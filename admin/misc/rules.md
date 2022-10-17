@@ -11,6 +11,7 @@
 - The team members will meet again with their respective subteams at least once weekly.
 ### **3) General Responsibilities for All Team Members**
 This element of the team working agreement is the list of rules/agreements or the contract that all members agree to live by.
+
 - All team members will be communicative, respectful, and collaborative. 
 - All team members will be responsible for their own tasks.
 - All team members will maintain a positive and safe atmosphere.
