@@ -2,7 +2,7 @@
 
 ###### Team 6 - Kickoff Meeting
 
-###### Warren Bear - 10/2/22
+###### Warren Bear - 10/12/22
 
 ###### 2:00pm - 2:45pm
 
