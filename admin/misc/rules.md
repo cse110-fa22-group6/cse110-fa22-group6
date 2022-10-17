@@ -1,7 +1,7 @@
 # **Group 6 Contract**
 ## **CSE - 110 - FA22**
 
-**This Team contract is a set of agreed upon rules by each team member of group 6. This contract contains the rules to be followed, repurcussions of broken rules, and member signature (to be signed on seperate copies of this document by each member).**
+**This Team contract is a set of agreed upon rules by each team member of group 6. This contract contains the rules to be followed, repercussions of broken rules, and member signature (to be signed on seperate copies of this document by each member).**
 
 ### **1) Primary Means of Communication and Expectations**
 - All members are expected to attend weekly meetings, including but not limited to, meetings with the TA, meetings with the entire team, and meetings with their respective subteams. 
