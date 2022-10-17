@@ -25,8 +25,10 @@ This element of the team working agreement is the list of rules/agreements or th
 I understand and agree to follow the above set of rules and I understand the repurcussions of rules being broken.
 
 
+***Date:*** 16th October 2022
+
 ***Name:***   
 
-***Date:*** 16th October 2022
+
 
 ***Signature***:
