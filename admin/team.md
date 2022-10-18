@@ -35,7 +35,8 @@ Hi, I'm Andrei Secor, and I'm a third year majoring in Math - Computer Science a
 
 <br>
 
-[Christian Antonio-Hernandez](https://github.com/CristianAH)
+<img src="./branding/team_images/christian.png" alt="Avatar" width=75px>[Christian Antonio-Hernandez](https://github.com/CristianAH) <br>
+Hey there, my name is Cristian and I am a member of Wing It (group 6). I am currently studying at UCSD as a fourth year Math-CS student and before I graduate I hope to get some internships during my last year here. My goal after graduation is to be employed in the software industry, specifically in the field of applied mathematics.
 
 <br>
 
