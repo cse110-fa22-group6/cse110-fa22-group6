@@ -45,6 +45,9 @@
     - Filtering the Jobs (By Date, Stage, Role, Company) (low prio)
   - Application Statistics (low prio)
 
+<hr>
+  
+### Unifinished Business
 - Slides that can be without meeting: 
   - Problem, 
   - Solution
@@ -57,3 +60,6 @@
   - Statement of Purpose, Roadmap
   - Technologies? 
   - Risks/Rabbit Holes/No Gos
+
+### Concerns
+- None
