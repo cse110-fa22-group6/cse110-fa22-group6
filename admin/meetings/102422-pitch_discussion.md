@@ -45,11 +45,15 @@
     - Filtering the Jobs (By Date, Stage, Role, Company) (low prio)
   - Application Statistics (low prio)
 
-Slides that can be without meeting: 
-Problem, 
-Solution
-User Personas/Stories
-Brainstorming, 
-System Diagrams/Wireframes?
+- Slides that can be without meeting: 
+  - Problem, 
+  - Solution
+  - User Personas/Stories
+  - Brainstorming, 
+  - System Diagrams/Wireframes?
 
-Slides to do when meeting: Features and their Priorities, Statement of Purpose, Roadmap, Technologies? Risks/Rabbit Holes/No Gos
+- Slides to do when meeting:
+  - Features and their Priorities 
+  - Statement of Purpose, Roadmap
+  - Technologies? 
+  - Risks/Rabbit Holes/No Gos
