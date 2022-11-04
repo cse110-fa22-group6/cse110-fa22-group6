@@ -2,9 +2,9 @@
 
 ###### Team 6 - First Meeting for Sprint 1
 
-###### Warren Bear - 11/02/22
+###### Zoom - 11/03/22
 
-###### 2:00pm - 2:30pm
+###### 9:00pm - 9:30pm
 
 <hr>
 
