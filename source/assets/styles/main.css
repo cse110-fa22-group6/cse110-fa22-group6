@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Spoof';
+    src:    url('../font/Spoof-Regular.woff2') format('woff2'),
+            url('../font/Spoof-Regular.woff') format('woff');
+}
+
+* {
+    font-family: 'Spoof';
+}
+.color1 { /* Color Theme */
+    color: rgb(149,161,241);
+}
+
