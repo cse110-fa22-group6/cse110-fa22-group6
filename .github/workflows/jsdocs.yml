@@ -15,7 +15,7 @@ on:
     branches:
       - "**"
 jobs:
-  run-lint:
+  generate-documentation:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
