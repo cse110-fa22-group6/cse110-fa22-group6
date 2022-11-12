@@ -15,7 +15,7 @@
     <article class="grid-container">
         <!--     Logo (for the future)  -->
         <div class="grid-1">
-            <img src="" alt="">
+            <img src="#" alt="">
             <i class="fa-solid fa-image"></i>
         </div>
 
@@ -30,32 +30,31 @@
         <section id="progress" class="grid-3">
             <div id="progress-bar"></div>
             <ul class="stages">
-                <div>
-                    <li class="step"><span>1</span></li>
+                <li class="step active">
+                    <span>1</span>
                     <p>Rejected</p>
-                </div>
-                <div>
-                    <li class="step active"><span>2</span></li>
+                </li>
+                <li class="step">
+                    <span>2</span>
                     <p>Applied</p>
-                </div>
-                <div>
-                    <li class="step"><span>3</span></li>
+                </li>
+                <li class="step">
+                    <span>3</span>
                     <p>Screening</p>
-                </div>
-                <div>
-                    <li class="step"><span>4</span></li>
+                </li>
+                <li class="step">
+                    <span>4</span>
                     <p>Interview</p>
-                </div>
-                <div>
-                    <li class="step"><span>5</span></li>
+                </li>
+                <li class="step">
+                    <span>5</span>
                     <p>Offer</p>
-                </div>
+                </li>
             </ul>
         </section>
 
         <!--       Trash/Pencil Icons -->
         <section class="grid-4">
-            <!--     Placeholder for icons -->
             <button class="delete-icon"><i class="fa-solid fa-trash"></i></button>
             <button class="edit-icon"><i class="fa-solid fa-pencil"></i></button>
         </section>
@@ -84,11 +83,7 @@
         background: #e6e6e6;
         padding: 20px 40px;
         border: 3px solid black;
-    }
-
-    .grid-2 {
-        position: relative;
-        top: 10%;
+        margin: 20px;
     }
 
     .grid-1 {
@@ -98,7 +93,12 @@
 
     .grid-1 i {
         font-size: 50px;
-        margin-top: 40%;
+        margin-top: 20%;
+    }
+
+    .grid-2 {
+        position: relative;
+        top: 10%;
     }
 
     .delete-icon,
@@ -142,7 +142,8 @@
         background: black;
         height: 5px;
         width: 98%;
-        top: 13%;
+        top: 20%;
+        left: 2px;
     }
 
     .stages {
@@ -170,6 +171,11 @@
 
     .stages .step span {
         display: none;
+    }
+
+    .stages .step p {
+        padding-top: 15px;
+        text-align: center;
     }
 
     .stages .step.active {
