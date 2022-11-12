@@ -14,12 +14,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+
       - name: Build
         uses: andstor/jsdoc-action@v1
         with:
-          source_dir: ./src
-          output_dir: ./out
+          source_dir: ./source/assets/scripts
+          output_dir: ./specs/documentation
           config_file: conf.json
           template: minami
           front_page: README.md
