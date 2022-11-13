@@ -27,3 +27,6 @@ jobs:
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.2
+        with:
+          # changes option to include prettifying all doc types
+          prettier_options: --write **/*.{js,md,html,css}
