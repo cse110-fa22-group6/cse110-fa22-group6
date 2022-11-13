@@ -18,9 +18,8 @@
 6. Michael Lian
 7. Supratik Banerjee
 8. Tamara Sagakova
-9. Kwangyun Keum 
+9. Kwangyun Keum
 10. Andrei Secor (absent)
-
 
 <hr>
 
@@ -30,15 +29,10 @@
 
 <hr>
 
-
-
-
 ### Unfinished business:
 
-
-
-
 ### New Business & discussion :
+
 - Discussed Ideas
   - Receipt Tracker
   - Youtube Video Organizer
@@ -62,9 +56,10 @@
   - Monday night, zoom call to practice starting pitch
   - Tuesday, starting pitch with TA
 
-
 ### Agenda for next
+
 - Go over research and decide on what idea to move forward with for starting pitch
-  
+
 ### Concerns:
-  - None
+
+- None

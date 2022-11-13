@@ -18,28 +18,29 @@
 6. Michael Lian
 7. Supratik Banerjee
 8. Tamara Sagakova
-9. Kwangyun Keum 
+9. Kwangyun Keum
 10. Andrei Secor
-
 
 <hr>
 
 ### Agenda
 
 1. Features
-2. Pitch Slides 
+2. Pitch Slides
 
 <hr>
 
 ### New Business and Discussion
+
 - Features:
+
   - CRUD (essential - hi prio)
   - Creating Job Applications
   - Updating Job Applications (Stage)
   - Viewing List of Job Applications
   - Deleting Job Applications
 
-- Other Features 
+- Other Features
   - Sorting the Job Applications - default sorted by application date (nice to have - med prio) (By Date, Stage, Role, Company)
   - Search
     - Filtering the Jobs (By Date, Stage, Role, Company) (low prio)
@@ -56,10 +57,11 @@
   - System Diagrams/Wireframes?
 
 - Slides to do when meeting:
-  - Features and their Priorities 
+  - Features and their Priorities
   - Statement of Purpose, Roadmap
-  - Technologies? 
+  - Technologies?
   - Risks/Rabbit Holes/No Gos
 
 ### Concerns
+
 - None
