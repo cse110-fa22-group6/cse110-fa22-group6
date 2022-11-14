@@ -1,30 +1,28 @@
 // Run the init() function when the page has loaded
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    progressBarListener()
+  progressBarListener();
 }
-
 
 /**
  * @description Updates progress bar by retrieving which step was clicked and updates the coloring of all steps
  */
 function progressBarListener() {
-    for (let i = 0; i < document.getElementsByClassName("stages").length; i++) {
-        document
-            .getElementsByClassName("stages")
-        [i].addEventListener("click", function (e) {
-            // get which bubble was clicked for that specific progress bar
-            if (e.target && e.target.nodeName == "LI") {
-                let stepNum = parseInt(e.target.textContent);
-                console.log(`updating progress bar ${i}`);
-                // make the clicked bubble purple and all others white
-                updateProgress(document.getElementsByClassName("stages")[i], stepNum);
-            }
-        });
-    }
+  for (let i = 0; i < document.getElementsByClassName("stages").length; i++) {
+    document
+      .getElementsByClassName("stages")
+      [i].addEventListener("click", function (e) {
+        // get which bubble was clicked for that specific progress bar
+        if (e.target && e.target.nodeName == "LI") {
+          let stepNum = parseInt(e.target.textContent);
+          console.log(`updating progress bar ${i}`);
+          // make the clicked bubble purple and all others white
+          updateProgress(document.getElementsByClassName("stages")[i], stepNum);
+        }
+      });
+  }
 }
-
 
 /**
  * @param {Object} ul The progress bar
@@ -45,4 +43,3 @@ function updateProgress(ul, stepNum) {
     }
   }
 }
-

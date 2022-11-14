@@ -1,114 +1,112 @@
 @font-face {
-        font-family: 'Spoof';
-        src: url('/source/assets/font/Spoof-Regular.woff') format('woff');
-    }
+  font-family: "Spoof";
+  src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
+}
 
-    * {
-        font-family: "Spoof", serif;
-    }
+* {
+  font-family: "Spoof", serif;
+}
 
-    .grid-container {
-        display: grid;
-        grid-template-columns: 0.15fr 1fr 1fr 0.2fr;
-        grid-gap: 20px;
-        background: #e6e6e6;
-        padding: 20px 40px;
-        border: 3px solid black;
-        margin: 20px;
-    }
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.15fr 1fr 1fr 0.2fr;
+  grid-gap: 20px;
+  background: #e6e6e6;
+  padding: 20px 40px;
+  border: 3px solid black;
+  margin: 20px;
+}
 
-    .grid-1 {
-        text-align: center;
-        vertical-align: middle;
-    }
+.grid-1 {
+  text-align: center;
+  vertical-align: middle;
+}
 
-    .grid-1 i {
-        font-size: 50px;
-        margin-top: 20%;
-    }
+.grid-1 i {
+  font-size: 50px;
+  margin-top: 20%;
+}
 
-    .grid-2 {
-        position: relative;
-        top: 10%;
-    }
+.grid-2 {
+  position: relative;
+  top: 10%;
+}
 
-    .delete-icon,
-    .edit-icon {
-        border: none;
-        cursor: pointer;
-        background-color: #e6e6e6;
-    }
+.delete-icon,
+.edit-icon {
+  border: none;
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
 
+.grid-4 i {
+  font-size: 25px;
+}
 
-    .grid-4 i {
-        font-size: 25px;
-    }
+.position {
+  font-weight: bold;
+  font-size: 30px;
+}
 
+.position,
+.company,
+.location {
+  margin: 0px;
+}
 
-    .position {
-        font-weight: bold;
-        font-size: 30px;
-    }
+.job-card {
+  background: grey;
+  border: 2px solid black;
+  padding: 3px 10px;
+}
 
-    .position,
-    .company,
-    .location {
-        margin: 0px;
-    }
+#progress {
+  position: relative;
+  margin-bottom: 30px;
+  top: 30%;
+}
 
-    .job-card {
-        background: grey;
-        border: 2px solid black;
-        padding: 3px 10px;
-    }
+#progress-bar {
+  position: absolute;
+  background: black;
+  height: 5px;
+  width: 98%;
+  top: 20%;
+  left: 2px;
+}
 
-    #progress {
-        position: relative;
-        margin-bottom: 30px;
-        top: 30%;
-    }
+.stages {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
 
-    #progress-bar {
-        position: absolute;
-        background: black;
-        height: 5px;
-        width: 98%;
-        top: 20%;
-        left: 2px;
-    }
+.stages::before {
+  position: absolute;
+  width: 97%;
+}
 
-    .stages {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-    }
+.stages .step {
+  border: 3px solid black;
+  cursor: pointer;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  position: relative;
+}
 
-    .stages::before {
-        position: absolute;
-        width: 97%;
-    }
+.stages .step span {
+  display: none;
+}
 
-    .stages .step {
-        border: 3px solid black;
-        cursor: pointer;
-        border-radius: 100%;
-        width: 25px;
-        height: 25px;
-        background-color: #fff;
-        position: relative;
-    }
+.stages .step p {
+  padding-top: 15px;
+  text-align: center;
+}
 
-    .stages .step span {
-        display: none;
-    }
-
-    .stages .step p {
-        padding-top: 15px;
-        text-align: center;
-    }
-
-    .stages .step.active {
-        background-color: #95a1f1;
-    }
+.stages .step.active {
+  background-color: #95a1f1;
+}
