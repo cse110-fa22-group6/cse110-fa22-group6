@@ -40,9 +40,6 @@ plugins:
 rules: 
     eqeqeq: off
     quotes: off
-    declaration-colon-newline-after: off
-    value-list-comma-newline-after: off
-    font-family-name-quotes: off
     semi: off
 
 
