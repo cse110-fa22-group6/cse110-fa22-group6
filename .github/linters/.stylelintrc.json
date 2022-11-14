@@ -4,6 +4,7 @@
     "selector-list-comma-newline-after": null,
     "declaration-colon-newline-after": null,
     "value-list-comma-newline-after": null,
-    "font-family-name-quotes": null
+    "font-family-name-quotes": null,
+    "string-quotes": null
   }
 }
