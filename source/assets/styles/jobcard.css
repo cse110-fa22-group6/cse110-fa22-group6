@@ -1,6 +1,6 @@
 @font-face {
   font-family: Spoof, serif;
-  src: url('/source/assets/font/Spoof-Regular.woff') format('woff');
+  src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
 }
 
 * {
