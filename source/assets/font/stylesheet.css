@@ -1,8 +1,7 @@
 @font-face {
   font-family: Spoof;
   src: url("Spoof-Regular.eot");
-  src:
-    local("Spoof Regular"), local("Spoof-Regular"),
+  src: local("Spoof Regular"), local("Spoof-Regular"),
     url("Spoof-Regular.eot?#iefix") format("embedded-opentype"),
     url("Spoof-Regular.woff2") format("woff2"),
     url("Spoof-Regular.woff") format("woff"),
@@ -14,8 +13,7 @@
 @font-face {
   font-family: Spoof;
   src: url("Spoof-Medium.eot");
-  src:
-    local("Spoof Medium"), local("Spoof-Medium"),
+  src: local("Spoof Medium"), local("Spoof-Medium"),
     url("Spoof-Medium.eot?#iefix") format("embedded-opentype"),
     url("Spoof-Medium.woff2") format("woff2"),
     url("Spoof-Medium.woff") format("woff"),
@@ -27,8 +25,7 @@
 @font-face {
   font-family: Spoof;
   src: url("Spoof-Light.eot");
-  src:
-    local("Spoof Light"), local("Spoof-Light"),
+  src: local("Spoof Light"), local("Spoof-Light"),
     url("Spoof-Light.eot?#iefix") format("embedded-opentype"),
     url("Spoof-Light.woff2") format("woff2"),
     url("Spoof-Light.woff") format("woff"),
@@ -40,8 +37,7 @@
 @font-face {
   font-family: Spoof;
   src: url("Spoof-Bold.eot");
-  src:
-    local("Spoof Bold"), local("Spoof-Bold"),
+  src: local("Spoof Bold"), local("Spoof-Bold"),
     url("Spoof-Bold.eot?#iefix") format("embedded-opentype"),
     url("Spoof-Bold.woff2") format("woff2"),
     url("Spoof-Bold.woff") format("woff"),
@@ -53,8 +49,7 @@
 @font-face {
   font-family: "Spoof";
   src: url("Spoof-Thin.eot");
-  src:
-    local("Spoof Thin"), local("Spoof-Thin"),
+  src: local("Spoof Thin"), local("Spoof-Thin"),
     url("Spoof-Thin.eot?#iefix") format("embedded-opentype"),
     url("Spoof-Thin.woff2") format("woff2"),
     url("Spoof-Thin.woff") format("woff"),
@@ -66,8 +61,7 @@
 @font-face {
   font-family: Spoof;
   src: url("Spoof-Black.eot");
-  src:
-    local("Spoof Black"), local("Spoof-Black"),
+  src: local("Spoof Black"), local("Spoof-Black"),
     url("Spoof-Black.eot?#iefix") format("embedded-opentype"),
     url("Spoof-Black.woff2") format("woff2"),
     url("Spoof-Black.woff") format("woff"),
