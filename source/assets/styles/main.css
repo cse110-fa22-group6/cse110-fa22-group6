@@ -5,9 +5,10 @@
 }
 
 * {
-  font-family: Spoof;
+  font-family: Spoof, serif;
 }
+
 .color1 {
   /* Color Theme */
-  color: rgb(149, 161, 241);
+  color: rgb(149 161 241);
 }
