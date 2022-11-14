@@ -1,8 +1,8 @@
 // Run the init() function when the page has loaded
 window.addEventListener("DOMContentLoaded", init);
 
-function init () {
-  progressBarListener()
+function init() {
+  progressBarListener();
 }
 
 /**
