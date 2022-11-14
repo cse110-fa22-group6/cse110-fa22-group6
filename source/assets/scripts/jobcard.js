@@ -39,7 +39,7 @@ function updateProgress (ul, stepNum) {
       li[i].classList.add('active')
       console.log(`Updated stage ${i + 1}`)
     } else {
-      li[i].classList.remove("active")
+      li[i].classList.remove('active')
     }
   }
 }
