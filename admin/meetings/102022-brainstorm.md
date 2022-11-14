@@ -1,10 +1,10 @@
-### Wing It
+# Wing It
 
-###### Team 6 - Brainstorm (education and work group)
+## Team 6 - Brainstorm (education and work group)
 
-###### Zoom - 10/20/22
+Zoom - 10/20/22
 
-###### 7pm - 8:45pm
+7pm - 8:45pm
 
 <hr>
 

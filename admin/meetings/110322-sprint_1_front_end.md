@@ -1,10 +1,10 @@
-### Wing It
+# Wing It
 
-###### Team 6 - First Meeting for Sprint 1
+## Team 6 - First Meeting for Sprint 1
 
-###### Zoom - 11/03/22
+Zoom - 11/03/22
 
-###### 9:00pm - 9:30pm
+9:00pm - 9:30pm
 
 <hr>
 
@@ -20,7 +20,7 @@
 
 ### Agenda
 
-- Decide how we're splitting up front end
+- Decide how we're splitting up frontend
 - Assign Roles
 - Deadlines
 

@@ -1,10 +1,10 @@
-### Wing It
+# Wing It
 
-###### Team 6 - Brainstorm - All groups
+## Team 6 - Brainstorm - All groups
 
-###### Zoom - 10/21/22
+Zoom - 10/21/22
 
-###### 6:00pm - 7:20pm
+6:00pm - 7:20pm
 
 <hr>
 
@@ -50,4 +50,4 @@
 
 ### Concerns
 
-- Permission to use 3rd party js libraries for graphs
+- Permission to use third-party js libraries for graphs

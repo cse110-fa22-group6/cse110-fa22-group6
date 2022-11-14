@@ -1,10 +1,10 @@
-### Wing It
+# Wing It
 
-###### Team 6 - Pitch Discussion
+## Team 6 - Pitch Discussion
 
-###### Zoom - 10/26/22
+Zoom - 10/26/22
 
-###### 2:00pm - 3:00pm
+2:00pm - 3:00pm
 
 <hr>
 
