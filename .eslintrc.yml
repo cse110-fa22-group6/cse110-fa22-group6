@@ -5,7 +5,7 @@ extends: standard
 overrides: []
 parserOptions:
   ecmaVersion: latest
-rules: 
+rules:
   quotes: warn
   semi: warn
-
+  space-before-function-paren: warn
