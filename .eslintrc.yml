@@ -6,6 +6,6 @@ overrides: []
 parserOptions:
   ecmaVersion: latest
 rules: 
-	quotes: warn
+  quotes: warn
 	semi: warn
 
