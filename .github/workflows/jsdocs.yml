@@ -21,7 +21,7 @@ jobs:
       - name: Build
         uses: andstor/jsdoc-action@v1
         with:
-          source_dir: ./tree/pipeline-jcyan-jsdocs/source/assets/scripts
+          source_dir: ./source/assets/scripts
           recurse: true
-          output_dir: ./tree/pipeline-jcyan-jsdocs/specs/documentation
+          output_dir: ./specs/documentation
           template: minami
