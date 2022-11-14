@@ -2,9 +2,6 @@
 #
 # You can view and modify the input variables here:
 # https://github.com/marketplace/actions/jsdoc-action
-#
-# It also deploys the documentation to GitHub pages using this action:
-# https://github.com/marketplace/actions/github-pages-action
 name: Document Generator
 
 on:
@@ -28,9 +25,3 @@ jobs:
           recurse: true
           output_dir: ./specs/documentation
           template: minami
-      
-      - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.9.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./specs/documentation
