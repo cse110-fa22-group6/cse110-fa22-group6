@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Spoof";
+  font-family: Spoof, serif;
   src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
 }
 
@@ -51,7 +51,7 @@
 .position,
 .company,
 .location {
-  margin: 0px;
+  margin: 0;
 }
 
 .job-card {
