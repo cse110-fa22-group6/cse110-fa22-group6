@@ -14,7 +14,7 @@ function progressBarListener () {
     document
       .getElementsByClassName('stages')[i].addEventListener('click', function (e) {
         // get which bubble was clicked for that specific progress bar
-        if (e.target && e.target.nodeName === "LI") {
+        if (e.target && e.target.nodeName === 'LI') {
           const stepNum = parseInt(e.target.textContent)
           console.log(`updating progress bar ${i}`)
           // make the clicked bubble purple and all others white
@@ -29,7 +29,7 @@ function progressBarListener () {
  * @param {number} stepNum The current step (bubble) we have clicked
  * @description Makes a specific bubble purple and makes all others white.
  */
-function updateProgress(ul, stepNum) {
+function updateProgress (ul, stepNum) {
   // get the specific progress bar
   const li = ul.getElementsByTagName('li')
 
