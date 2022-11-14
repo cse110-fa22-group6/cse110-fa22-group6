@@ -1,9 +1,9 @@
 ---
 name: Meeting Minute
 about: For updating meeting minutes
-title: "[Meeting Minutes]"
+title: '[Meeting Minutes]'
 labels: meeting minutes, todo
-assignees: ""
+assignees: ''
 ---
 
 - Create a branch for minutes.
