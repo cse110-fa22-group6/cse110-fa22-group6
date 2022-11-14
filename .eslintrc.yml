@@ -1,5 +1,0 @@
----
-rules:
-  eqeqeq: warn
-  quotes: off
-  space-before-function-paren: off
