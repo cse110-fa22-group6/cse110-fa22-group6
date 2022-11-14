@@ -2,4 +2,4 @@
 rules:
   eqeqeq: warn
   quotes: off
-  space-before-function-parens: off
+  space-before-function-paren: off
