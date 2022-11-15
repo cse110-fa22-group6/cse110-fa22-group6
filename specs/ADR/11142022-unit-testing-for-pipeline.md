@@ -24,7 +24,7 @@ Chosen option: "Jest".
 
 ## Jest
 
-Jest Getting Started Guide:<https://jestjs.io/docs/getting-started>
+Jest Getting Started Guide: <https://jestjs.io/docs/getting-started>
 
 ```
 const sum = require('./sum');
@@ -40,6 +40,8 @@ test('adds 1 + 2 to equal 3', () => {
 * Bad, Not as many features as Mocha
 
 ## Mocha
+
+Mocha Getting Started Guide: <https://mochajs.org/#getting-started>
 
 ```
 var assert = require('assert');
