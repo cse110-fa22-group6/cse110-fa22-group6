@@ -4,10 +4,112 @@
             url('../font/Spoof-Regular.woff') format('woff');
 }
 
+:root{
+    --special-color: rgb(149,161,241); 
+}
 * {
     font-family: 'Spoof';
+    font-weight: 300;
+    margin: 0.5em;
+
 }
-.color1 { /* Color Theme */
-    color: rgb(149,161,241);
+.container-1 {
+    display: flex;
+    align-items: center; 
+    margin-bottom: -1em; 
 }
 
+#title{
+    font-weight: 600;
+    font-size: 2.5em;
+}
+h2{
+    margin-bottom: -1em; 
+}
+.container-2 {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+
+h5{
+    color: grey;
+}
+
+#add_application_btn{
+    background-color: var(--special-color);
+    margin: 1em 0.7em;
+    padding: 0em 2.5em;
+}
+
+/* DELETE DIALOG STYLES */
+#delete-application{
+    background-color: rgb(237, 237, 237);
+    width: 50%;
+    top: 25%;
+    left: 25%;
+    margin: 0;
+    padding: 0;
+}
+
+#delete-application::backdrop{
+    background-color: white;
+}
+
+.delete_container{
+    display: flex;
+    align-items: center; 
+    margin: 0 1em;
+}
+
+#delete_title{
+    width: 77%;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+    
+}
+
+#delete_question{
+    margin-top: 2em;
+    margin-bottom: 1.1em;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.delete_buttons{
+    display: flex;
+    align-items: center; 
+    justify-content:center;
+    margin-bottom: 1.5em;
+}
+
+#delete-application{
+    border: 1px solid black;
+    border-radius: 3.5rem;
+}
+
+#d_cancel, #d_delete{
+    padding: 0.6em 2.5em;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.3rem;
+}
+
+#d_cancel:hover, 
+#d_delete:hover{
+    padding: 0.6em 2.5em;
+    background-color: var(--special-color);;
+    border: 1px solid var(--special-color);
+    border-radius: 0.3rem;
+    color: white;
+}
+
+hr{
+    margin: 0;
+}
+
+/* END -- DELETE DIALOG STYLES */
