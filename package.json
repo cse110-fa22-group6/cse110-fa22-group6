@@ -6,8 +6,5 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-promise": "^6.1.1"
-  },
-  "scripts": {
-    "test": "jest"
   }
 }
