@@ -20,6 +20,7 @@ Chosen option: "browser local storage".
 * Good, because file no new file is created for each addition of a job card.
 * Good, because file is automatically overwwritten.
 * Good, because stores json objects, no additional computation needed for storing or reading.
+* Good, all the team members have experience working with local storage
 * Bad, because clearing of browser cache removes the saved data.
 
 ## Pros and Cons of the Options
