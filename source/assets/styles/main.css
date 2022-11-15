@@ -41,6 +41,16 @@ h5{
     background-color: var(--special-color);
     margin: 1em 0.7em;
     padding: 0em 2.5em;
+    cursor: pointer;
+}
+
+
+#add_application_btn:hover{
+    background-color: rgb(105, 123, 240);
+    color:white;
+    margin: 1em 0.7em;
+    padding: 0em 2.5em;
+    cursor: pointer;
 }
 
 /* DELETE DIALOG STYLES */
@@ -97,6 +107,7 @@ h5{
     background-color: white;
     border: 1px solid black;
     border-radius: 0.3rem;
+    cursor: pointer;
 }
 
 #d_cancel:hover, 
