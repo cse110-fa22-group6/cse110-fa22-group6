@@ -21,12 +21,15 @@
   margin: 0 1em;
 }
 
-.logo, .blank, .title{
+.logo,
+.blank,
+.title {
   flex: 1;
   display: flex;
 }
 
-.logo, .blank {
+.logo,
+.blank {
   flex: 1 1 0;
 }
 
@@ -51,7 +54,7 @@
 }
 
 .add_buttons button {
-  margin: 0 .7em;
+  margin: 0 0.7em;
 }
 
 #add-application {
@@ -66,7 +69,7 @@
   border: 1px solid black;
   border-radius: 0.3rem;
   cursor: pointer;
-  font-size: 1em; 
+  font-size: 1em;
 }
 
 #add_cancel:hover,
@@ -83,22 +86,21 @@
   text-align: center;
 }
 label {
-    display: block;
-    font-size: 1.3em;
-    padding-bottom: .7em;
+  display: block;
+  font-size: 1.3em;
+  padding-bottom: 0.7em;
 }
 input {
-    font-size: 1.2em;
-    border:.15em solid #D1D1D1;
-    border-radius: .3rem;
-    padding: .7em;
-
+  font-size: 1.2em;
+  border: 0.15em solid #d1d1d1;
+  border-radius: 0.3rem;
+  padding: 0.7em;
 }
 .column {
   flex: 50%;
 }
 .form-section {
-    padding: 2em 0;
+  padding: 2em 0;
 }
 
 hr {

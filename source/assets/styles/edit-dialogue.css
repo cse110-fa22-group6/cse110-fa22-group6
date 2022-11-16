@@ -23,16 +23,19 @@
   margin: 0 1em;
 }
 
-.logo, .blank, .title{
+.logo,
+.blank,
+.title {
   flex: 1;
   display: flex;
 }
 
-.logo, .blank {
+.logo,
+.blank {
   flex: 1 1 0;
 }
 
-.title { 
+.title {
   flex: 3 1 0;
 }
 
@@ -53,9 +56,8 @@
 }
 
 .edit_buttons button {
-  margin: 0 .7em;
+  margin: 0 0.7em;
 }
-
 
 .edit_cancel,
 .edit_submit {
@@ -81,23 +83,22 @@
   text-align: center;
 }
 label {
-    display: block;
-    font-size: 1.3em;
-    padding-bottom: .7em;
+  display: block;
+  font-size: 1.3em;
+  padding-bottom: 0.7em;
 }
 input {
-    font-size: 1.2em;
-    border:.15em solid #D1D1D1;
-    border-radius: .3rem;
-    padding: .7em;
-    margin: 1rem;
-
+  font-size: 1.2em;
+  border: 0.15em solid #d1d1d1;
+  border-radius: 0.3rem;
+  padding: 0.7em;
+  margin: 0.1em;
 }
 .column {
   flex: 50%;
 }
 .form-section {
-    padding: 2em 0;
+  padding: 2em 0;
 }
 
 hr {
