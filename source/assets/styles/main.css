@@ -4,14 +4,55 @@
     url("../font/Spoof-Regular.woff") format("woff");
 }
 
-:root{
-    --special-color: rgb(149,161,241); 
-}
-* {
-  font-family: Spoof, serif;
+:root {
+  --special-color: rgb(149, 161, 241);
 }
 
-.color1 {
-  /* Color Theme */
-  color: rgb(149 161 241);
+* {
+  font-family: "Spoof";
+  font-weight: 300;
+  /* margin: 0.5em; */
+}
+
+body {
+    margin: 2% 5%;
+}
+
+.container-1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: -1em;
+}
+
+#title {
+  font-weight: 600;
+  font-size: 2.5em;
+}
+
+h2 {
+  margin-bottom: -1em;
+}
+
+.container-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+h5 {
+  color: grey;
+}
+
+#add_application_btn {
+  background-color: var(--special-color);
+  margin: 1em 0.7em;
+  padding: .5em 2.5em;
+  cursor: pointer;
+}
+
+#add_application_btn:hover {
+  background-color: rgb(105, 123, 240);
+  color: white;
+  cursor: pointer;
 }

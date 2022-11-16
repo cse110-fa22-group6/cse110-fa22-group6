@@ -1,0 +1,80 @@
+#delete-application {
+  background-color: rgb(237, 237, 237);
+  width: 50%;
+  top: 25%;
+  left: 25%;
+  margin: 0;
+  padding: 0;
+}
+
+#delete-application::backdrop {
+  /* Backdrop is only displayed when dialog is opened with dialog.showModal() */
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  padding: 2em 1em;
+}
+
+.delete_container {
+  display: flex;
+  align-items: center;
+  margin: 0 1em;
+}
+
+#delete_title {
+  /* width: 77%; */
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+#delete_question {
+  margin-top: 2em;
+  margin-bottom: 1.1em;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.delete_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5em;
+}
+
+.delete_buttons button {
+  margin: 0 .7em;
+}
+
+#delete-application {
+  border: 1px solid black;
+  border-radius: 3.5rem;
+}
+
+#d_cancel,
+#d_delete {
+  padding: 0.6em 2.5em;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+#d_cancel:hover,
+#d_delete:hover {
+  padding: 0.6em 2.5em;
+  background-color: var(--special-color);
+  border: 1px solid var(--special-color);
+  border-radius: 0.3rem;
+  color: white;
+}
+
+hr {
+  margin: 0;
+}
+
+/* END -- DELETE DIALOG STYLES */

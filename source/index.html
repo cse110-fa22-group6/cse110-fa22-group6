@@ -1,46 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/main.css">
-    <link rel="icon" type="image/x-icon" href="/admin/branding/favicon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/source/assets/styles/main.css" />
+    <link rel="stylesheet" href="/source/assets/styles/delete-dialogue.css" />
+    <link rel="stylesheet" href="/source/assets/styles/jobcard.css" />
+    <link rel="icon" type="image/x-icon" href="/admin/branding/favicon.ico" />
     <title>Wing It</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="container-1">
-            <img src="/admin/branding/logo.png" alt="logo" width="80" height="80">
-            <h1 id="title"> Wing It</h1>
-        </div>
-        <h2>Your Applications</h2>
-        <div class="container-2">
-            <h5> # Total Aplications</h5>
-            <button type="button" id="add_application_btn">+ Add Application</button>
-        </div>
-        <button type="button" id="deletebtn" >Delete</button>
+      <div class="container-1">
+        <img src="/admin/branding/logo.png" alt="logo" width="80" height="80" />
+        <h1 id="title">Wing It</h1>
+      </div>
+      <h2>Your Applications</h2>
+      <div class="container-2">
+        <h5># Total Aplications</h5>
+        <button type="button" id="add_application_btn">
+          <i class="fa-solid fa-plus"></i> Add Application
+        </button>
+      </div>
+
     </header>
     <main>
-        <!-- Add Job Card Here -->
+      <!-- BEGIN JOB CARD -->
+      <article class="grid-container">
+        <!--     Logo (for the future)  -->
+        <div class="grid-1">
+          <img src="#" alt="" />
+          <i class="fa-solid fa-image"></i>
+        </div>
 
-        <!-- Delete Dialog -->
-        <dialog id="delete-application">
-            <div class="modal-content">
-                <div class="delete_container">
-                    <img src="/admin/branding/logo.png" alt="logo" width="60" height="60">
-                    <p id="delete_title">Delete Job</p>
-                </div>
-                <hr>
-                <p id="delete_question">Are you sure you want to delete this job?</p>
-                <div class="delete_buttons">
-                    <button id="d_cancel">Cancel</button>
-                    <button id="d_delete">Delete</button>
-                </div>
-            </div>
-        </dialog>
+        <!--     Application Text -->
+        <section class="grid-2">
+          <p class="position">Software Engineer Intern</p>
+          <p class="company">Amazon</p>
+          <p class="location">Seattle, WA</p>
+        </section>
+
+        <!--     Progress Bar -->
+        <section id="progress" class="grid-3">
+          <div id="progress-bar"></div>
+          <ul class="stages">
+            <li class="step">
+              <span>1</span>
+              <p>Rejected</p>
+            </li>
+            <li class="step active">
+              <span>2</span>
+              <p>Applied</p>
+            </li>
+            <li class="step">
+              <span>3</span>
+              <p>Screening</p>
+            </li>
+            <li class="step">
+              <span>4</span>
+              <p>Interview</p>
+            </li>
+            <li class="step">
+              <span>5</span>
+              <p>Offer</p>
+            </li>
+          </ul>
+          
+        </section>
+
+        <!--       Trash/Pencil Icons -->
+        <section class="grid-4">
+          <button id="deletebtn" class="delete-icon">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+          <button class="edit-icon"><i class="fa-solid fa-pen"></i></i></button>
+        </section>
+      </article>
+
+      <!-- END JOB CARD -->
+      
+
+      <!-- Delete Dialog -->
+      <dialog id="delete-application">
+        <div class="modal-content">
+          <div class="delete_container">
+            <img 
+              src="/admin/branding/logo.png"
+              alt="logo"
+              width="60"
+              height="60"
+              class="delete-logo"
+            />
+            <p id="delete_title">Delete Job</p>
+          </div>
+          <hr />
+          <p id="delete_question">Are you sure you want to delete this job?</p>
+          <div class="delete_buttons">
+            <button id="d_cancel">Cancel</button>
+            <button id="d_delete">Delete</button>
+          </div>
+        </div>
+      </dialog>
     </main>
-    <script type="module" src="/source/assets/styles/delete_popup.js"></script>
-</body>
+
+    <!-- Script for job card progress bar -->
+    <script
+      type="text/javascript"
+      src="/source/assets/scripts/progres_bar.js"
+    ></script>
+
+    <!-- Script for Delete Dialogue Box -->
+    <script type="module" src="/source/assets/scripts/delete_popup.js"></script>
+
+    <!-- Needed for icons -->
+    <script
+      src="https://kit.fontawesome.com/b9cc338eb6.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
