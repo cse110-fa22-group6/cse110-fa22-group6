@@ -1,4 +1,4 @@
-const deleteBtn = document.getElementById('deletebtn');
+const deleteBtn = document.getElementById('delete-btn');
 const delete_dialog = document.getElementById('delete-application');
 
 
