@@ -18,17 +18,34 @@
 
 .delete_container {
   display: flex;
-  align-items: center;
   margin: 0 1em;
 }
 
+.logo{
+  flex: 1;
+  display: flex;
+
+}
+.title, .blank{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header:first-child:first-child { 
+  margin-right: auto; 
+}
+
+.header:last-child { 
+  margin-left: auto;  
+}
+
 #delete_title {
-  /* width: 77%; */
-  width: 100%;
-  text-align: center;
   font-size: 2.5rem;
   font-weight: 400;
   margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 #delete_question {
