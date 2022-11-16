@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/source/assets/styles/main.css" />
     <link rel="stylesheet" href="/source/assets/styles/delete-dialogue.css" />
     <link rel="stylesheet" href="/source/assets/styles/jobcard.css" />
+    <link rel="stylesheet" href="/source/assets/styles/add-dialogue.css" />
     <link rel="icon" type="image/x-icon" href="/admin/branding/logo.ico" />
 
     <title>Wing It</title>
@@ -93,7 +94,7 @@
         <div class="modal-content">
           <div class="delete_container">
             <div class="logo" id="item1">
-              <img 
+              <img
                 src="/admin/branding/icon-transparent.png"
                 alt="logo"
                 width="60"
@@ -104,7 +105,7 @@
             <div class="title" id="item2">
               <p id="delete_title">Delete Job</p>
             </div>
-            <div class="blank" id="item3"> </div>
+            <div class="blank" id="item3"></div>
           </div>
           <hr />
           <p id="delete_question">Are you sure you want to delete this job?</p>
@@ -113,6 +114,57 @@
             <button id="d_delete">Delete</button>
           </div>
         </div>
+      </dialog>
+
+      <!-- Add Dialogue -->
+      <dialog id="add-application">
+        <div class="modal-content">
+          <div class="add_container">
+            <div class="logo" id="item1">
+              <img
+                src="/admin/branding/icon-transparent.png"
+                alt="logo"
+                width="60"
+                height="60"
+                class="add-logo"
+              />
+            </div>
+            <div class="title" id="item2">
+              <p id="add_title">Add Job</p>
+            </div>
+            <div class="blank" id="item3"></div>
+          </div>
+          <hr />
+          <form id="add-form" action="">
+            <div class="row">
+              <div class="column">
+                <div class="form-section">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" required/>
+                </div>
+                <div class="form-section">
+                <label for="position">Position</label>
+                <input type="text" id="position" name="position" required/>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="form-section">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" required/>
+                </div>
+                <div class="form-section">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required/>
+                </div>
+              </div>
+          </form>
+          
+        </div>
+        <div class="add_buttons">
+            <button id="add_cancel">Cancel</button>
+            <button type="submit" form="add-form" id="add_submit">Add</button>
+          </div>
       </dialog>
     </main>
 
@@ -124,6 +176,9 @@
 
     <!-- Script for Delete Dialogue Box -->
     <script type="module" src="/source/assets/scripts/delete_popup.js"></script>
+
+    <!-- Script for Add Dialogue Box -->
+    <script type="module" src="/source/assets/scripts/add_popup.js"></script>
 
     <!-- Needed for icons -->
     <script
