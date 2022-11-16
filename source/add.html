@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wing it</title>
+    <link rel="stylesheet" href="styles/style.css">
+    </head>
+<body>
+
+    <!--Top/Logo layout-->
+    <div class="flex-container">
+        <div class="flex-item">
+            <img src="img/logo.png" id='left' alt="" >
+        </div>
+        <div class="flex-item">
+            <h1>Add Application</h1>
+        </div>
+        <div class="flex-item"> </div>
+    </div>
+
+    <!--Form Layout-->
+    <div class ="Forms">
+        <form>
+            <div class="forms">
+                <div class="flex-container2">
+                    <div class="flex-item">
+                        <label for="fname">Company*</label><br>
+                        <input type="text" id="fname" name="fname" placeholder="Google" style="width: 90%;" ><br>
+                    </div>
+                    <div class="flex-item">
+                        <label for="lname1">Location*</label><br>
+                        <input type="text" id="lname1" name="lname1" placeholder='Mountain view, CA'  style="width: 30%;" required>
+                    </div>
+
+                </div>
+                <div class="flex-container2">
+                    <div class="flex-item">
+                        <label for="pname">Position*</label><br>
+                        <input type="text" id="pname" name="pname" placeholder="Software Engineer" style="width: 90%;" required ><br>
+                    </div>
+                    <div class="flex-item">
+                        <label for="dname">Date*</label><br>
+                        <input type="date" id="dname" name="dname"  style="width: 30%;" required>
+                    </div>
+
+                </div>
+                <!--Buttons-->
+                <div class="flex-container2">
+                    <div class="flex-item"></div>
+                    <div class="flex-item">
+                        <button type="submit" style="width: 100px;">Cancel</button>
+                        <button type="submit" style="width: 100px;">Save</button>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+  
+</body>
+
+</html>
