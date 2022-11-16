@@ -26,7 +26,7 @@
   display: flex;
 }
 
-.logo, .blank {
+.logo, .blank { 
   flex: 1 1 0;
 }
 
