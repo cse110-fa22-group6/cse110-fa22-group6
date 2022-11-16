@@ -1,6 +1,6 @@
 const addBtn = document.getElementById("add_application_btn");
 const add_dialog = document.getElementById("add-application");
-console.log(addBtn)
+
 document.getElementById("add_cancel").addEventListener("click", () => {
   add_dialog.close();
 });

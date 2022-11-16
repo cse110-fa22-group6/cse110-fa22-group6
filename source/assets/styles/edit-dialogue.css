@@ -1,13 +1,15 @@
-#add-application {
+.edit-application {
   background-color: rgb(237, 237, 237);
   width: 50%;
   top: 10%;
   left: 25%;
   margin: 0;
   padding: 0;
+  border: 1px solid black;
+  border-radius: 3.5rem;
 }
 
-#add-application::backdrop {
+.edit-application::backdrop {
   /* Backdrop is only displayed when dialog is opened with dialog.showModal() */
   background: rgba(0, 0, 0, 0.4);
 }
@@ -36,7 +38,7 @@
   margin-left: auto;  
 }
 
-#add_title {
+.edit_title {
   font-size: 2.5rem;
   font-weight: 400;
   margin: 0;
@@ -44,24 +46,20 @@
   text-align: center;
 }
 
-.add_buttons {
+.edit_buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5em;
 }
 
-.add_buttons button {
+.edit_buttons button {
   margin: 0 .7em;
 }
 
-#add-application {
-  border: 1px solid black;
-  border-radius: 3.5rem;
-}
 
-#add_cancel,
-#add_submit {
+.edit_cancel,
+.edit_submit {
   padding: 0.6em 2.5em;
   background-color: white;
   border: 1px solid black;
@@ -70,8 +68,8 @@
   font-size: 1em;
 }
 
-#add_cancel:hover,
-#add_submit:hover {
+.edit_cancel:hover,
+.edit_submit:hover {
   padding: 0.6em 2.5em;
   background-color: var(--special-color);
   border: 1px solid var(--special-color);
@@ -93,6 +91,7 @@ input {
     border:.15em solid #D1D1D1;
     border-radius: .3rem;
     padding: .7em;
+    margin: 1rem;
 
 }
 .column {
