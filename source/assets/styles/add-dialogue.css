@@ -16,27 +16,26 @@
   padding: 2em 1em;
 }
 
+.add_container {
+  display: flex;
+  margin: 0 1em;
+}
 
-.logo{
+.logo, .blank, .title{
   flex: 1;
   display: flex;
-
-}
-.title, .blank{
-  flex: 1;
-  display: flex;
-  justify-content: center;
 }
 
-.header:first-child:first-child { 
-  margin-right: auto; 
+.logo, .blank {
+  flex: 1 1 0;
 }
 
-.header:last-child { 
-  margin-left: auto;  
+.title {
+  flex: 2 1 0;
 }
 
 #add_title {
+  width: 100%;
   font-size: 2.5rem;
   font-weight: 400;
   margin: 0;
