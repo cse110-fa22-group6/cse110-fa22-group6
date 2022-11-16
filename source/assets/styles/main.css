@@ -4,6 +4,9 @@
     url("../font/Spoof-Regular.woff") format("woff");
 }
 
+:root{
+    --special-color: rgb(149,161,241); 
+}
 * {
   font-family: Spoof, serif;
 }
