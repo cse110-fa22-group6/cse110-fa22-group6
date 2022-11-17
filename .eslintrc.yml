@@ -1,11 +1,14 @@
 env:
   browser: true
   es2021: true
+plugins: snakecase.js
 extends: standard
 overrides: []
 parserOptions:
   ecmaVersion: latest
+  sourceType: module
 rules:
+  snakecasejs/snakecasejs: error
   quotes: warn
   semi: warn
   space-before-function-paren: warn
