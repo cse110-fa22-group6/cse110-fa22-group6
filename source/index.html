@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/source/assets/styles/main.css" />
-    <link rel="stylesheet" href="/source/assets/styles/delete-dialogue.css" />
-    <link rel="stylesheet" href="/source/assets/styles/jobcard.css" /> 
-    <link rel="stylesheet" href="/source/assets/styles/add-dialogue.css" /> 
-    <link rel="stylesheet" href="/source/assets/styles/edit-dialogue.css" /> 
-    <link rel="icon" type="image/x-icon" href="/admin/branding/logo.ico" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/source/assets/styles/main.css">
+    <link rel="stylesheet" href="/source/assets/styles/jobcard.css"> 
+    <link rel="stylesheet" href="/source/assets/styles/dialogues.css"> 
+    <link rel="icon" type="image/x-icon" href="/admin/branding/logo.ico">
 
     <title>Wing It</title>
   </head>
@@ -21,7 +19,7 @@
           alt="logo"
           width="80"
           height="80"
-        />
+        >
         <h1 id="title">Wing It</h1>
       </div>
       <h2>Your Applications</h2>
@@ -34,23 +32,23 @@
     </header>
     <main>
       <!-- BEGIN JOB CARD -->
-      <article class="grid-container">
+      <div class="grid-container">
         <!--     Logo (for the future)  -->
         <div class="grid-1">
-          <img src="#" alt="" />
+          <img src="#" alt="" >
           <i class="fa-solid fa-image"></i>
         </div>
 
         <!--     Application Text -->
-        <section class="grid-2">
+        <div class="grid-2">
           <p class="position">Software Engineer Intern</p>
           <p class="company">Amazon</p>
           <p class="location">Seattle, WA</p>
-        </section>
+        </div>
 
         <!--     Progress Bar -->
-        <section id="progress" class="grid-3">
-          <div id="progress-bar"></div>
+        <div id="progress-1" class="grid-3">
+          <div id="progress-bar-1"></div>
           <ul class="stages">
             <li class="step">
               <span>1</span>
@@ -77,36 +75,36 @@
               <p>Offer</p>
             </li>
           </ul>
-        </section>
+        </div>
 
         <!--       Trash/Pencil Icons -->
-        <section class="grid-4">
-          <button id="delete-btn" class="delete-icon">
+        <div class="grid-4">
+          <button id="delete-btn-1" class="delete-icon">
             <i class="fa-solid fa-trash"></i>
           </button>
           <button class="edit-icon"><i class="fa-solid fa-pen"></i></button>
-        </section>
-      </article>
+        </div>
+      </div>
 
       <!-- END JOB CARD -->
 
-      <article class="grid-container">
+      <div class="grid-container">
         <!--     Logo (for the future)  -->
         <div class="grid-1">
-          <img src="#" alt="" />
+          <img src="#" alt="" >
           <i class="fa-solid fa-image"></i>
         </div>
 
         <!--     Application Text -->
-        <section class="grid-2">
+        <div class="grid-2">
           <p class="position">Product Manager Intern</p>
           <p class="company">Google</p>
           <p class="location">Mountain View, CA</p>
-        </section>
+        </div>
 
         <!--     Progress Bar -->
-        <section id="progress" class="grid-3">
-          <div id="progress-bar"></div>
+        <div id="progress-2" class="grid-3">
+          <div id="progress-bar-2"></div>
           <ul class="stages">
             <li class="step">
               <span>1</span>
@@ -133,36 +131,36 @@
               <p>Offer</p>
             </li>
           </ul>
-        </section>
+        </div>
 
         <!--       Trash/Pencil Icons -->
-        <section class="grid-4">
-          <button id="delete-btn" class="delete-icon">
+        <div class="grid-4">
+          <button id="delete-btn-2" class="delete-icon">
             <i class="fa-solid fa-trash"></i>
           </button>
           <button class="edit-icon"><i class="fa-solid fa-pen"></i></button>
-        </section>
-      </article>
+        </div>
+      </div>
 
       <!-- Delete Dialog -->
       <dialog id="delete-application">
         <div class="modal-content">
           <div class="delete_container">
-            <div class="logo" id="item1">
+            <div class="logo" id="item1-delete">
               <img
                 src="/admin/branding/icon-transparent.png"
                 alt="logo"
                 width="60"
                 height="60"
                 class="delete-logo"
-              />
+              >
             </div>
-            <div class="title" id="item2">
+            <div class="title" id="item2-delete">
               <p id="delete_title">Delete Job</p>
             </div>
-            <div class="blank" id="item3"></div>
+            <div class="blank" id="item3-delete"></div>
           </div>
-          <hr />
+          <hr>
           <p id="delete_question">Are you sure you want to delete this job?</p>
           <div class="delete_buttons">
             <button id="d_cancel">Cancel</button>
@@ -175,44 +173,45 @@
       <dialog id="add-application">
         <div class="modal-content">
           <div class="add_container">
-            <div class="logo" id="item1">
+            <div class="logo" id="item1-add">
               <img
                 src="/admin/branding/icon-transparent.png"
                 alt="logo"
                 width="60"
                 height="60"
                 class="add-logo"
-              />
+              >
             </div>
-            <div class="title" id="item2">
+            <div class="title" id="item2-add">
               <p id="add_title">Add Application</p>
             </div>
-            <div class="blank" id="item3"></div>
+            <div class="blank" id="item3-add"></div>
           </div>
-          <hr />
-          <form id="add-form" action="">
+          <hr>
+          <form id="add-form" action="post"> <!-- change action later if needed-->
             <div class="row">
               <div class="column">
                 <div class="form-section">
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company" required/>
+                  <label for="company-add">Company</label>
+                  <input type="text" id="company-add" name="company-add" required>
                 </div>
                 <div class="form-section">
-                <label for="position">Position</label>
-                <input type="text" id="position" name="position" required/>
+                  <label for="position-add">Position</label>
+                  <input type="text" id="position-add" name="position-add" required>
                 </div>
               </div>
 
               <div class="column">
                 <div class="form-section">
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" required/>
+                  <label for="location-add">Location</label>
+                  <input type="text" id="location-add" name="location-add" required>
                 </div>
                 <div class="form-section">
-                <label for="date">Date</label>
-                <input type="date" id="date" name="date" required/>
+                  <label for="date-add">Date</label>
+                  <input type="date" id="date-add" name="date-add" required>
                 </div>
               </div>
+            </div>
           </form>
           
         </div>
@@ -224,62 +223,60 @@
 
 
       <!-- Edit Dialogue -->
-      <dialog class="edit-application">
+      <dialog class="edit-application" id="edit-application">
         <div class="modal-content">
           <div class="edit_container">
-            <div class="logo" id="item1">
+            <div class="logo" id="item1-edit">
               <img
                 src="/admin/branding/icon-transparent.png"
                 alt="logo"
                 width="60"
                 height="60"
                 class="add-logo"
-              />
+              >
             </div>
-            <div class="title" id="item2">
-              <p class="edit_title">Update Application</p>
+            <div class="title" id="item2-edit">
+              <p id="edit_title">Update Application</p>
             </div>
-            <div class="blank" id="item3"></div>
+            <div class="blank" id="item3-edit"></div>
           </div>
-          <hr />
-          <form id="edit-form" action="">
+          <hr>
+          <form id="edit-form" action="post"> <!-- change action later if needed-->
             <div class="row">
               <div class="column">
                 <div class="form-section">
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company" placeholder="Old Company Here"/>
+                  <label for="company-edit">Company</label>
+                  <input type="text" id="company-edit" name="company-edit" placeholder="Old Company Here">
                 </div>
                 <div class="form-section">
-                <label for="position">Position</label>
-                <input type="text" id="position" name="position" placeholder="Old Position Here"/>
+                  <label for="position-edit">Position</label>
+                  <input type="text" id="position-edit" name="position-edit" placeholder="Old Position Here">
                 </div>
               </div>
 
               <div class="column">
                 <div class="form-section">
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" placeholder="Old Location Here"/>
+                  <label for="location-edit">Location</label>
+                  <input type="text" id="location-edit" name="location-edit" placeholder="Old Location Here">
                 </div>
                 <div class="form-section">
-                <label for="date">Date</label>
-                <input type="date" id="date" name="date"/>
+                  <label for="date-edit">Date</label>
+                  <input type="date" id="date-edit" name="date-edit">
                 </div>
               </div>
+            </div>
           </form>
           
         </div>
         <div class="edit_buttons">
-            <button class="edit_cancel">Cancel</button>
-            <button type="submit" form="add-form" class="edit_submit">Add</button>
+            <button class="edit_cancel" id="edit_cancel">Cancel</button>
+            <button type="submit" form="add-form" id="edit_submit">Add</button>
           </div>
       </dialog>
     </main> 
 
     <!-- Script for job card progress bar -->
-    <script
-      type="text/javascript"
-      src="/source/assets/scripts/progres_bar.js"
-    ></script>
+    <script src="/source/assets/scripts/progres_bar.js"></script>
 
     <!-- Script for Delete Dialogue Box -->
     <script type="module" src="/source/assets/scripts/delete_popup.js"></script>
