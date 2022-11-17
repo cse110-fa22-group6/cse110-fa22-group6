@@ -1,0 +1,13 @@
+{
+  "name": "eslint-plugin-snakecase",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "David Buchan-Swanson <david.buchanswanson@gmail.com>",
+  "scripts": {
+    "test": "node ./test"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.1"
+  }
+}
