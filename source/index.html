@@ -188,28 +188,27 @@
             <div class="blank" id="item3-add"></div>
           </div>
           <hr>
+
           <form id="add-form" action="post"> <!-- change action later if needed-->
-            <div class="row">
-              <div class="column">
-                <div class="form-section">
-                  <label for="company-add">Company</label>
-                  <input type="text" id="company-add" name="company-add" required>
-                </div>
-                <div class="form-section">
-                  <label for="position-add">Position</label>
-                  <input type="text" id="position-add" name="position-add" required>
-                </div>
+            <div class="grid-container-form">
+              <div class="form-section" id="add-grid-1">
+                <label for="company-add">Company</label>
+                <input type="text" id="company-add" name="company-add" required>
               </div>
 
-              <div class="column">
-                <div class="form-section">
-                  <label for="location-add">Location</label>
-                  <input type="text" id="location-add" name="location-add" required>
-                </div>
-                <div class="form-section">
-                  <label for="date-add">Date</label>
-                  <input type="date" id="date-add" name="date-add" required>
-                </div>
+              <div class="form-section" id="add-grid-2">
+                <label for="position-add">Position</label>
+                <input type="text" id="position-add" name="position-add" required>
+              </div>
+
+              <div class="form-section" id="add-grid-3">
+                <label for="location-add">Location</label>
+                <input type="text" id="location-add" name="location-add" required>
+              </div>
+
+              <div class="form-section" id="add-grid-4">
+                <label for="date-add">Date</label>
+                <input type="date" id="date-add" name="date-add" required>
               </div>
             </div>
           </form>
@@ -241,29 +240,28 @@
             <div class="blank" id="item3-edit"></div>
           </div>
           <hr>
+
           <form id="edit-form" action="post"> <!-- change action later if needed-->
-            <div class="row">
-              <div class="column">
-                <div class="form-section">
+            <div class="grid-container-form">
+                <div class="form-section" id="edit-grid-1">
                   <label for="company-edit">Company</label>
                   <input type="text" id="company-edit" name="company-edit" placeholder="Old Company Here">
                 </div>
-                <div class="form-section">
+
+                <div class="form-section" id="edit-grid-2">
                   <label for="position-edit">Position</label>
                   <input type="text" id="position-edit" name="position-edit" placeholder="Old Position Here">
                 </div>
-              </div>
 
-              <div class="column">
-                <div class="form-section">
+                <div class="form-section" id="edit-grid-3">
                   <label for="location-edit">Location</label>
                   <input type="text" id="location-edit" name="location-edit" placeholder="Old Location Here">
                 </div>
-                <div class="form-section">
+
+                <div class="form-section" id="edit-grid-4">
                   <label for="date-edit">Date</label>
                   <input type="date" id="date-edit" name="date-edit">
                 </div>
-              </div>
             </div>
           </form>
           
