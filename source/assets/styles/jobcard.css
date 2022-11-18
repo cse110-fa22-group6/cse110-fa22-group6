@@ -242,27 +242,3 @@
     padding-right: 20px;
   }
 } 
-
-@media screen and (max-width: 565px) {
-  .grid-container {
-    grid-template-columns: 0.13fr .43fr 1.53fr 0.06fr;
-  }
-  .position {
-    font-weight: bold;
-    font-size: 17px;
-  }
-  .company,
-  .location {
-    font-size: 8px;
-  }
-  .stages .step p {
-    padding-top: 15px;
-    font-size: 8px;
-  }
-  .grid-1 i {
-    padding-bottom: 40px
-  }
-  .grid-2 {
-    padding-right: 20px;
-  }
-} 
