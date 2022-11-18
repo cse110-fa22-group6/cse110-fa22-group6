@@ -157,7 +157,7 @@ hr {
     .form-section {
         padding: 0.8em 0;
     }
-    @media screen and (max-height: 945px){ 
+    @media all and (max-height: 945px){ 
         #add-application,
         #edit-application{
             height: 75%
