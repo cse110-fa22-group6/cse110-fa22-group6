@@ -35,7 +35,7 @@ class JobCard extends HTMLElement {
       place-self: center;
     }
     
-    .grid-1 i {
+    .grid-1 img {
       font-size: 50px;
       margin-top: 20%;
       padding-right: 10px;
@@ -52,14 +52,12 @@ class JobCard extends HTMLElement {
       border: none;
       cursor: pointer;
       background-color: #e6e6e6;
+      width: 1.5rem
     }
     
     .grid-4 {
       text-align: center;
       padding-left: 20px;
-    }
-    .grid-4 i {
-      font-size: 2.2em;
     }
     
     .position {
@@ -294,8 +292,8 @@ class JobCard extends HTMLElement {
     <div class="grid-container">
       <!--     Logo (for the future)  -->
       <div class="grid-1">
-        <img src="#" alt="" >
-        <i class="fa-solid fa-image"></i>
+
+        <input type="image" src="/source/assets/images/image-solid.svg" />
       </div>
 
       <!--     Application Text -->
@@ -338,8 +336,8 @@ class JobCard extends HTMLElement {
 
       <!--       Trash/Pencil Icons -->
       <div class="grid-4">
-        <button class="delete-icon">delete</button>
-        <button class="edit-icon">edit</button>
+      <input class="delete-icon" type="image" src="/source/assets/images/trash-solid.svg" />
+      <input class="edit-icon" type="image" src="/source/assets/images/pen-solid.svg" />
       </div>
     </div>
 
