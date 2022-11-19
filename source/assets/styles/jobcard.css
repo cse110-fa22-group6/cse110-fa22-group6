@@ -45,7 +45,8 @@
   padding-left: 20px;
 }
 .grid-4 i {
-  font-size: 2.2em;
+  font-size: 1.7em;
+  padding-bottom: .3em;
 }
 
 .position {
@@ -130,7 +131,7 @@
 /* MEDIA QUERIES */
 @media screen and (max-width: 1127px) {
   .grid-container {
-    grid-template-columns: 0.15fr .5fr 1.2fr 0.2fr;
+    grid-template-columns: 0.15fr .5fr 1.2fr 0.3fr;
   }
   .position {
     font-weight: bold;
@@ -169,8 +170,10 @@
   .grid-1 i {
     padding-bottom: 40px;
     font-size: 40px;
-
   }
+  .grid-4 i {
+  font-size: 1.7em;
+}
 } 
 
 @media screen and (max-width: 790px) {
@@ -236,7 +239,6 @@
     font-size: 10px;
   }
  
-  
   .grid-1 {
     display: none;
   }
