@@ -233,12 +233,20 @@
   }
   .stages .step p {
     padding-top: 15px;
-    font-size: 8px;
+    font-size: 10px;
+  }
+ 
+  
+  .grid-1 {
+    display: none;
   }
   .grid-1 i {
     padding-bottom: 40px
   }
   .grid-2 {
     padding-right: 20px;
+  }
+  .grid-3 {
+    width: 18em
   }
 } 
