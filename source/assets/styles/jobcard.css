@@ -96,6 +96,7 @@
   justify-content: space-between;
   height: 100%;
   align-items: center;
+  position: relative;
 }
 
 .stages::before {
@@ -122,6 +123,8 @@
   line-height: 300%;
   cursor: default;
   font-size: 16px;
+  height: 0;
+  position: absolute;
 }
 
 .stages .step.active {
@@ -142,7 +145,6 @@
     font-size: 14px;
   }
   .stages .step p {
-    top: 15px;
     font-size: 14px;
   }
   .grid-1 i {
@@ -164,7 +166,6 @@
     font-size: 14px;
   }
   .stages .step p {
-    top: 15px;
     font-size: 14px;
   }
   .grid-1 i {
@@ -173,30 +174,8 @@
   }
   .grid-4 i {
   font-size: 1.7em;
+  }
 }
-} 
-
-@media screen and (max-width: 790px) {
-  .grid-container {
-    grid-template-columns: 0.13fr .41fr 1.53fr 0.08fr;
-  }
-  .position {
-    font-weight: bold;
-    font-size: 21px;
-  }
-  .company,
-  .location {
-    font-size: 12px;
-  }
-  .stages .step p {
-    padding-top: 8px;
-    font-size: 12px;
-  }
-  .grid-1 i {
-    padding-bottom: 40px;
-    font-size: 35px;
-  }
-} 
 
 @media screen and (max-width: 790px) {
   .grid-container {
@@ -211,7 +190,7 @@
     font-size: 10px;
   }
   .stages .step p {
-    padding-top: 10px;
+    top: 10px;
     font-size: 10px;
   }
   .grid-1 i {
@@ -236,7 +215,7 @@
     font-size: 10px;
   }
   .stages .step p {
-    padding-top: 10px;
+    top: 10px;
     font-size: 10px;
   }
   .grid-1{
