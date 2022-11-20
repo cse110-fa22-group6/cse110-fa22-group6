@@ -153,6 +153,10 @@ hr {
     margin: 0;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
     .grid-container-form{
@@ -165,7 +169,7 @@ hr {
     @media all and (max-height: 945px){ 
         #add-application,
         #edit-application{
-            height: 75%
+            height: 75%;
         }
     }
 }
