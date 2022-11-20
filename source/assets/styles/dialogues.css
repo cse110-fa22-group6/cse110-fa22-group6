@@ -140,6 +140,11 @@ input {
     line-height: 110%;
 }
 
+.required:after {
+    content:" *";
+    color: red;
+  }
+
 .form-section {
     padding: 2em 0;
 }
