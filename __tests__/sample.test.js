@@ -10,8 +10,8 @@ describe("Basic user flow for Website", () => {
     console.log("Checking if we screenshotted the correct page...");
     await page.screenshot({ path: "screenshot.png" });
   });
-    
-    // Check Jest by asserting something
+
+  // Check Jest by asserting something
   it("Check Jest", async () => {
     console.log("Checking if expect().ToBe() works");
     expect(1 + 1).toBe(2);
