@@ -1,4 +1,4 @@
-name: Jest
+name: Tests
 
 on:
   push:
@@ -9,11 +9,10 @@ on:
       - "**"
 
 jobs:
-  build:
+  Jest:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: yarn
-    - name: Run tests
-      run: yarn test
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: Run Jest
+      uses: stefanoeb/jest-action@1.0.3
