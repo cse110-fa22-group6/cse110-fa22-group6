@@ -1,5 +1,4 @@
-name: Tests
-
+name: Jest
 on:
   push:
     branches:
@@ -7,12 +6,12 @@ on:
   pull_request:
     branches:
       - "**"
-
 jobs:
-  Jest:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
-    - name: Run Jest
-      uses: stefanoeb/jest-action@1.0.3
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run tests
+      run: yarn test
