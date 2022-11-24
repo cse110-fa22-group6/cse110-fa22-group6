@@ -1,8 +1,9 @@
 describe("Basic user flow for Website", () => {
   // First, visit the lab 8 website
   beforeAll(async () => {
+    const LIVESERVER_URL = "http://127.0.0.1:5500/index.html";
     // add the correct URL according to your LiveServer
-    await page.goto("http://127.0.0.1:5500/index.html");
+    await page.goto(LIVESERVER_URL);
   });
 
   // Check Puppeteer by screenshotting page
