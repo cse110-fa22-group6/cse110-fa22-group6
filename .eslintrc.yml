@@ -1,12 +1,14 @@
 env:
   browser: true
   es2021: true
+  jest: true
 plugins: [snakecase]
 extends: standard
 overrides: []
 parserOptions:
   ecmaVersion: latest
   sourceType: module
+ignorePatterns: ["/__tests__/*"]
 rules:
   snakecase/snakecase: "error"
   quotes: warn
