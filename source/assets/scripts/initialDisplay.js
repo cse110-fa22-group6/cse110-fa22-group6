@@ -198,6 +198,13 @@ function initFormHandler() {
   function showFilteredCards(stage){
     // Get a reference to the <main> element
     let main = document.querySelector('main');
+
+    // Removes All Jobs
+    let arrayOfJobs = main.querySelectorAll('job-card');
+    for(let i = 0; i < arrayOfJobs.length; i++){
+      arrayOfJobs[i].remove();
+    }
+
     let jobs = get_jobs_from_storage();
 
     // Loops through each of the jobs in the passed in array,
