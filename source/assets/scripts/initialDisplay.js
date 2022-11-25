@@ -60,13 +60,21 @@ function add_jobs_to_document(jobs) {
     let job = document.createElement('job-card');
     job.data = jobs[i];
     var date = jobs[i]['date']
-    sortDic[date] = job
+    if (sortDic[date] == null){
+      sortDic[date] = [job]
+    }else {
+      sortDic[date].push(job)
+    }
     sortArr.push(date)
     i++;
+    console.log(sortDic)
+    console.log(sortArr)
   }
   sortArr.sort()
   for(i = 0; i<sortArr.length; i++){
-    main.append(sortDic[sortArr[i]])
+    for (let j = 0; j<sortDic[sortArr[i]].length; j++){
+      main.append(sortDic[sortArr[i]][j])
+    }
   }
 
 }
