@@ -7,8 +7,8 @@ This will also decide how tests will be written for our JS
 
 ## Considered Options
 
-* Jest
-* Mocha
+- Jest
+- Mocha
 
 ## Decision Outcome
 
@@ -16,9 +16,9 @@ Chosen option: "Jest".
 
 ## Consequences
 
-* Seems straightforward
-* Easy to Install and Work with
-* Not as many features as Mocha
+- Seems straightforward
+- Easy to Install and Work with
+- Not as many features as Mocha
 
 ## Pros and Cons of the Options
 
@@ -33,11 +33,12 @@ test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
 });
 ```
-* Good, Seems simple and straightforward
-* Good, Uses expect() followed by a matcher so like a toBe() function
-* Good, Easy to install in the pipeline, github action
-* Good, Create files using fileNameToTest.test.js
-* Bad, Not as many features as Mocha
+
+- Good, Seems simple and straightforward
+- Good, Uses expect() followed by a matcher so like a toBe() function
+- Good, Easy to install in the pipeline, github action
+- Good, Create files using fileNameToTest.test.js
+- Bad, Not as many features as Mocha
 
 ## Mocha
 
@@ -54,9 +55,8 @@ describe('Array', function () {
 });
 ```
 
-* Good, a lot of different tests available
-* Good, can test asynchronous code
-* Good, can also display test duration
-* Bad, Seems a bit more complicated
-* Bad, Not as easy to install, not on the github marketplace
-
+- Good, a lot of different tests available
+- Good, can test asynchronous code
+- Good, can also display test duration
+- Bad, Seems a bit more complicated
+- Bad, Not as easy to install, not on the github marketplace

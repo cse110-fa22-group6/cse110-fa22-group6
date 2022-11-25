@@ -9,7 +9,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 0.15fr .7fr 1fr 0.2fr;
+  grid-template-columns: 0.15fr 0.7fr 1fr 0.2fr;
   background: #e6e6e6;
   padding: 20px 30px;
   border: 3px solid black;
@@ -77,15 +77,14 @@
 }
 
 #progress-bar-1,
-#progress-bar-2{
+#progress-bar-2 {
   position: absolute;
   background: black;
   margin: none;
   width: 100%;
   height: 5px;
-  top: 50%
+  top: 50%;
 }
-
 
 .stages {
   margin: 0;
@@ -130,7 +129,7 @@
 /* MEDIA QUERIES */
 @media screen and (max-width: 1127px) {
   .grid-container {
-    grid-template-columns: 0.15fr .5fr 1.2fr 0.2fr;
+    grid-template-columns: 0.15fr 0.5fr 1.2fr 0.2fr;
   }
   .position {
     font-weight: bold;
@@ -148,11 +147,11 @@
     padding-bottom: 20px;
     font-size: 45px;
   }
-} 
+}
 
 @media screen and (max-width: 920px) {
   .grid-container {
-    grid-template-columns: 0.15fr .45fr 1.47fr 0.08fr;
+    grid-template-columns: 0.15fr 0.45fr 1.47fr 0.08fr;
   }
   .position {
     font-weight: bold;
@@ -169,13 +168,12 @@
   .grid-1 i {
     padding-bottom: 40px;
     font-size: 40px;
-
   }
-} 
+}
 
 @media screen and (max-width: 790px) {
   .grid-container {
-    grid-template-columns: 0.13fr .41fr 1.53fr 0.08fr;
+    grid-template-columns: 0.13fr 0.41fr 1.53fr 0.08fr;
   }
   .position {
     font-weight: bold;
@@ -193,11 +191,11 @@
     padding-bottom: 40px;
     font-size: 35px;
   }
-} 
+}
 
 @media screen and (max-width: 790px) {
   .grid-container {
-    grid-template-columns: 0.13fr .43fr 1.53fr 0.06fr;
+    grid-template-columns: 0.13fr 0.43fr 1.53fr 0.06fr;
   }
   .position {
     font-weight: bold;
@@ -217,11 +215,11 @@
   .grid-2 {
     padding-right: 10px;
   }
-} 
+}
 
 @media screen and (max-width: 640px) {
   .grid-container {
-    grid-template-columns: 0.13fr .43fr 1.53fr 0.06fr;
+    grid-template-columns: 0.13fr 0.43fr 1.53fr 0.06fr;
   }
   .position {
     font-weight: bold;
@@ -236,9 +234,9 @@
     font-size: 8px;
   }
   .grid-1 i {
-    padding-bottom: 40px
+    padding-bottom: 40px;
   }
   .grid-2 {
     padding-right: 20px;
   }
-} 
+}

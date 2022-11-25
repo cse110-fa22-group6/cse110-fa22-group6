@@ -1,5 +1,5 @@
-const edit_dialog = document.getElementsByClassName('edit-application')[0];
-const edit_cancel = document.getElementsByClassName('edit_cancel')
+const edit_dialog = document.getElementsByClassName("edit-application")[0];
+const edit_cancel = document.getElementsByClassName("edit_cancel");
 
 for (let i = 0; i < edit_cancel.length; i++) {
   edit_cancel[i].addEventListener("click", () => {
@@ -7,9 +7,8 @@ for (let i = 0; i < edit_cancel.length; i++) {
   });
 }
 
-
 var editIcons = document.getElementsByClassName("edit-icon");
-console.log(edit_dialog)
+console.log(edit_dialog);
 for (let i = 0; i < editIcons.length; i++) {
   editIcons[i].addEventListener("click", () => {
     console.log(`${i}th item wants to be edited`);
