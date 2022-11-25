@@ -3,6 +3,8 @@
 window.addEventListener('DOMContentLoaded', init);
 var num_of_card = 0
 // Starts the program, all function calls trace back here
+
+
 function init() {
   // Get the jobs from localStorage
   let jobs = get_jobs_from_storage();
@@ -50,14 +52,24 @@ function add_jobs_to_document(jobs) {
 
   // Loops through each of the jobs in the passed in array,
   // creates a <job-card> element for each one, and populate
+  // sorted by date
   // Append each element to <main>
   let i = 0;
+  let sortDic = {}
+  let sortArr = []
   while(i<jobs.length) {
     let job = document.createElement('job-card');
     job.data = jobs[i];
-    main.append(job);
+    var date = jobs[i]['date']
+    sortDic[date] = job
+    sortArr.push(date)
     i++;
   }
+  sortArr.sort()
+  for(i = 0; i<sortArr.length; i++){
+    main.append(sortDic[sortArr[i]])
+  }
+
 }
 
 /**
@@ -110,6 +122,9 @@ function initFormHandler() {
 
 }
 
+// // reference to the "Clear Local Storage" button
+// // click event listener to clear local storage button
+// let clear_local = document.getElementsByClassName('danger')[0];
 
 // clear_local.addEventListener('click', () => {
 //   // Clear the local storage
