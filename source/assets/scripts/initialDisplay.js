@@ -110,9 +110,6 @@ function initFormHandler() {
 
 }
 
-// // reference to the "Clear Local Storage" button
-// // click event listener to clear local storage button
-// let clear_local = document.getElementsByClassName('danger')[0];
 
 // clear_local.addEventListener('click', () => {
 //   // Clear the local storage
