@@ -12,6 +12,7 @@ function init() {
   add_jobs_to_document(jobs);
   // Add the event listeners to the form elements
   initFormHandler();
+  filterButtonListener();
 }
 
 /**
@@ -120,3 +121,82 @@ function initFormHandler() {
 //   document.querySelector('main').innerHTML = null;
 //   init()
 // });
+
+/**
+ * @description
+ */
+ function filterButtonListener(){
+      // prettier-ignore
+      document.getElementsByClassName('filterStages')[0].addEventListener('click', function (e) {
+          // get which bubble was clicked for that specific progress bar
+          if (e.target && e.target.nodeName === 'LI') {
+            const filter = e.target.textContent;
+            let stepNum = 0;
+            switch(filter) {
+              case 'All':
+                stepNum = 0;
+                break;
+              case 'Rejected':
+                stepNum = 1;
+                break;
+              case 'Unapplied':
+                stepNum = 2;
+                break;
+              case 'Applied':
+                stepNum = 3;
+                break;
+              case 'Screening':
+                stepNum = 4;
+                break;
+              case 'Interview':
+                stepNum = 5;
+                break;
+              case 'Offer':
+                stepNum = 6;
+                break;
+            }
+            console.log(`updating filters ${filter} ${stepNum}`);
+            // make the clicked bubble purple and all others white
+            updateProgress(document.getElementsByClassName('filterStages')[0], stepNum);
+            showFilteredCards(stepNum);
+          }
+      })
+}
+   
+  /**
+   * @param {Object} ul The progress bar
+   * @param {number} stepNum The current step (bubble) we have clicked
+   * @description Makes a specific bubble purple and makes all others white.
+   */
+  function updateProgress(ul, stepNum) {
+    // get the specific progress bar
+    const li = ul.getElementsByTagName("li");
+  
+    // change each bubble accordingly
+    for (let i = 0; i < li.length; i++) {
+      if (i === stepNum) {
+        li[i].classList.add("active");
+        console.log(`Updated filter ${i}`);
+      } else {
+        li[i].classList.remove("active");
+      }
+    }
+  }
+
+  function showFilteredCards(stage){
+    let main = document.querySelector('main');
+    let arrayOfJobs = main.querySelectorAll('job-card');
+    for(let i = 0; i < arrayOfJobs.length; i++){
+      arrayOfJobs[i].remove();
+    }
+    let jobs = get_jobs_from_storage();
+    let i = 0;
+    while(i<jobs.length) {
+      if(stage == 0 || jobs[i].status == stage-1){
+        let job = document.createElement('job-card');
+        job.data = jobs[i];
+        main.append(job);
+      }
+      i++;
+    }
+  }
