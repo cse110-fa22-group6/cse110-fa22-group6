@@ -1,0 +1,28 @@
+# This workflow checks html syntax of files found in the source folder.
+#
+# You can adjust the behavior by modifying this file.
+# For more information on other optional inputs, see:
+# https://github.com/marketplace/actions/html5-validator
+
+name: HTML Validation
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: HTML5 Validator
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: source/

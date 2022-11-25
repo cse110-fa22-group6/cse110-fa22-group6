@@ -1,10 +1,10 @@
-### Wing It
+# Wing It
 
-###### Team 6 - First Meeting for Sprint 1
+## Team 6 - First Meeting for Sprint 1
 
-###### Zoom - 11/03/22
+Zoom - 11/03/22
 
-###### 9:00pm - 9:30pm
+9:00pm - 9:30pm
 
 <hr>
 
@@ -12,21 +12,22 @@
 
 1. Tyler Le
 2. JC Yan
-3. Matilda Michel 
+3. Matilda Michel
 4. Tamara Sagakova
-5. Kwangyun Keum 
-
+5. Kwangyun Keum
 
 <hr>
 
-### Agenda 
-- Decide how we're splitting up front end
+### Agenda
+
+- Decide how we're splitting up frontend
 - Assign Roles
 - Deadlines
 
 <hr>
 
 ### New Business and discussion
+
 - Follow the Miro Wireframe
   - Front Page, Popup Dialog Boxes
     - Kwan
@@ -43,9 +44,11 @@
 <hr>
 
 ### Unfinished Business
+
 -
 
 <hr>
 
 ### Concerns
-- 
+
+-
