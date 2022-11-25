@@ -60,14 +60,14 @@ function add_jobs_to_document(jobs) {
   while(i<jobs.length) {
     let job = document.createElement('job-card');
     job.data = jobs[i];
-    var date = jobs[i]['date']
-    sortDic[date] = job
-    sortArr.push(date)
-    i++;
+    var date = jobs[i]['date'];
+    sortDic[date] = job;
+    sortArr.push(date);
+    i++;  
   }
   sortArr.sort()
   for(i = 0; i<sortArr.length; i++){
-    main.append(sortDic[sortArr[i]])
+    main.append(sortDic[sortArr[i]]);
   }
 
 }
@@ -196,19 +196,29 @@ function initFormHandler() {
   }
 
   function showFilteredCards(stage){
+    // Get a reference to the <main> element
     let main = document.querySelector('main');
-    let arrayOfJobs = main.querySelectorAll('job-card');
-    for(let i = 0; i < arrayOfJobs.length; i++){
-      arrayOfJobs[i].remove();
-    }
     let jobs = get_jobs_from_storage();
+
+    // Loops through each of the jobs in the passed in array,
+    // creates a <job-card> element for each one, and populate
+    // sorted by date
+    // Append each element to <main>
     let i = 0;
+    let sortDic = {}
+    let sortArr = []
     while(i<jobs.length) {
       if(stage == 0 || jobs[i].status == stage-1){
         let job = document.createElement('job-card');
         job.data = jobs[i];
-        main.append(job);
-      }
+        var date = jobs[i]['date'];
+        sortDic[date] = job;
+        sortArr.push(date);
+      } 
       i++;
+    }
+    sortArr.sort()
+    for(i = 0; i<sortArr.length; i++){
+      main.append(sortDic[sortArr[i]]);
     }
   }
