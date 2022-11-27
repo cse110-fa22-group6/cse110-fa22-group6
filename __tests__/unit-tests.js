@@ -1,11 +1,10 @@
 const { expect } = require("@jest/globals");
 
 describe("Basic user flow for Website", () => {
-
     beforeAll(async () => {
-      const LIVESERVER_URL = "http://127.0.0.1:5500/source/index.html";
-      // add the correct URL according to your LiveServer
-      await page.goto(LIVESERVER_URL);
+        const LIVESERVER_URL = "http://127.0.0.1:5500/index.html";
+        // add the correct URL according to your LiveServer
+        await page.goto(LIVESERVER_URL);
     });
   
     it('Check page status when first opened (clear local storage)', async () => {
@@ -17,7 +16,7 @@ describe("Basic user flow for Website", () => {
         var jobs = await page.$$('job-card');
         expect(jobs.length).toBe(0);
     });
-  
+    
     it('Check add confirmation popup', async () => {
         console.log('Testing add confirmation popup...');
         var addBtn = await page.$('[id="add_application_btn"]');
@@ -29,4 +28,4 @@ describe("Basic user flow for Website", () => {
         expect(await popup.isIntersectingViewport()).toBe(false);
     });
 
-  });
+});
