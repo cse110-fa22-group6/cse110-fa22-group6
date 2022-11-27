@@ -12,7 +12,7 @@ describe("Basic user flow for Website", () => {
             localStorage.clear();
         });
         await page.reload();
-        var jobs = page.$$('job-card');
+        var jobs = await page.$$('job-card');
         expect(jobs.length).toBe(0);
     });
 
