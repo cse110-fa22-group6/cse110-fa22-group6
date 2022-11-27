@@ -1,5 +1,5 @@
 describe("Basic user flow for Website", () => {
-  // First, visit the lab 8 website
+  // First, visit the website
   beforeAll(async () => {
     const LIVESERVER_URL = "http://127.0.0.1:5500/index.html";
     // add the correct URL according to your LiveServer
