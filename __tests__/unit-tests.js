@@ -53,4 +53,14 @@ describe("Basic user flow for Website", () => {
         expect(jobs.length).toBe(1);
     });
 
+  it("Check add confirmation popup", async () => {
+    console.log("Testing add confirmation popup...");
+    var addBtn = await page.$('[id="add_application_btn"]');
+    await addBtn.click(0, 1, 1);
+    var popup = await page.$('[id="add-application"]');
+    expect(await popup.isIntersectingViewport()).toBe(true);
+    var cancelBtn = await popup.$('[id="add_cancel"]');
+    await cancelBtn.click(0, 1, 1);
+    expect(await popup.isIntersectingViewport()).toBe(false);
+  });
 });
