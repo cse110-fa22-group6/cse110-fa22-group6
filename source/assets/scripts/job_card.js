@@ -1,6 +1,8 @@
 // Run the init() function when the page has loaded
 window.addEventListener("DOMContentLoaded", init);
-
+/**
+ * @description Initializes the only function progressBarListener
+ */
 function init() {
   progressBarListener();
 }
@@ -27,7 +29,7 @@ function progressBarListener() {
 /**
  * @param {Object} ul The progress bar
  * @param {number} stepNum The current step (bubble) we have clicked
- * @description Makes a specific bubble purple and makes all others white.
+ * @description Makes a specific bubble purple and makes all others white for the job cards
  */
 function updateProgress(ul, stepNum) {
   // get the specific progress bar
