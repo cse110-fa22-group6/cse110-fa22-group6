@@ -1,3 +1,7 @@
+/**
+ * @description This file displays popup dialog where users can add or cancel an apllicaition 
+ * 
+ */
 const addBtn = document.getElementById("add_application_btn");
 const add_dialog = document.getElementById("add-application");
 
