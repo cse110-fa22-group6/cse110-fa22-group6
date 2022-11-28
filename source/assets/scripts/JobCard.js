@@ -1,5 +1,8 @@
 
-// JobCard.js
+/**
+ * Constructor class for Jobcard
+ * @constructor
+ */
 class JobCard extends HTMLElement {
 
   constructor() {
@@ -344,7 +347,9 @@ class JobCard extends HTMLElement {
     <!-- END JOB CARD -->
       `
 
-    // update stage
+ /**
+ * Updating stages
+ */
     var stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li")
     stage[status].classList.add("active")
     for (let i = 0; i < stage.length; i++) {
@@ -381,10 +386,12 @@ class JobCard extends HTMLElement {
             window.location.reload()
         })
       })
-
-    // Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
-    // For status change, might be extracted to out of this button event to get user change
-    // Jobcard 'id' is not changed for this button action
+    
+     /**
+     * Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
+     * For status change, might be extracted to out of this button event to get user change
+     * Jobcard 'id' is not changed for this button action
+     */
     this.shadowRoot.querySelector('.edit-icon').addEventListener('click', () => {
       const edit_dialog = document.getElementById('edit-application');
       const edit_cancel = document.getElementById('edit_cancel');
@@ -416,7 +423,8 @@ class JobCard extends HTMLElement {
 
 
 }
-
-// Defines the Class as a customElement to create
-// 'job-card' elements
+/**
+ * Defines the Class as a customElement to create
+ * 'job-card' elements
+ */
 customElements.define('job-card', JobCard);
