@@ -9,11 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install JSDoc
-        run: sudo npm install -g jsdoc
-
-      - name: Run JSDoc
-        run: jsdoc source/assets/scripts/*
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: /source/assets/scripts
+          recurse: true
+          output_dir: /out
