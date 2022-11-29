@@ -1,4 +1,3 @@
-
 // JobCard.js
 class JobCard extends HTMLElement {
 

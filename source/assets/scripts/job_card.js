@@ -2,13 +2,13 @@
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  progressBarListener();
+  progress_bar_listener();
 }
 
 /**
  * @description Updates progress bar by retrieving which step was clicked and updates the coloring of all steps
  */
-function progressBarListener() {
+function progress_bar_listener() {
   // prettier-ignore
   for (let i = 0; i < document.getElementsByClassName('stages').length; i++) {
     document
@@ -18,7 +18,7 @@ function progressBarListener() {
           const stepNum = parseInt(e.target.textContent)
           console.log(`updating progress bar ${i}`)
           // make the clicked bubble purple and all others white
-          updateProgress(document.getElementsByClassName('stages')[i], stepNum)
+          update_progress(document.getElementsByClassName('stages')[i], stepNum)
         }
       })
   }
@@ -29,7 +29,7 @@ function progressBarListener() {
  * @param {number} stepNum The current step (bubble) we have clicked
  * @description Makes a specific bubble purple and makes all others white.
  */
-function updateProgress(ul, stepNum) {
+function update_progress(ul, stepNum) {
   // get the specific progress bar
   const li = ul.getElementsByTagName("li");
 
