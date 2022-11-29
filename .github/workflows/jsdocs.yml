@@ -1,25 +1,28 @@
-# This workflow executes JSDoc to build documentation for our JS code
-#
-# You can view and modify the input variables here:
-# https://github.com/marketplace/actions/jsdoc-action
-name: Document Generator
+name: GitHub pages
 
 on:
   push:
     branches:
-      - "**"
-  pull_request:
-    branches:
-      - "**"
+      - master
+
 jobs:
-  generate-documentation:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - name: Install JSDoc Globally
-        run: npm install -g jsdoc
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: source/assets/scripts
+          output_dir: ./out
+          config_file: conf.json
+          template: minami
+          front_page: README.md
 
-      - name: Run JSDoc
-        run: jsdoc --destination specs/documentation source/assets/scripts/*
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./out
