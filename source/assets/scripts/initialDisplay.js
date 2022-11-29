@@ -62,6 +62,16 @@ function init() {
   document.getElementById('number-of-job-cards').innerText = num_of_card
   add_jobs_to_document(jobs, 0);
   // Add the event listeners to the form elements
+  const addBtn = document.getElementById("add_application_btn");
+  const add_dialog = document.getElementById("add-application");
+
+  document.getElementById("add_cancel").addEventListener("click", () => {
+    add_dialog.close();
+  });
+  addBtn.addEventListener("click", () => {
+    add_dialog.showModal();
+  });
+
   init_form_handler();
   filter_button_listener();
 }
@@ -124,8 +134,6 @@ function add_jobs_to_document(jobs, statusFilter) {
       sortArr.push(date);
     }
     i++;
-    console.log(sortDic);
-    console.log(sortArr);
   }
   sortArr.sort();
   for(i = 0; i<sortArr.length; i++){
@@ -179,9 +187,15 @@ function init_form_handler() {
     //main.append
     document.querySelector('main').append(job_card);
     // Get the jobs array from localStorage, add this new job to it, and
-    // then save the jobs array back to localStorage
+    // then try to save the jobs array back to localStorage
+    // if localStorage has enough space for saving, it will be saved 
+    // otherwise, not save, but displayed with warning messages
     item_list.push(job_object);
-    localStorage.setItem('jobs', JSON.stringify(item_list));
+    try {
+      localStorage.setItem('jobs', JSON.stringify(item_list));
+    } catch(e) {
+      alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items")
+    }
 });
 
 }
@@ -220,7 +234,6 @@ function init_form_handler() {
                 filterNum = filter_offer;
                 break;
             }
-            console.log(`updating filters ${filter} ${filterNum}`);
             // make the clicked bubble purple and all others white
             update_filter(document.getElementsByClassName('filterStages')[0], filterNum);
 
@@ -252,9 +265,10 @@ function update_filter(ul, filterNum) {
   for (let i = 0; i < li.length; i++) {
     if (i === filterNum) {
       li[i].classList.add("active");
-      console.log(`Updated filter ${i}`);
     } else {
       li[i].classList.remove("active");
     }
   }
 }
+
+
