@@ -5,6 +5,7 @@
     "eslint-plugin-snakecasejs": "^2.2.0",
     "jest": "^27.5.1",
     "jest-puppeteer": "^6.1.1",
+    "jsdoc": "^4.0.0",
     "puppeteer": "^19.3.0"
   },
   "scripts": {
