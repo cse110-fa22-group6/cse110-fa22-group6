@@ -19,5 +19,5 @@ jobs:
       - name: Style Linter
         uses: actions-hub/stylelint@master
         env:
-          PATTERN: "./source/styles/*.css"
+          PATTERN: "./source/assets/styles/*.css"
 
