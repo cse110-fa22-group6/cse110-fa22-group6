@@ -24,4 +24,3 @@ jobs:
           source_dir: ./source/assets/scripts
           recurse: true
           output_dir: ./specs/documentation
-          template: minami
