@@ -9,9 +9,21 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate Docs
         uses: andstor/jsdoc-action@v1
         with:
-          source_dir: /
+          source_dir: ./source/assets/scripts
+          output_dir: ./specs/documentation
+          template: minami
           recurse: true
-          output_dir: ./out
+
+      - name: Push Docs
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Auto Generated JSDoc
+          branch: pipeline-tle-jsdoc
+          commit_options: "--no-verify --signoff"
+          push_options: "--force"
