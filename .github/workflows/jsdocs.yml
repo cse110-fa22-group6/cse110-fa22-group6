@@ -12,11 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build
-        uses: andstor/jsdoc-action@v1
-        with:
-          source_dir: source/assets/scripts
-          output_dir: ./out
-          template: minami
-          front_page: README.md
+      - name: Install JSDoc
+        run: sudo npm install -g jsdoc
 
+      - name: Run JSDoc
+        run: jsdoc source/assets/scripts/*
