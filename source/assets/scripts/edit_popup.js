@@ -1,3 +1,7 @@
+/**
+ * @description Updates the displayed popup dialog where users can confirm changes or cancel to leave it unchanged. 
+ */
+
 const edit_dialog = document.getElementsByClassName('edit-application')[0];
 const edit_cancel = document.getElementsByClassName('edit_cancel')
 
