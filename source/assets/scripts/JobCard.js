@@ -2,19 +2,18 @@
  * Constructor class for Jobcard
  * @constructor
  */
- class JobCard extends HTMLElement {
+class JobCard extends HTMLElement {
+  constructor() {
+    super(); // Inheret everything from HTMLElement
+    // Attaches the shadow DOM to this Web Component
+    let shadow_element = this.attachShadow({ mode: "open" });
+    // Creates an <article> element
+    let article_element = document.createElement("article");
+    // Create a style element
+    let style_element = document.createElement("style");
 
-    constructor() {
-      super(); // Inheret everything from HTMLElement
-      // Attaches the shadow DOM to this Web Component
-      let shadow_element = this.attachShadow({mode:'open'});
-      // Creates an <article> element 
-      let article_element = document.createElement('article');
-      // Create a style element 
-      let style_element = document.createElement('style');
-  
-      //Job card CSS goes here
-      style_element.textContent = `
+    //Job card CSS goes here
+    style_element.textContent = `
       @font-face {
         font-family: Spoof, serif;
         src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
@@ -258,38 +257,38 @@
         }
       } 
       `;
-  
-      // Appends the <style> and <article> elements to the Shadow DOM
-      shadow_element.append(style_element);
-      shadow_element.append(article_element);
-    }
-  
-    /**
-     * Called when the .data property is set on this element.
-     *
-     * @param {Object} data - The data to pass into the <job-card>, must be of the
-     *                        following format:
-     *                        {
-     *                          "id": automatically assigned by number of job card
-     *                          "company": "Google",(str)
-     *                          "location": "Mountain View, CA",(str)
-     *                          "status": 5,(unapplied, applied, rejected, screened, interviewed, offer)
-     *                          "position": "Data Science Intern", (str)
-     *                          "date": "12/24/2022" (str)
-     */
-    set data(data) {
-      // If nothing was passed in, return
-      if (!data) return;
-  
-      //  Selects the <article> we added to the Shadow DOM in the constructor
-      let shadow_article = this.shadowRoot.querySelector('article');
-      const id = data.id
-      const company = data.company;
-      const location = data.location;
-      const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
-      const position = data.position;
-      const date = data.date;
-      shadow_article.innerHTML = `
+
+    // Appends the <style> and <article> elements to the Shadow DOM
+    shadow_element.append(style_element);
+    shadow_element.append(article_element);
+  }
+
+  /**
+   * Called when the .data property is set on this element.
+   *
+   * @param {Object} data - The data to pass into the <job-card>, must be of the
+   *                        following format:
+   *                        {
+   *                          "id": automatically assigned by number of job card
+   *                          "company": "Google",(str)
+   *                          "location": "Mountain View, CA",(str)
+   *                          "status": 5,(unapplied, applied, rejected, screened, interviewed, offer)
+   *                          "position": "Data Science Intern", (str)
+   *                          "date": "12/24/2022" (str)
+   */
+  set data(data) {
+    // If nothing was passed in, return
+    if (!data) return;
+
+    //  Selects the <article> we added to the Shadow DOM in the constructor
+    let shadow_article = this.shadowRoot.querySelector("article");
+    const id = data.id;
+    const company = data.company;
+    const location = data.location;
+    const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
+    const position = data.position;
+    const date = data.date;
+    shadow_article.innerHTML = `
       <!-- BEGIN JOB CARD -->
       <div class="grid-container">
         <!--     Logo (for the future)  -->
@@ -339,86 +338,88 @@
         </div>
       </div>
       <!-- END JOB CARD -->
-        `
-  
-   /**
-   * Updating stages
-   */
-      var stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li")
-      stage[status].classList.add("active")
-      for (let i = 0; i < stage.length; i++) {
-          stage[i].addEventListener("click", function(e){
-            // get which bubble was clicked for that specific progress bar
-            // make the clicked bubble purple and prev status white
-            let items = localStorage.getItem('jobs')
-            let item_list = JSON.parse(items)
-            let prev = item_list[id]['status']
-            stage[prev].classList.remove("active")
-            stage[i].classList.add("active")
-            item_list[id]['status'] = String(i)
-            localStorage.setItem('jobs',JSON.stringify(item_list))
-        })
-      }
-  
-      
-     
-      this.shadowRoot.querySelector('.delete-icon').addEventListener('click', () => {
-          const delete_dialog = document.getElementById('delete-application');
-          delete_dialog.showModal();
-          document.getElementById('d_cancel').addEventListener('click', () => {
-              delete_dialog.close();
-          });
-          document.getElementById('d_delete').addEventListener('click', () => {
-              let items = window.localStorage.getItem('jobs');
-              let item_list = JSON.parse(items)
-              item_list.splice(id,1)
-              for (var i = 0; i<item_list.length; i++) {
-                item_list[i]['id'] = String(i)
-              }
-              localStorage.setItem('jobs', JSON.stringify(item_list));
-              document.getElementById('delete-application').close();
-              window.location.reload()
-          })
-        })
-      
-       /**
-       * Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
-       * For status change, might be extracted to out of this button event to get user change
-       * Jobcard 'id' is not changed for this button action
-       */
-      this.shadowRoot.querySelector('.edit-icon').addEventListener('click', () => {
-        const edit_dialog = document.getElementById('edit-application');
-        const edit_cancel = document.getElementById('edit_cancel');
-        const edit_form = document.getElementById('edit-form');
-  
+        `;
+
+    /**
+     * Updating stages
+     */
+    var stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
+    stage[status].classList.add("active");
+    for (let i = 0; i < stage.length; i++) {
+      stage[i].addEventListener("click", function (e) {
+        // get which bubble was clicked for that specific progress bar
+        // make the clicked bubble purple and prev status white
+        let items = localStorage.getItem("jobs");
+        let item_list = JSON.parse(items);
+        let prev = item_list[id]["status"];
+        stage[prev].classList.remove("active");
+        stage[i].classList.add("active");
+        item_list[id]["status"] = String(i);
+        localStorage.setItem("jobs", JSON.stringify(item_list));
+      });
+    }
+
+    this.shadowRoot
+      .querySelector(".delete-icon")
+      .addEventListener("click", () => {
+        const delete_dialog = document.getElementById("delete-application");
+        delete_dialog.showModal();
+        document.getElementById("d_cancel").addEventListener("click", () => {
+          delete_dialog.close();
+        });
+        document.getElementById("d_delete").addEventListener("click", () => {
+          let items = window.localStorage.getItem("jobs");
+          let item_list = JSON.parse(items);
+          item_list.splice(id, 1);
+          for (var i = 0; i < item_list.length; i++) {
+            item_list[i]["id"] = String(i);
+          }
+          localStorage.setItem("jobs", JSON.stringify(item_list));
+          document.getElementById("delete-application").close();
+          window.location.reload();
+        });
+      });
+
+    /**
+     * Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
+     * For status change, might be extracted to out of this button event to get user change
+     * Jobcard 'id' is not changed for this button action
+     */
+    this.shadowRoot
+      .querySelector(".edit-icon")
+      .addEventListener("click", () => {
+        const edit_dialog = document.getElementById("edit-application");
+        const edit_cancel = document.getElementById("edit_cancel");
+        const edit_form = document.getElementById("edit-form");
+
         edit_dialog.showModal();
-        document.getElementById('company-edit').setAttribute("placeholder", company)
-        document.getElementById('position-edit').setAttribute("placeholder", position)
-        document.getElementById('location-edit').setAttribute("placeholder", location)
-        document.getElementById('date-edit').setAttribute("placeholder", date)
-        edit_cancel.addEventListener('click', () => {
+        document
+          .getElementById("company-edit")
+          .setAttribute("placeholder", company);
+        document
+          .getElementById("position-edit")
+          .setAttribute("placeholder", position);
+        document
+          .getElementById("location-edit")
+          .setAttribute("placeholder", location);
+        document.getElementById("date-edit").setAttribute("placeholder", date);
+        edit_cancel.addEventListener("click", () => {
           edit_dialog.close();
         });
-        document.getElementById('edit-form').addEventListener('submit', () => {
-          
-          let items = window.localStorage.getItem('jobs');
-          let item_list = JSON.parse(items)
-          item_list[id]['company'] = edit_form.company.value
-          item_list[id]['position'] = edit_form.position.value
-          item_list[id]['location'] = edit_form.location.value
-          item_list[id]['date'] = edit_form.date.value
-          localStorage.setItem('jobs', JSON.stringify(item_list));
-        })
-        
-      })
-    }
-  
-    
-  
-  
+        document.getElementById("edit-form").addEventListener("submit", () => {
+          let items = window.localStorage.getItem("jobs");
+          let item_list = JSON.parse(items);
+          item_list[id]["company"] = edit_form.company.value;
+          item_list[id]["position"] = edit_form.position.value;
+          item_list[id]["location"] = edit_form.location.value;
+          item_list[id]["date"] = edit_form.date.value;
+          localStorage.setItem("jobs", JSON.stringify(item_list));
+        });
+      });
   }
-  /**
-   * Defines the Class as a customElement to create
-   * 'job-card' elements
-   */
-  customElements.define('job-card', JobCard);
+}
+/**
+ * Defines the Class as a customElement to create
+ * 'job-card' elements
+ */
+customElements.define("job-card", JobCard);
