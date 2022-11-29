@@ -62,8 +62,8 @@ function init() {
   document.getElementById('number-of-job-cards').innerText = num_of_card
   add_jobs_to_document(jobs, 0);
   // Add the event listeners to the form elements
-  initFormHandler();
-  filterButtonListener();
+  init_form_handler();
+  filter_button_listener();
 }
 
 /**
@@ -149,7 +149,7 @@ function save_jobs_to_storage(jobs) {
  * Adds the necesarry event handlers to <form> and the clear storage
  * <button>.
  */
-function initFormHandler() {
+function init_form_handler() {
   const add_dialog = document.getElementById("add-application");
   document.getElementById("add_cancel").addEventListener("click", () => {
     add_dialog.close();
@@ -190,7 +190,7 @@ function initFormHandler() {
  * @description Updates the filter buttons by retrieving which filter was clicked
  * and updates the job cards to show the cards that were filtered
  */
- function filterButtonListener(){
+ function filter_button_listener(){
       // prettier-ignore
       document.getElementsByClassName('filterStages')[0].addEventListener('click', function (e) {
           // get which bubble was clicked for that specific progress bar
@@ -222,7 +222,7 @@ function initFormHandler() {
             }
             console.log(`updating filters ${filter} ${filterNum}`);
             // make the clicked bubble purple and all others white
-            updateProgress(document.getElementsByClassName('filterStages')[0], filterNum);
+            update_filter(document.getElementsByClassName('filterStages')[0], filterNum);
 
             let main = document.querySelector('main');
 
@@ -244,7 +244,7 @@ function initFormHandler() {
  * @param {number} filterNum The current filter (bubble) we have clicked
  * @description Makes a specific filter bubble purple and makes all others white.
  */
-function updateFilter(ul, filterNum) {
+function update_filter(ul, filterNum) {
   // get the filters
   const li = ul.getElementsByTagName("li");
 
