@@ -1,7 +1,29 @@
+:root {
+    --special-color: #95a1f1;
+    --dialog-backgroud-color: rgb(237, 237, 237);
+    --text-color: black;
+    --input-text-color:black;
+    --button-text-color: black;
+    --dialog-button-text-color: black;
+    --button-color-onhover: rgb(105, 123, 240);
+    --button-text-color-onhover: white;
+}
+  
+body.dark-theme {
+    --special-color: rgb(187,134,250);
+    --dialog-backgroud-color: rgba(30,30,30,255);
+    --text-color: rgba(218,218,218,255);
+    --input-text-color:black;
+    --button-text-color: white;
+    --dialog-button-text-color: black;
+    --button-color-onhover: rgb(145, 68, 239);
+    --button-text-color-onhover: black;
+}
+
 #add-application,
 #edit-application,
 #delete-application {
-    background-color: rgb(237, 237, 237);
+    background-color: var(--dialog-backgroud-color);
     width: 50%;
     left: 25%;
     height:fit-content;
@@ -99,10 +121,11 @@
     text-align:center;
     line-height:1.1em;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid var(--dialog-backgroud-color);
     border-radius: 0.3rem;
     cursor: pointer;
     font-size: 1em;
+    color: var(--dialog-button-text-color);
 }
 
 #add_cancel:hover,
@@ -111,9 +134,9 @@
 #edit_submit:hover,
 #d_cancel:hover,
 #d_delete:hover {
-    background-color: var(--special-color);
-    border: 1px solid var(--special-color);
-    color: white;
+    background-color: var(--button-color-onhover);
+    border: 1px solid var(--button-color-onhover);
+    color: var(--button-text-color-onhover);
 }
 
 .grid-container-form{
@@ -138,6 +161,7 @@ input {
     padding: 0.7em;
     width: 80%;
     line-height: 110%;
+    color: var(--input-text-color);
 }
 
 .required:after {

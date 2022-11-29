@@ -3,6 +3,15 @@
   src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
 }
 
+:root {
+  --special-color: #95a1f1;
+  --job-card-backgroud-color: #e6e6e6;
+}
+
+body.dark-theme {
+  --job-card-backgroud-color: rgba(30,30,30,255);
+}
+
 * {
   font-family: "Spoof", serif;
 }
@@ -10,7 +19,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 0.15fr .7fr 1fr 0.2fr;
-  background: #e6e6e6;
+  background: var(--job-card-backgroud-color);
   padding: 20px 30px;
   border: 3px solid black;
   margin: 1em 0;
@@ -37,7 +46,7 @@
 .edit-icon {
   border: none;
   cursor: pointer;
-  background-color: #e6e6e6;
+  background-color: var(--job-card-backgroud-color);
 }
 
 .grid-4 {
@@ -128,7 +137,7 @@
 }
 
 .stages .step.active {
-  background-color: #95a1f1;
+  background-color: var(--special-color);
 }
 
 /* MEDIA QUERIES */

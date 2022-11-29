@@ -19,8 +19,19 @@
           alt="logo"
           width="80"
           height="80"
+          id="main-logo"
         >
         <h1 id="title">Wing It</h1>
+
+        <div class="flexitem-3">
+          <input type="checkbox" class="darkMode" id="toggle"/>
+          <label class="darkMode-switch" for="toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
+
       </div>
       <h2>Your Applications</h2>
       <div class="container-2">
@@ -153,6 +164,7 @@
                 width="60"
                 height="60"
                 class="delete-logo"
+                id="delete-logo"
               >
             </div>
             <div class="title" id="item2-delete">
@@ -180,6 +192,7 @@
                 width="60"
                 height="60"
                 class="add-logo"
+                id="add-logo"
               >
             </div>
             <div class="title" id="item2-add">
@@ -232,6 +245,7 @@
                 width="60"
                 height="60"
                 class="add-logo"
+                id="edit-logo"
               >
             </div>
             <div class="title" id="item2-edit">
@@ -284,6 +298,8 @@
 
     <!-- Script for Edit Dialogue Box -->
     <script type="module" src="/source/assets/scripts/edit_popup.js"></script>
+
+    <script type="module" src="/source/assets/scripts/dark_mode.js"></script>
 
     <!-- Needed for icons -->
     <script

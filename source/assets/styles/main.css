@@ -5,22 +5,39 @@
 }
 
 :root {
-  --special-color: rgb(149, 161, 241);
+  --special-color: #95a1f1;
+  --backgroud-color: white;
+  --text-color: black;
+  --button-text-color: black;
+  --button-color-onhover: rgb(105, 123, 240);
+  --button-text-color-onhover: white;
+
+}
+
+body.dark-theme {
+  --special-color: rgb(187,134,250);
+  --backgroud-color: rgba(18,18,18,255);
+  --text-color: rgba(218,218,218,255);
+  --button-text-color: white;
+  --button-color-onhover: rgb(145, 68, 239);
+  --button-text-color-onhover: black;
 }
 
 * {
   font-family: "Spoof", serif;
   font-weight: 300;
-  /* margin: 0.5em; */
+  color: var(--text-color);
 }
 
 body {
-    margin: 2% 5%;
+  margin: 2% 5%;
+  background-color: var(--backgroud-color);
 }
 
 .container-1 {
   display: flex;
   align-items: center;
+  position: relative;
   margin-bottom: -1em;
 }
 
@@ -31,6 +48,13 @@ body {
 
 h2 {
   margin-bottom: -1em;
+}
+
+.flexitem-3{
+  position: absolute;
+  width: auto;
+  top: 35px;
+  right: 5px;
 }
 
 .container-2 {
@@ -46,13 +70,53 @@ h5 {
 
 #add_application_btn {
   background-color: var(--special-color);
+  color: var(--button-text-color);
   margin: 1em 0.7em;
   padding: .5em 2.5em;
   cursor: pointer;
 }
 
 #add_application_btn:hover {
-  background-color: rgb(105, 123, 240);
-  color: white;
+  background-color: var(--button-color-onhover);
+  color: var(--button-text-color-onhover);
   cursor: pointer;
+}
+
+/* dark theme */
+.darkMode {
+  display: none;
+}
+  
+.darkMode-switch {
+  background-color: var(--special-color);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(0.8);
+}
+  
+.darkMode-switch .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  height: 28px;
+  width: 28px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+  
+.darkMode:checked + .darkMode-switch .ball {
+  transform: translateX(28px);
+}
+  
+.fa-moon, .fa-sun {
+  color: black;
 }
