@@ -22,5 +22,3 @@ jobs:
         uses: andstor/jsdoc-action@v1
         with:
           source_dir: ./source/assets/scripts/
-          recurse: true
-          output_dir: ./specs/documentation
