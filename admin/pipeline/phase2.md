@@ -23,5 +23,3 @@ we are using
 
 ## Next Steps
 * Fix JSDocs bug
-* Merge the Pipeline with main so everyone 
-  can start pushing/merging code and have it pass tests
