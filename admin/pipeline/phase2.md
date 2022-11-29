@@ -18,8 +18,8 @@ we are using
 * ESLint - Implemented on testing branch
 * Jest - Implemented on testing branch
 * CSSLint - Implemented on testing branch
-* JSDocs - Implemented on testing branch, [bug] unable to publish to github pages.
+* JSDocs - Implemented on testing branch
 * Prettier - Implemented on testing branch
 
 ## Next Steps
-* Fix JSDocs bug
+* None
