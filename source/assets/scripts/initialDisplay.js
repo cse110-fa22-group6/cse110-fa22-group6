@@ -1,7 +1,56 @@
 // main.js
 // Run the init() function when the page has loaded
 window.addEventListener('DOMContentLoaded', init);
-var num_of_card = 0
+/**
+ * @constant
+ * @type {number}
+ * @default
+ */
+var num_of_card = 0;
+/**
+ * @constant
+ * @type {number}
+ * @default
+ */
+const filter_all = 0;
+/**
+ * @constant
+ * @type {number}
+ * @default
+ */
+const filter_rejected = 1;
+/**
+ * @constant
+ * @type {number}
+ * @default
+ */
+const filter_unapplied = 2;
+/**
+ * @constant
+ * @type {number}
+ * @default
+ */
+const filter_applied = 3;
+/**
+ * @constant
+ * @type {number}
+ * @default
+ */
+const filter_screening = 4;
+/**
+ * @constant
+ * @type {number}
+ * @default
+ */
+ const filter_interview = 5;
+ /**
+ * @constant
+ * @type {number}
+ * @default
+ */
+const filter_offer = 6;
+
+
 // Starts the program, all function calls trace back here
 
 
@@ -11,7 +60,7 @@ function init() {
   // Add each job to the <main> element
   num_of_card = jobs.length
   document.getElementById('number-of-job-cards').innerText = num_of_card
-  add_jobs_to_document(jobs);
+  add_jobs_to_document(jobs, 0);
   // Add the event listeners to the form elements
   initFormHandler();
   filterButtonListener();
@@ -44,9 +93,14 @@ function get_jobs_from_storage() {
  * new <job-card> element, adds the recipe data to that card
  * using element.data = {...}, and then appends that new job
  * to <main>
+ * 
+ * Can also append specific jobs to main depending on the job
+ * status which can be specified by statusFilter parameter
+ * 
  * @param {Array<Object>} jobs An array of jobs
+ * @param {number} statusFilter status to filter jobs
  */
-function add_jobs_to_document(jobs) {
+function add_jobs_to_document(jobs, statusFilter) {
   // Get a reference to the <main> element
   let main = document.querySelector('main');
 
@@ -58,14 +112,22 @@ function add_jobs_to_document(jobs) {
   let sortDic = {}
   let sortArr = []
   while(i<jobs.length) {
-    let job = document.createElement('job-card');
-    job.data = jobs[i];
-    var date = jobs[i]['date'];
-    sortDic[date] = job;
-    sortArr.push(date);
-    i++;  
+    if(statusFilter == 0 || jobs[i].status == statusFilter-1){
+      let job = document.createElement('job-card');
+      job.data = jobs[i];
+      var date = jobs[i]['date'];
+      if (sortDic[date] == null){
+        sortDic[date] = job;
+      }else {
+        sortDic[date].push(job);
+      }
+      sortArr.push(date);
+    }
+    i++;
+    console.log(sortDic);
+    console.log(sortArr);
   }
-  sortArr.sort()
+  sortArr.sort();
   for(i = 0; i<sortArr.length; i++){
     main.append(sortDic[sortArr[i]]);
   }
@@ -170,7 +232,7 @@ function initFormHandler() {
             console.log(`updating filters ${filter} ${stepNum}`);
             // make the clicked bubble purple and all others white
             updateProgress(document.getElementsByClassName('filterStages')[0], stepNum);
-            showFilteredCards(stepNum);
+            add_jobs_to_document(stepNum);
           }
       })
 }
