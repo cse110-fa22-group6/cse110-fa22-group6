@@ -18,10 +18,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build
-        uses: andstor/jsdoc-action@v1
-        with:
-          source_dir: source/assets/scripts
-          recurse: true
-          output_dir: specs/documentation
-          template: minami
+      - name: Run JSDoc
+        run: jsdoc --destination specs/documentation source/assets/scripts/*
