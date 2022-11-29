@@ -117,7 +117,7 @@ function add_jobs_to_document(jobs, statusFilter) {
       job.data = jobs[i];
       var date = jobs[i]['date'];
       if (sortDic[date] == null){
-        sortDic[date] = job;
+        sortDic[date] = [job];
       }else {
         sortDic[date].push(job);
       }
@@ -129,7 +129,9 @@ function add_jobs_to_document(jobs, statusFilter) {
   }
   sortArr.sort();
   for(i = 0; i<sortArr.length; i++){
-    main.append(sortDic[sortArr[i]]);
+    for (let j = 0; j<sortDic[sortArr[i]].length; j++){
+      main.append(sortDic[sortArr[i]][j]);
+    }
   }
 
 }
@@ -184,20 +186,9 @@ function initFormHandler() {
 
 }
 
-// // reference to the "Clear Local Storage" button
-// // click event listener to clear local storage button
-// let clear_local = document.getElementsByClassName('danger')[0];
-
-// clear_local.addEventListener('click', () => {
-//   // Clear the local storage
-//   localStorage.clear();
-//   // Delete the contents of <main>
-//   document.querySelector('main').innerHTML = null;
-//   init()
-// });
-
 /**
- * @description
+ * @description Updates the filter buttons by retrieving which filter was clicked
+ * and updates the job cards to show the cards that were filtered
  */
  function filterButtonListener(){
       // prettier-ignore
@@ -205,89 +196,65 @@ function initFormHandler() {
           // get which bubble was clicked for that specific progress bar
           if (e.target && e.target.nodeName === 'LI') {
             const filter = e.target.textContent;
-            let stepNum = 0;
+            let filterNum = 0;
             switch(filter) {
               case 'All':
-                stepNum = 0;
+                filterNum = filter_all;
                 break;
               case 'Rejected':
-                stepNum = 1;
+                filterNum = filter_rejected;
                 break;
               case 'Unapplied':
-                stepNum = 2;
+                filterNum = filter_unapplied;
                 break;
               case 'Applied':
-                stepNum = 3;
+                filterNum = filter_applied;
                 break;
               case 'Screening':
-                stepNum = 4;
+                filterNum = filter_screening;
                 break;
               case 'Interview':
-                stepNum = 5;
+                filterNum = filter_interview;
                 break;
               case 'Offer':
-                stepNum = 6;
+                filterNum = filter_offer;
                 break;
             }
-            console.log(`updating filters ${filter} ${stepNum}`);
+            console.log(`updating filters ${filter} ${filterNum}`);
             // make the clicked bubble purple and all others white
-            updateProgress(document.getElementsByClassName('filterStages')[0], stepNum);
-            add_jobs_to_document(stepNum);
+            updateProgress(document.getElementsByClassName('filterStages')[0], filterNum);
+
+            let main = document.querySelector('main');
+
+            // Removes All Jobs
+            let arrayOfJobs = main.querySelectorAll('job-card');
+            for(let i = 0; i < arrayOfJobs.length; i++){
+              arrayOfJobs[i].remove();
+            }
+
+            let jobs = get_jobs_from_storage();
+
+            add_jobs_to_document(jobs ,filterNum);
           }
       })
 }
    
-  /**
-   * @param {Object} ul The progress bar
-   * @param {number} stepNum The current step (bubble) we have clicked
-   * @description Makes a specific bubble purple and makes all others white.
-   */
-  function updateProgress(ul, stepNum) {
-    // get the specific progress bar
-    const li = ul.getElementsByTagName("li");
-  
-    // change each bubble accordingly
-    for (let i = 0; i < li.length; i++) {
-      if (i === stepNum) {
-        li[i].classList.add("active");
-        console.log(`Updated filter ${i}`);
-      } else {
-        li[i].classList.remove("active");
-      }
+/**
+ * @param {Object} ul The filter bar
+ * @param {number} filterNum The current filter (bubble) we have clicked
+ * @description Makes a specific filter bubble purple and makes all others white.
+ */
+function updateFilter(ul, filterNum) {
+  // get the filters
+  const li = ul.getElementsByTagName("li");
+
+  // change each bubble accordingly
+  for (let i = 0; i < li.length; i++) {
+    if (i === filterNum) {
+      li[i].classList.add("active");
+      console.log(`Updated filter ${i}`);
+    } else {
+      li[i].classList.remove("active");
     }
   }
-
-  function showFilteredCards(stage){
-    // Get a reference to the <main> element
-    let main = document.querySelector('main');
-
-    // Removes All Jobs
-    let arrayOfJobs = main.querySelectorAll('job-card');
-    for(let i = 0; i < arrayOfJobs.length; i++){
-      arrayOfJobs[i].remove();
-    }
-
-    let jobs = get_jobs_from_storage();
-
-    // Loops through each of the jobs in the passed in array,
-    // creates a <job-card> element for each one, and populate
-    // sorted by date
-    // Append each element to <main>
-    let i = 0;
-    let sortDic = {}
-    let sortArr = []
-    while(i<jobs.length) {
-      if(stage == 0 || jobs[i].status == stage-1){
-        let job = document.createElement('job-card');
-        job.data = jobs[i];
-        var date = jobs[i]['date'];
-        sortDic[date] = job;
-        sortArr.push(date);
-      } 
-      i++;
-    }
-    sortArr.sort()
-    for(i = 0; i<sortArr.length; i++){
-      main.append(sortDic[sortArr[i]]);
-    }
-  }
+}
