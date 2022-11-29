@@ -18,5 +18,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install JSDoc Globally
+        run: npm install -g jsdoc
+
       - name: Run JSDoc
         run: jsdoc --destination specs/documentation source/assets/scripts/*
