@@ -2,16 +2,12 @@ env:
   browser: true
   es2021: true
   jest: true
-plugins: [snakecase]
-extends: standard
+extends: eslint:recommended
 overrides: []
 parserOptions:
   ecmaVersion: latest
   sourceType: module
-ignorePatterns: ["/__tests__/*"]
 rules:
-  snakecase/snakecase: "error"
   quotes: warn
   semi: warn
   space-before-function-paren: warn
-  camelcase: off
