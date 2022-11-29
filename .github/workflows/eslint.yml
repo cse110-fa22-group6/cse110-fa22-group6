@@ -16,8 +16,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install ESLint
-        run: npm install eslint
-        
       - name: Run ESLint
-        run: npx eslint **/**.js
+        run: npx eslint source/assets/scripts/*
