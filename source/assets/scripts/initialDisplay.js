@@ -4,7 +4,9 @@ window.addEventListener('DOMContentLoaded', init);
 var num_of_card = 0
 // Starts the program, all function calls trace back here
 
-
+/**
+ * @description Initalizes the display by reading the jobs from local storage. 
+ */
 function init() {
   // Get the jobs from localStorage
   let jobs = get_jobs_from_storage();
