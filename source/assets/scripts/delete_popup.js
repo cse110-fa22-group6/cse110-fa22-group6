@@ -1,3 +1,7 @@
+/**
+ * @description Deletes displayed popup dialog, if the cancel option is clicked then nothing gets deleted.
+ *
+*/
 const deleteBtn = document.getElementById('delete-btn');
 const delete_dialog = document.getElementById('delete-application');
 
