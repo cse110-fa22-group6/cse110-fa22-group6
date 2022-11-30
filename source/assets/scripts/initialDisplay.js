@@ -3,7 +3,7 @@
 window.addEventListener("DOMContentLoaded", init);
 var num_of_card = 0;
 // Starts the program, all function calls trace back here
-function init() {
+function init () {
   // Get the jobs from localStorage
   let jobs = get_jobs_from_storage();
   // Add each job to the <main> element
@@ -21,7 +21,7 @@ function init() {
  * is returned.
  * @returns {Array<Object>} An array of jobs found in localStorage
  */
-function get_jobs_from_storage() {
+function get_jobs_from_storage () {
   //vars
   var unparsed_job_list = window.localStorage.getItem("jobs");
   var parsed_job_list = JSON.parse(unparsed_job_list);
@@ -43,7 +43,7 @@ function get_jobs_from_storage() {
  * to <main>
  * @param {Array<Object>} jobs An array of jobs
  */
-function add_jobs_to_document(jobs) {
+function add_jobs_to_document (jobs) {
   // Get a reference to the <main> element
   let main = document.querySelector("main");
 
@@ -59,20 +59,12 @@ function add_jobs_to_document(jobs) {
   }
 }
 
-/**
- * Takes in an array of jobs, converts it to a string, and then
- * saves that string to 'jobs' in localStorage
- * @param {Array<Object>} jobs An array of jobs
- */
-function save_jobs_to_storage(jobs) {
-  localStorage.setItem("jobs", JSON.stringify(jobs));
-}
 
 /**
  * Adds the necesarry event handlers to <form> and the clear storage
  * <button>.
  */
-function initFormHandler() {
+function initFormHandler () {
   const add_dialog = document.getElementById("add-application");
   document.getElementById("add_cancel").addEventListener("click", () => {
     add_dialog.close();

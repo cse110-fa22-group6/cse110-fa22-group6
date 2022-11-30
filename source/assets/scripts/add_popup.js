@@ -5,8 +5,6 @@ document.getElementById("add_cancel").addEventListener("click", () => {
   add_dialog.close();
 });
 
-var addIcon = document.getElementsByClassName("add-icon");
-
 addBtn.addEventListener("click", () => {
   console.log("add application");
   add_dialog.showModal();
