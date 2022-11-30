@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>JobCard.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
@@ -10,57 +10,51 @@
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
 
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="styles/prettify-tomorrow.css"
-    />
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
-  </head>
-  <body>
-    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-    <label for="nav-trigger" class="navicon-button x">
-      <div class="navicon"></div>
-    </label>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
-    <label for="nav-trigger" class="overlay"></label>
+<label for="nav-trigger" class="overlay"></label>
 
-    <nav>
-      <li class="nav-link nav-home-link"><a href="index.html">Home</a></li>
-      <li class="nav-heading">Classes</li>
-      <li class="nav-heading">
-        <span class="nav-item-type type-class">C</span
-        ><span class="nav-item-name"><a href="JobCard.html">JobCard</a></span>
-      </li>
-    </nav>
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="JobCard.html">JobCard</a></span></li>
+</nav>
 
-    <div id="main">
-      <h1 class="page-title">JobCard.js</h1>
+<div id="main">
+    
+    <h1 class="page-title">JobCard.js</h1>
+    
 
-      <section>
+    
+
+
+
+    
+    <section>
         <article>
-          <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>/**
  * Constructor class for Jobcard
  * @constructor
  */
 class JobCard extends HTMLElement {
-  constructor() {
-    super(); // Inheret everything from HTMLElement
-    // Attaches the shadow DOM to this Web Component
-    let shadow_element = this.attachShadow({ mode: "open" });
-    // Creates an &lt;article> element
-    let article_element = document.createElement("article");
-    // Create a style element
-    let style_element = document.createElement("style");
+    constructor() {
+        super(); // Inheret everything from HTMLElement
+        // Attaches the shadow DOM to this Web Component
+        let shadow_element = this.attachShadow({ mode: "open" });
+        // Creates an &lt;article> element
+        let article_element = document.createElement("article");
+        // Create a style element
+        let style_element = document.createElement("style");
 
-    //Job card CSS goes here
-    style_element.textContent = `
+        //Job card CSS goes here
+        style_element.textContent = `
       @font-face {
         font-family: Spoof, serif;
         src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
@@ -305,37 +299,37 @@ class JobCard extends HTMLElement {
       } 
       `;
 
-    // Appends the &lt;style> and &lt;article> elements to the Shadow DOM
-    shadow_element.append(style_element);
-    shadow_element.append(article_element);
-  }
+        // Appends the &lt;style> and &lt;article> elements to the Shadow DOM
+        shadow_element.append(style_element);
+        shadow_element.append(article_element);
+    }
 
-  /**
-   * Called when the .data property is set on this element.
-   *
-   * @param {Object} data - The data to pass into the &lt;job-card>, must be of the
-   *                        following format:
-   *                        {
-   *                          "id": automatically assigned by number of job card
-   *                          "company": "Google",(str)
-   *                          "location": "Mountain View, CA",(str)
-   *                          "status": 5,(unapplied, applied, rejected, screened, interviewed, offer)
-   *                          "position": "Data Science Intern", (str)
-   *                          "date": "12/24/2022" (str)
-   */
-  set data(data) {
-    // If nothing was passed in, return
-    if (!data) return;
+    /**
+     * Called when the .data property is set on this element.
+     *
+     * @param {Object} data - The data to pass into the &lt;job-card>, must be of the
+     *                        following format:
+     *                        {
+     *                          "id": automatically assigned by number of job card
+     *                          "company": "Google",(str)
+     *                          "location": "Mountain View, CA",(str)
+     *                          "status": 5,(unapplied, applied, rejected, screened, interviewed, offer)
+     *                          "position": "Data Science Intern", (str)
+     *                          "date": "12/24/2022" (str)
+     */
+    set data(data) {
+        // If nothing was passed in, return
+        if (!data) return;
 
-    //  Selects the &lt;article> we added to the Shadow DOM in the constructor
-    let shadow_article = this.shadowRoot.querySelector("article");
-    const id = data.id;
-    const company = data.company;
-    const location = data.location;
-    const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
-    const position = data.position;
-    const date = data.date;
-    shadow_article.innerHTML = `
+        //  Selects the &lt;article> we added to the Shadow DOM in the constructor
+        let shadow_article = this.shadowRoot.querySelector("article");
+        const id = data.id;
+        const company = data.company;
+        const location = data.location;
+        const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
+        const position = data.position;
+        const date = data.date;
+        shadow_article.innerHTML = `
       &lt;!-- BEGIN JOB CARD -->
       &lt;div class="grid-container">
         &lt;!--     Logo (for the future)  -->
@@ -387,83 +381,83 @@ class JobCard extends HTMLElement {
       &lt;!-- END JOB CARD -->
         `;
 
-    /**
-     * Updating stages
-     */
-    var stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
-    stage[status].classList.add("active");
-    for (let i = 0; i &lt; stage.length; i++) {
-      stage[i].addEventListener("click", function (e) {
-        // get which bubble was clicked for that specific progress bar
-        // make the clicked bubble purple and prev status white
-        let items = localStorage.getItem("jobs");
-        let item_list = JSON.parse(items);
-        let prev = item_list[id]["status"];
-        stage[prev].classList.remove("active");
-        stage[i].classList.add("active");
-        item_list[id]["status"] = String(i);
-        localStorage.setItem("jobs", JSON.stringify(item_list));
-      });
+        /**
+         * Updating stages
+         */
+        var stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
+        stage[status].classList.add("active");
+        for (let i = 0; i &lt; stage.length; i++) {
+            stage[i].addEventListener("click", function (e) {
+                // get which bubble was clicked for that specific progress bar
+                // make the clicked bubble purple and prev status white
+                let items = localStorage.getItem("jobs");
+                let item_list = JSON.parse(items);
+                let prev = item_list[id]["status"];
+                stage[prev].classList.remove("active");
+                stage[i].classList.add("active");
+                item_list[id]["status"] = String(i);
+                localStorage.setItem("jobs", JSON.stringify(item_list));
+            });
+        }
+
+        this.shadowRoot
+            .querySelector(".delete-icon")
+            .addEventListener("click", () => {
+                const delete_dialog = document.getElementById("delete-application");
+                delete_dialog.showModal();
+                document.getElementById("d_cancel").addEventListener("click", () => {
+                    delete_dialog.close();
+                });
+                document.getElementById("d_delete").addEventListener("click", () => {
+                    let items = window.localStorage.getItem("jobs");
+                    let item_list = JSON.parse(items);
+                    item_list.splice(id, 1);
+                    for (var i = 0; i &lt; item_list.length; i++) {
+                        item_list[i]["id"] = String(i);
+                    }
+                    localStorage.setItem("jobs", JSON.stringify(item_list));
+                    document.getElementById("delete-application").close();
+                    window.location.reload();
+                });
+            });
+
+        /**
+         * Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
+         * For status change, might be extracted to out of this button event to get user change
+         * Jobcard 'id' is not changed for this button action
+         */
+        this.shadowRoot
+            .querySelector(".edit-icon")
+            .addEventListener("click", () => {
+                const edit_dialog = document.getElementById("edit-application");
+                const edit_cancel = document.getElementById("edit_cancel");
+                const edit_form = document.getElementById("edit-form");
+
+                edit_dialog.showModal();
+                document
+                    .getElementById("company-edit")
+                    .setAttribute("placeholder", company);
+                document
+                    .getElementById("position-edit")
+                    .setAttribute("placeholder", position);
+                document
+                    .getElementById("location-edit")
+                    .setAttribute("placeholder", location);
+                document.getElementById("date-edit").setAttribute("placeholder", date);
+                edit_cancel.addEventListener("click", () => {
+                    edit_dialog.close();
+                });
+                document.getElementById("edit-form").addEventListener("submit", () => {
+                    let items = window.localStorage.getItem("jobs");
+                    let item_list = JSON.parse(items);
+                    item_list[id]["company"] = edit_form.company.value;
+                    item_list[id]["position"] = edit_form.position.value;
+                    item_list[id]["location"] = edit_form.location.value;
+                    item_list[id]["date"] = edit_form.date.value;
+                    localStorage.setItem("jobs", JSON.stringify(item_list));
+                });
+            });
     }
-
-    this.shadowRoot
-      .querySelector(".delete-icon")
-      .addEventListener("click", () => {
-        const delete_dialog = document.getElementById("delete-application");
-        delete_dialog.showModal();
-        document.getElementById("d_cancel").addEventListener("click", () => {
-          delete_dialog.close();
-        });
-        document.getElementById("d_delete").addEventListener("click", () => {
-          let items = window.localStorage.getItem("jobs");
-          let item_list = JSON.parse(items);
-          item_list.splice(id, 1);
-          for (var i = 0; i &lt; item_list.length; i++) {
-            item_list[i]["id"] = String(i);
-          }
-          localStorage.setItem("jobs", JSON.stringify(item_list));
-          document.getElementById("delete-application").close();
-          window.location.reload();
-        });
-      });
-
-    /**
-     * Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
-     * For status change, might be extracted to out of this button event to get user change
-     * Jobcard 'id' is not changed for this button action
-     */
-    this.shadowRoot
-      .querySelector(".edit-icon")
-      .addEventListener("click", () => {
-        const edit_dialog = document.getElementById("edit-application");
-        const edit_cancel = document.getElementById("edit_cancel");
-        const edit_form = document.getElementById("edit-form");
-
-        edit_dialog.showModal();
-        document
-          .getElementById("company-edit")
-          .setAttribute("placeholder", company);
-        document
-          .getElementById("position-edit")
-          .setAttribute("placeholder", position);
-        document
-          .getElementById("location-edit")
-          .setAttribute("placeholder", location);
-        document.getElementById("date-edit").setAttribute("placeholder", date);
-        edit_cancel.addEventListener("click", () => {
-          edit_dialog.close();
-        });
-        document.getElementById("edit-form").addEventListener("submit", () => {
-          let items = window.localStorage.getItem("jobs");
-          let item_list = JSON.parse(items);
-          item_list[id]["company"] = edit_form.company.value;
-          item_list[id]["position"] = edit_form.position.value;
-          item_list[id]["location"] = edit_form.location.value;
-          item_list[id]["date"] = edit_form.date.value;
-          localStorage.setItem("jobs", JSON.stringify(item_list));
-        });
-      });
-  }
 }
 /**
  * Defines the Class as a customElement to create
@@ -472,20 +466,20 @@ class JobCard extends HTMLElement {
 customElements.define("job-card", JobCard);
 </code></pre>
         </article>
-      </section>
-    </div>
+    </section>
 
-    <br class="clear" />
 
-    <footer>
-      Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on
-      Tue Nov 29 2022 22:38:23 GMT+0000 (Coordinated Universal Time) using the
-      Minami theme.
-    </footer>
 
-    <script>
-      prettyPrint();
-    </script>
-    <script src="scripts/linenumber.js"></script>
-  </body>
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Nov 30 2022 01:39:19 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
 </html>
