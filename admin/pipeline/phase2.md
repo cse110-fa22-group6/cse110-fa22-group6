@@ -22,4 +22,5 @@ also added Codacy to check and improve our overall code quality.
 * Codacy - Implemented on testing branch
 
 ## Next Steps
+* Make sure there's no errors with the testing branch and merge with main so we can publish.
 * Look into adding code coverage through Codacy.
