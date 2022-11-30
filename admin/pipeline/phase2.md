@@ -9,7 +9,7 @@ also added Codacy to check and improve our overall code quality.
 
 ## Diagram
 
-![image](phase1.drawio.png)
+![image](phase2.drawio.png)
 
 ## Status of Each Part
 
@@ -22,5 +22,5 @@ also added Codacy to check and improve our overall code quality.
 * Codacy - Implemented on testing branch
 
 ## Next Steps
-* Make sure there's no errors with the testing branch and merge with main so we can publish.
+* Fix any errors with the testing branch and merge with main so we can publish to pages.
 * Look into adding code coverage through Codacy.
