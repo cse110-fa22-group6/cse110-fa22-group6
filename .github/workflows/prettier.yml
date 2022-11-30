@@ -30,4 +30,4 @@ jobs:
         with:
           # changes option to include prettifying all doc types
           prettier_options: --write **/*.{js,md,html,css}
-          working_directory: source/assets
+          working_directory: /source/assets
