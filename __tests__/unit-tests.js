@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const { expect } = require("@jest/globals");
 
 describe("Basic user flow for Website", () => {
@@ -19,35 +20,35 @@ describe("Basic user flow for Website", () => {
 
   it("Check add confirmation popup", async () => {
     console.log("Testing add confirmation popup...");
-    var add_btn = await page.$('[id="add-application-btn"]');
+    var add_btn = await page.$("[id=\"add-application-btn\"]");
     await add_btn.click(0, 1, 1);
-    var popup = await page.$('[id="add-application"]');
+    var popup = await page.$("[id=\"add-application\"]");
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancel_btn = await popup.$('[id="add-cancel"]');
+    var cancel_btn = await popup.$("[id=\"add-cancel\"]");
     await cancel_btn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });
 
   it("Check adding application", async () => {
     console.log("Testing adding application...");
-    var add_btn = await page.$('[id="add-application-btn"]');
+    var add_btn = await page.$("[id=\"add-application-btn\"]");
     await add_btn.click(0, 1, 1);
-    var popup = await page.$('[id="add-application"]');
+    var popup = await page.$("[id=\"add-application\"]");
     expect(await popup.isIntersectingViewport()).toBe(true);
 
-    var text_box = await popup.$('[id="company"]');
+    var text_box = await popup.$("[id=\"company\"]");
     await text_box.type("Ronald's Emporium");
-    text_box = await popup.$('[id="position"]');
+    text_box = await popup.$("[id=\"position\"]");
     await text_box.type("Professional Burger Flipper");
-    text_box = await popup.$('[id="location"]');
+    text_box = await popup.$("[id=\"location\"]");
     await text_box.type("Jackson, CA");
-    text_box = await popup.$('[id="date"]');
+    text_box = await popup.$("[id=\"date\"]");
     await text_box.type("06212023");
 
-    var submit_btn = await popup.$('[id="add-submit"]');
+    var submit_btn = await popup.$("[id=\"add-submit\"]");
     await submit_btn.click(0, 1, 1);
     await page.reload();
-    popup = await page.$('[id="add-application"]');
+    popup = await page.$("[id=\"add-application\"]");
     expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
@@ -87,9 +88,9 @@ describe("Basic user flow for Website", () => {
     var root = await app.getProperty("shadowRoot");
     var edit_btn = await root.$(".edit-icon");
     await edit_btn.click(0, 1, 1);
-    var popup = await page.$('[id="edit-application"]');
+    var popup = await page.$("[id=\"edit-application\"]");
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancel_btn = await popup.$('[id="edit-cancel"]');
+    var cancel_btn = await popup.$("[id=\"edit-cancel\"]");
     await cancel_btn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });
@@ -100,22 +101,22 @@ describe("Basic user flow for Website", () => {
     var root = await app.getProperty("shadowRoot");
     var edit_btn = await root.$(".edit-icon");
     await edit_btn.click(0, 1, 1);
-    var popup = await page.$('[id="edit-application"]');
+    var popup = await page.$("[id=\"edit-application\"]");
     expect(await popup.isIntersectingViewport()).toBe(true);
 
-    var text_box = await popup.$('[id="company-edit"]');
+    var text_box = await popup.$("[id=\"company-edit\"]");
     await text_box.type("Amazon");
-    text_box = await popup.$('[id="position-edit"]');
+    text_box = await popup.$("[id=\"position-edit\"]");
     await text_box.type("Software Engineering Intern");
-    text_box = await popup.$('[id="location-edit"]');
+    text_box = await popup.$("[id=\"location-edit\"]");
     await text_box.type("San Francisco, CA");
-    text_box = await popup.$('[id="date-edit"]');
+    text_box = await popup.$("[id=\"date-edit\"]");
     await text_box.type("06222023");
 
-    var submit_btn = await popup.$('[id="edit-submit"]');
+    var submit_btn = await popup.$("[id=\"edit-submit\"]");
     await submit_btn.click(0, 1, 1);
     await page.reload();
-    popup = await page.$('[id="edit-application"]');
+    popup = await page.$("[id=\"edit-application\"]");
     expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
@@ -156,9 +157,9 @@ describe("Basic user flow for Website", () => {
     var root = await app.getProperty("shadowRoot");
     var delete_btn = await root.$(".delete-icon");
     await delete_btn.click(0, 1, 1);
-    var popup = await page.$('[id="delete-application"]');
+    var popup = await page.$("[id=\"delete-application\"]");
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancel_btn = await popup.$('[id="d-cancel"]');
+    var cancel_btn = await popup.$("[id=\"d-cancel\"]");
     await cancel_btn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });
@@ -169,13 +170,13 @@ describe("Basic user flow for Website", () => {
     var root = await app.getProperty("shadowRoot");
     var delete_btn = await root.$(".delete-icon");
     await delete_btn.click(0, 1, 1);
-    var popup = await page.$('[id="delete-application"]');
+    var popup = await page.$("[id=\"delete-application\"]");
     expect(await popup.isIntersectingViewport()).toBe(true);
 
-    var submit_btn = await popup.$('[id="d-delete"]');
+    var submit_btn = await popup.$("[id=\"d-delete\"]");
     await submit_btn.click(0, 1, 1);
     await page.reload();
-    popup = await page.$('[id="add-application"]');
+    popup = await page.$("[id=\"add-application\"]");
     expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(0);
