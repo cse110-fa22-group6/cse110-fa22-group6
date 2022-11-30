@@ -30,3 +30,5 @@ jobs:
           branch: jsdoc
           commit_options: "--no-verify --signoff"
           push_options: "--force"
+          status_options: "--untracked-files=no"
+          skip_dirty_check: true
