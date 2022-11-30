@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - "**"
-  pull_request:
-    branches:
-      - "**"
 
 jobs:
   deploy:
@@ -27,6 +24,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Auto Generated JSDoc
-          branch: jsdoc
           commit_options: "--no-verify --signoff"
           push_options: "--force"
+          status_options: "--untracked-files=no"
+          skip_dirty_check: true
+

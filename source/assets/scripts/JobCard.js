@@ -1,45 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>JobCard.js - Documentation</title>
-
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-<body>
-
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
-
-<label for="nav-trigger" class="overlay"></label>
-
-<nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="JobCard.html">JobCard</a></span></li>
-</nav>
-
-<div id="main">
-    
-    <h1 class="page-title">JobCard.js</h1>
-    
-
-    
-
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
+/**
  * Constructor class for Jobcard
  * @constructor
  */
@@ -48,7 +7,7 @@ class JobCard extends HTMLElement {
         super(); // Inheret everything from HTMLElement
         // Attaches the shadow DOM to this Web Component
         let shadow_element = this.attachShadow({ mode: "open" });
-        // Creates an &lt;article> element
+        // Creates an <article> element
         let article_element = document.createElement("article");
         // Create a style element
         let style_element = document.createElement("style");
@@ -299,7 +258,7 @@ class JobCard extends HTMLElement {
       } 
       `;
 
-        // Appends the &lt;style> and &lt;article> elements to the Shadow DOM
+        // Appends the <style> and <article> elements to the Shadow DOM
         shadow_element.append(style_element);
         shadow_element.append(article_element);
     }
@@ -307,7 +266,7 @@ class JobCard extends HTMLElement {
     /**
      * Called when the .data property is set on this element.
      *
-     * @param {Object} data - The data to pass into the &lt;job-card>, must be of the
+     * @param {Object} data - The data to pass into the <job-card>, must be of the
      *                        following format:
      *                        {
      *                          "id": automatically assigned by number of job card
@@ -321,7 +280,7 @@ class JobCard extends HTMLElement {
         // If nothing was passed in, return
         if (!data) return;
 
-        //  Selects the &lt;article> we added to the Shadow DOM in the constructor
+        //  Selects the <article> we added to the Shadow DOM in the constructor
         let shadow_article = this.shadowRoot.querySelector("article");
         const id = data.id;
         const company = data.company;
@@ -330,55 +289,55 @@ class JobCard extends HTMLElement {
         const position = data.position;
         const date = data.date;
         shadow_article.innerHTML = `
-      &lt;!-- BEGIN JOB CARD -->
-      &lt;div class="grid-container">
-        &lt;!--     Logo (for the future)  -->
-        &lt;div class="grid-1">
-          &lt;input type="image" src="/source/assets/images/image-solid.svg" />
-        &lt;/div>
-        &lt;!--     Application Text -->
-        &lt;div class="grid-2">
-          &lt;p class="position">${position}&lt;/p>
-          &lt;p class="company">${company}&lt;/p>
-          &lt;p class="location">${location}&lt;/p>
-        &lt;/div>
-        &lt;!--     Progress Bar -->
-        &lt;div id="progress-1" class="grid-3">
-          &lt;div id="progress-bar-1">&lt;/div>
-          &lt;ul class="stages">
-            &lt;li class="step">
-              &lt;span>1&lt;/span>
-              &lt;p>Rejected&lt;/p>
-            &lt;/li>
-            &lt;li class="step">
-              &lt;span>2&lt;/span>
-              &lt;p>Unapplied&lt;/p>
-            &lt;/li>
-            &lt;li class="step">
-              &lt;span>3&lt;/span>
-              &lt;p>Applied&lt;/p>
-            &lt;/li>
-            &lt;li class="step">
-              &lt;span>4&lt;/span>
-              &lt;p>Screening&lt;/p>
-            &lt;/li>
-            &lt;li class="step">
-              &lt;span>5&lt;/span>
-              &lt;p>Interview&lt;/p>
-            &lt;/li>
-            &lt;li class="step">
-              &lt;span>6&lt;/span>
-              &lt;p>Offer&lt;/p>
-            &lt;/li>
-          &lt;/ul>
-        &lt;/div>
-        &lt;!--       Trash/Pencil Icons -->
-        &lt;div class="grid-4">
-        &lt;input class="delete-icon" type="image" src="/source/assets/images/trash-solid.svg" />
-        &lt;input class="edit-icon" type="image" src="/source/assets/images/pen-solid.svg" />
-        &lt;/div>
-      &lt;/div>
-      &lt;!-- END JOB CARD -->
+      <!-- BEGIN JOB CARD -->
+      <div class="grid-container">
+        <!--     Logo (for the future)  -->
+        <div class="grid-1">
+          <input type="image" src="/source/assets/images/image-solid.svg" />
+        </div>
+        <!--     Application Text -->
+        <div class="grid-2">
+          <p class="position">${position}</p>
+          <p class="company">${company}</p>
+          <p class="location">${location}</p>
+        </div>
+        <!--     Progress Bar -->
+        <div id="progress-1" class="grid-3">
+          <div id="progress-bar-1"></div>
+          <ul class="stages">
+            <li class="step">
+              <span>1</span>
+              <p>Rejected</p>
+            </li>
+            <li class="step">
+              <span>2</span>
+              <p>Unapplied</p>
+            </li>
+            <li class="step">
+              <span>3</span>
+              <p>Applied</p>
+            </li>
+            <li class="step">
+              <span>4</span>
+              <p>Screening</p>
+            </li>
+            <li class="step">
+              <span>5</span>
+              <p>Interview</p>
+            </li>
+            <li class="step">
+              <span>6</span>
+              <p>Offer</p>
+            </li>
+          </ul>
+        </div>
+        <!--       Trash/Pencil Icons -->
+        <div class="grid-4">
+        <input class="delete-icon" type="image" src="/source/assets/images/trash-solid.svg" />
+        <input class="edit-icon" type="image" src="/source/assets/images/pen-solid.svg" />
+        </div>
+      </div>
+      <!-- END JOB CARD -->
         `;
 
         /**
@@ -386,7 +345,7 @@ class JobCard extends HTMLElement {
          */
         var stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
         stage[status].classList.add("active");
-        for (let i = 0; i &lt; stage.length; i++) {
+        for (let i = 0; i < stage.length; i++) {
             stage[i].addEventListener("click", function (e) {
                 // get which bubble was clicked for that specific progress bar
                 // make the clicked bubble purple and prev status white
@@ -412,7 +371,7 @@ class JobCard extends HTMLElement {
                     let items = window.localStorage.getItem("jobs");
                     let item_list = JSON.parse(items);
                     item_list.splice(id, 1);
-                    for (var i = 0; i &lt; item_list.length; i++) {
+                    for (var i = 0; i < item_list.length; i++) {
                         item_list[i]["id"] = String(i);
                     }
                     localStorage.setItem("jobs", JSON.stringify(item_list));
@@ -464,22 +423,3 @@ class JobCard extends HTMLElement {
  * 'job-card' elements
  */
 customElements.define("job-card", JobCard);
-</code></pre>
-        </article>
-    </section>
-
-
-
-
-</div>
-
-<br class="clear">
-
-<footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Nov 30 2022 04:41:38 GMT+0000 (Coordinated Universal Time) using the Minami theme.
-</footer>
-
-<script>prettyPrint();</script>
-<script src="scripts/linenumber.js"></script>
-</body>
-</html>
