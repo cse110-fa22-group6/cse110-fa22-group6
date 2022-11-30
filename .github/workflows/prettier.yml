@@ -1,5 +1,5 @@
 # This workflow runs prettier on any files or changes pushed to the repository.
-# 
+#
 # You can adjust the behavior by modifying this file.
 # For more information and for optional parameters, see:
 # https://github.com/marketplace/actions/prettier-action
@@ -30,3 +30,4 @@ jobs:
         with:
           # changes option to include prettifying all doc types
           prettier_options: --write **/*.{js,md,html,css}
+          working_directory: source/assets
