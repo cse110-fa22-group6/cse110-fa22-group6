@@ -1,7 +1,6 @@
-
 // JobCard.js
 class JobCard extends HTMLElement {
-  constructor () {
+  constructor() {
     super(); // Inheret everything from HTMLElement
     // Attaches the shadow DOM to this Web Component
     let shadow_element = this.attachShadow({ mode: "open" });
@@ -274,7 +273,7 @@ class JobCard extends HTMLElement {
    *                          "position": "Data Science Intern", (str)
    *                          "date": "12/24/2022" (str)
    */
-  set data (data) {
+  set data(data) {
     // If nothing was passed in, return
     if (!data) return;
 
