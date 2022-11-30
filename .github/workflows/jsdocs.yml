@@ -27,7 +27,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Auto Generated JSDoc
-          branch: jsdoc
+          branch: pipeline-tle-jsdoc
           commit_options: "--no-verify --signoff"
           push_options: "--force"
           status_options: "--untracked-files=no"
