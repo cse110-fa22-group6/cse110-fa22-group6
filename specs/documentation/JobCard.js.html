@@ -410,10 +410,10 @@ class JobCard extends HTMLElement {
       .addEventListener("click", () => {
         const delete_dialog = document.getElementById("delete-application");
         delete_dialog.showModal();
-        document.getElementById("d_cancel").addEventListener("click", () => {
+        document.getElementById("d-cancel").addEventListener("click", () => {
           delete_dialog.close();
         });
-        document.getElementById("d_delete").addEventListener("click", () => {
+        document.getElementById("d-delete").addEventListener("click", () => {
           let items = window.localStorage.getItem("jobs");
           let item_list = JSON.parse(items);
           item_list.splice(id, 1);
@@ -432,7 +432,7 @@ class JobCard extends HTMLElement {
       .querySelector(".edit-icon")
       .addEventListener("click", () => {
         const edit_dialog = document.getElementById("edit-application");
-        const edit_cancel = document.getElementById("edit_cancel");
+        const edit-cancel = document.getElementById("edit-cancel");
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();
@@ -446,7 +446,7 @@ class JobCard extends HTMLElement {
           .getElementById("location-edit")
           .setAttribute("placeholder", location);
         document.getElementById("date-edit").setAttribute("placeholder", date);
-        edit_cancel.addEventListener("click", () => {
+        edit-cancel.addEventListener("click", () => {
           edit_dialog.close();
         });
         document.getElementById("edit-form").addEventListener("submit", () => {

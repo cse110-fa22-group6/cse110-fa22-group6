@@ -1,7 +1,6 @@
-const deleteBtn = document.getElementById("delete-btn");
 const delete_dialog = document.getElementById("delete-application");
 
-document.getElementById("d_cancel").addEventListener("click", () => {
+document.getElementById("d-cancel").addEventListener("click", () => {
   delete_dialog.close();
 });
 

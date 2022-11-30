@@ -1,7 +1,7 @@
 #add-application,
 #edit-application,
 #delete-application {
-  background-color: rgb(237, 237, 237);
+  background-color: rgb(237 237 237);
   width: 50%;
   left: 25%;
   height: fit-content;
@@ -24,16 +24,16 @@
 #edit-application::backdrop,
 #delete-application::backdrop {
   /* Backdrop is only displayed when dialog is opened with dialog.showModal() */
-  background: rgba(0, 0, 0, 0.4);
+  background: rgb(0 0 0 / 40%);
 }
 
 .modal-content {
   padding: 2em 1em;
 }
 
-.add_container,
-.edit_container,
-.delete_container {
+.add-container,
+.edit-container,
+.delete-container {
   display: flex;
   margin: 0 1em;
 }
@@ -54,9 +54,9 @@
   flex: 3 1 0;
 }
 
-#add_title,
-#edit_title,
-#delete_title {
+#add-title,
+#edit-title,
+#delete-title {
   width: 100%;
   font-size: 2.5rem;
   font-weight: 400;
@@ -65,7 +65,7 @@
   text-align: center;
 }
 
-#delete_question {
+#delete-question {
   margin-top: 2em;
   margin-bottom: 1.1em;
   font-size: 1.5rem;
@@ -73,27 +73,27 @@
   text-align: center;
 }
 
-.add_buttons,
-.edit_buttons,
-.delete_buttons {
+.add-buttons,
+.edit-buttons,
+.delete-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5em;
 }
 
-.add_buttons button,
-.edit_buttons button,
-.delete_buttons button {
+.add-buttons button,
+.edit-buttons button,
+.delete-buttons button {
   margin: 0 0.7em;
 }
 
-#add_cancel,
-#add_submit,
-#edit_cancel,
-#edit_submit,
-#d_cancel,
-#d_delete {
+#add-cancel,
+#add-submit,
+#edit-cancel,
+#edit-submit,
+#d-cancel,
+#d-delete {
   width: 130px;
   height: 40px;
   text-align: center;
@@ -105,12 +105,12 @@
   font-size: 1em;
 }
 
-#add_cancel:hover,
-#add_submit:hover,
-#edit_cancel:hover,
-#edit_submit:hover,
-#d_cancel:hover,
-#d_delete:hover {
+#add-cancel:hover,
+#add-submit:hover,
+#edit-cancel:hover,
+#edit-submit:hover,
+#d-cancel:hover,
+#d-delete:hover {
   background-color: var(--special-color);
   border: 1px solid var(--special-color);
   color: white;
@@ -129,6 +129,7 @@ label {
   padding-bottom: 0.7em;
   text-align: center;
 }
+
 input {
   margin: auto;
   display: block;
@@ -154,9 +155,11 @@ hr {
     grid-template-columns: none;
     grid-template-rows: [row1] auto [row2] auto [row3] auto [row4] auto;
   }
+
   .form-section {
     padding: 0.8em 0;
   }
+
   @media all and (max-height: 945px) {
     #add-application,
     #edit-application {
