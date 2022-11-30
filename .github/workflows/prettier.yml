@@ -29,4 +29,4 @@ jobs:
         uses: creyD/prettier_action@v4.2
         with:
           # changes option to include prettifying all doc types
-          prettier_options: --write /source/assets/*/*.{js,md,html,css}
+          prettier_options: --write source/assets/**/*.{js,md,html,css}
