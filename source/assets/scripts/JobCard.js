@@ -1,7 +1,7 @@
-
+/* eslint-disable snakecasejs/snakecasejs */
 // JobCard.js
 class JobCard extends HTMLElement {
-  constructor () {
+  constructor() {
     super(); // Inheret everything from HTMLElement
     // Attaches the shadow DOM to this Web Component
     let shadow_element = this.attachShadow({ mode: "open" });
@@ -14,7 +14,7 @@ class JobCard extends HTMLElement {
     style_element.textContent = `
     @font-face {
       font-family: Spoof, serif;
-      src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
+      src: url("../font/Spoof-Regular.woff") format("woff");
     }
     
     * {
@@ -274,7 +274,7 @@ class JobCard extends HTMLElement {
    *                          "position": "Data Science Intern", (str)
    *                          "date": "12/24/2022" (str)
    */
-  set data (data) {
+  set data(data) {
     // If nothing was passed in, return
     if (!data) return;
 
@@ -293,7 +293,7 @@ class JobCard extends HTMLElement {
       <!--     Logo (for the future)  -->
       <div class="grid-1">
 
-        <input type="image" src="/source/assets/images/image-solid.svg" />
+        <input type="image" src="../source/assets/images/image-solid.svg" />
       </div>
 
       <!--     Application Text -->
@@ -336,8 +336,8 @@ class JobCard extends HTMLElement {
 
       <!--       Trash/Pencil Icons -->
       <div class="grid-4">
-      <input class="delete-icon" type="image" src="/source/assets/images/trash-solid.svg" />
-      <input class="edit-icon" type="image" src="/source/assets/images/pen-solid.svg" />
+      <input class="delete-icon" type="image" src="../source/assets/images/trash-solid.svg" />
+      <input class="edit-icon" type="image" src="../source/assets/images/pen-solid.svg" />
       </div>
     </div>
 
@@ -369,10 +369,10 @@ class JobCard extends HTMLElement {
       .addEventListener("click", () => {
         const delete_dialog = document.getElementById("delete-application");
         delete_dialog.showModal();
-        document.getElementById("d_cancel").addEventListener("click", () => {
+        document.getElementById("d-cancel").addEventListener("click", () => {
           delete_dialog.close();
         });
-        document.getElementById("d_delete").addEventListener("click", () => {
+        document.getElementById("d-delete").addEventListener("click", () => {
           let items = window.localStorage.getItem("jobs");
           let item_list = JSON.parse(items);
           item_list.splice(id, 1);
@@ -391,7 +391,7 @@ class JobCard extends HTMLElement {
       .querySelector(".edit-icon")
       .addEventListener("click", () => {
         const edit_dialog = document.getElementById("edit-application");
-        const edit_cancel = document.getElementById("edit_cancel");
+        const edit_cancel = document.getElementById("edit-cancel");
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();

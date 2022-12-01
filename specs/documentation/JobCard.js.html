@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#add_jobs_to_document">add_jobs_to_document</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#get_jobs_from_storage">get_jobs_from_storage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#initFormHandler">initFormHandler</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#progressBarListener">progressBarListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateProgress">updateProgress</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#add_jobs_to_document">add_jobs_to_document</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#get_jobs_from_storage">get_jobs_from_storage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init_form_handler">init_form_handler</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#progress_bar_listener">progress_bar_listener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#update_progress">update_progress</a></span></li>
 </nav>
 
 <div id="main">
@@ -39,10 +39,10 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable snakecasejs/snakecasejs */
 // JobCard.js
 class JobCard extends HTMLElement {
-  constructor () {
+  constructor() {
     super(); // Inheret everything from HTMLElement
     // Attaches the shadow DOM to this Web Component
     let shadow_element = this.attachShadow({ mode: "open" });
@@ -55,7 +55,7 @@ class JobCard extends HTMLElement {
     style_element.textContent = `
     @font-face {
       font-family: Spoof, serif;
-      src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
+      src: url("../font/Spoof-Regular.woff") format("woff");
     }
     
     * {
@@ -315,7 +315,7 @@ class JobCard extends HTMLElement {
    *                          "position": "Data Science Intern", (str)
    *                          "date": "12/24/2022" (str)
    */
-  set data (data) {
+  set data(data) {
     // If nothing was passed in, return
     if (!data) return;
 
@@ -334,7 +334,7 @@ class JobCard extends HTMLElement {
       &lt;!--     Logo (for the future)  -->
       &lt;div class="grid-1">
 
-        &lt;input type="image" src="/source/assets/images/image-solid.svg" />
+        &lt;input type="image" src="../source/assets/images/image-solid.svg" />
       &lt;/div>
 
       &lt;!--     Application Text -->
@@ -377,8 +377,8 @@ class JobCard extends HTMLElement {
 
       &lt;!--       Trash/Pencil Icons -->
       &lt;div class="grid-4">
-      &lt;input class="delete-icon" type="image" src="/source/assets/images/trash-solid.svg" />
-      &lt;input class="edit-icon" type="image" src="/source/assets/images/pen-solid.svg" />
+      &lt;input class="delete-icon" type="image" src="../source/assets/images/trash-solid.svg" />
+      &lt;input class="edit-icon" type="image" src="../source/assets/images/pen-solid.svg" />
       &lt;/div>
     &lt;/div>
 
@@ -410,10 +410,10 @@ class JobCard extends HTMLElement {
       .addEventListener("click", () => {
         const delete_dialog = document.getElementById("delete-application");
         delete_dialog.showModal();
-        document.getElementById("d_cancel").addEventListener("click", () => {
+        document.getElementById("d-cancel").addEventListener("click", () => {
           delete_dialog.close();
         });
-        document.getElementById("d_delete").addEventListener("click", () => {
+        document.getElementById("d-delete").addEventListener("click", () => {
           let items = window.localStorage.getItem("jobs");
           let item_list = JSON.parse(items);
           item_list.splice(id, 1);
@@ -432,7 +432,7 @@ class JobCard extends HTMLElement {
       .querySelector(".edit-icon")
       .addEventListener("click", () => {
         const edit_dialog = document.getElementById("edit-application");
-        const edit_cancel = document.getElementById("edit_cancel");
+        const edit_cancel = document.getElementById("edit-cancel");
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();
@@ -479,7 +479,8 @@ customElements.define("job-card", JobCard);
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Dec 01 2022 01:08:36 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Dec 01 2022 06:31:00 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -6,6 +6,7 @@ Wing It is a fast and easy way to track and update job applications.
 
 [![ESLint](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/eslint.yml/badge.svg)](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/eslint.yml)
 [![HTML Validation](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/html.yml/badge.svg)](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/html.yml)
+[![CSSLint](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/csslint.yml/badge.svg)](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/csslint.yml)
 [![Codacy Analysis CLI](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/codacy-analysis.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/30759e75350b4954a5be1c284636efa0)](https://www.codacy.com/gh/cse110-fa22-group6/cse110-fa22-group6/dashboard?utm_source=github.com&utm_medium=referral&utm_content=cse110-fa22-group6/cse110-fa22-group6&utm_campaign=Badge_Grade)
 

@@ -1,3 +1,6 @@
+/* eslint-disable quotes */
+/* eslint-disable snakecasejs/snakecasejs */
+/* eslint-disable no-undef */
 const { expect } = require("@jest/globals");
 
 describe("Basic user flow for Website", () => {
@@ -19,18 +22,18 @@ describe("Basic user flow for Website", () => {
 
   it("Check add confirmation popup", async () => {
     console.log("Testing add confirmation popup...");
-    var addBtn = await page.$('[id="add_application_btn"]');
+    var addBtn = await page.$('[id="add-application-btn"]');
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancelBtn = await popup.$('[id="add_cancel"]');
+    var cancelBtn = await popup.$('[id="add-cancel"]');
     await cancelBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });
 
   it("Check adding application", async () => {
     console.log("Testing adding application...");
-    var addBtn = await page.$('[id="add_application_btn"]');
+    var addBtn = await page.$('[id="add-application-btn"]');
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
@@ -44,7 +47,7 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date"]');
     await textBox.type("06212023");
 
-    var submitBtn = await popup.$('[id="add_submit"]');
+    var submitBtn = await popup.$('[id="add-submit"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
     popup = await page.$('[id="add-application"]');
@@ -89,7 +92,7 @@ describe("Basic user flow for Website", () => {
     await editBtn.click(0, 1, 1);
     var popup = await page.$('[id="edit-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancelBtn = await popup.$('[id="edit_cancel"]');
+    var cancelBtn = await popup.$('[id="edit-cancel"]');
     await cancelBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });
@@ -112,7 +115,7 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date-edit"]');
     await textBox.type("06222023");
 
-    var submitBtn = await popup.$('[id="edit_submit"]');
+    var submitBtn = await popup.$('[id="edit-submit"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
     popup = await page.$('[id="edit-application"]');
@@ -158,7 +161,7 @@ describe("Basic user flow for Website", () => {
     await deleteBtn.click(0, 1, 1);
     var popup = await page.$('[id="delete-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancelBtn = await popup.$('[id="d_cancel"]');
+    var cancelBtn = await popup.$('[id="d-cancel"]');
     await cancelBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });
@@ -172,7 +175,7 @@ describe("Basic user flow for Website", () => {
     var popup = await page.$('[id="delete-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
 
-    var submitBtn = await popup.$('[id="d_delete"]');
+    var submitBtn = await popup.$('[id="d-delete"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
     popup = await page.$('[id="add-application"]');
