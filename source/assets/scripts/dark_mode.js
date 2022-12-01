@@ -16,7 +16,7 @@ const dark_theme_SetUp = () => {
   }
 };
 
-const get_current_theme = () => 
+const get_current_theme = () =>
   document.body.classList.contains(dark_theme) ? "dark_mode" : "light_mode";
 
 const selectedTheme = localStorage.getItem("selected-theme");
