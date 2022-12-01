@@ -29,8 +29,9 @@ Insert gif or link to demo
 - Light/dark mode toggle
 - Job Status Bubbles
 - Logo Upload
-- Local First
+- Vanilla JS and Local First
 - Full CRUD
+- Sorting Capability
 
 ## Run Locally
 
