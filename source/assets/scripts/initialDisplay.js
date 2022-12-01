@@ -65,7 +65,7 @@ function add_jobs_to_document (jobs) {
  */
 function init_form_handler () {
   const add_dialog = document.getElementById("add-application");
-  document.getElementById("add_cancel").addEventListener("click", () => {
+  document.getElementById("add-cancel").addEventListener("click", () => {
     add_dialog.close();
   });
 

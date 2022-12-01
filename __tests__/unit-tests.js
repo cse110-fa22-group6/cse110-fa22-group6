@@ -26,7 +26,7 @@ describe("Basic user flow for Website", () => {
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancelBtn = await popup.$('[id="add_cancel"]');
+    var cancelBtn = await popup.$('[id="add-cancel"]');
     await cancelBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });

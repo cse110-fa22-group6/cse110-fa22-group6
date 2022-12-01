@@ -88,7 +88,7 @@
   margin: 0 0.7em;
 }
 
-#add_cancel,
+#add-cancel,
 #add_submit,
 #edit-cancel,
 #edit_submit,
@@ -105,7 +105,7 @@
   font-size: 1em;
 }
 
-#add_cancel:hover,
+#add-cancel:hover,
 #add_submit:hover,
 #edit_cancel:hover,
 #edit_submit:hover,
