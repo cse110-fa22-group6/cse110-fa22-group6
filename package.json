@@ -6,7 +6,9 @@
     "jest": "^27.5.1",
     "jest-puppeteer": "^6.1.1",
     "jsdoc": "^4.0.0",
-    "puppeteer": "^19.3.0"
+    "puppeteer": "^19.3.0",
+    "stylelint": "^14.15.0",
+    "stylelint-config-standard": "^29.0.0"
   },
   "scripts": {
     "test": "jest"
