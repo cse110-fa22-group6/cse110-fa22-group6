@@ -2,9 +2,9 @@ const { expect } = require("@jest/globals");
 
 describe("Basic user flow for Website", () => {
   beforeAll(async () => {
-    const LIVESERVER_URL = "https://cse110-fa22-group6.github.io/cse110-fa22-group6/source/index.html";
+    const URL = "https://cse110-fa22-group6.github.io/cse110-fa22-group6/source/index.html";
     // add the correct URL according to your LiveServer
-    await page.goto(LIVESERVER_URL);
+    await page.goto(URL);
   });
 
   it("Check page status when first opened (clear local storage)", async () => {
