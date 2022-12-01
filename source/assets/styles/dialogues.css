@@ -31,9 +31,9 @@
   padding: 2em 1em;
 }
 
-.add_container,
-.edit_container,
-.delete_container {
+.add-container,
+.edit-container,
+.delete-container {
   display: flex;
   margin: 0 1em;
 }
@@ -54,7 +54,7 @@
   flex: 3 1 0;
 }
 
-#add_title,
+#add-title,
 #edit_title,
 #delete_title {
   width: 100%;

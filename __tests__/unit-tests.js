@@ -22,7 +22,7 @@ describe("Basic user flow for Website", () => {
 
   it("Check add confirmation popup", async () => {
     console.log("Testing add confirmation popup...");
-    var addBtn = await page.$('[id="add_application_btn"]');
+    var addBtn = await page.$('[id="add-application-btn"]');
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
@@ -33,7 +33,7 @@ describe("Basic user flow for Website", () => {
 
   it("Check adding application", async () => {
     console.log("Testing adding application...");
-    var addBtn = await page.$('[id="add_application_btn"]');
+    var addBtn = await page.$('[id="add-application-btn"]');
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
