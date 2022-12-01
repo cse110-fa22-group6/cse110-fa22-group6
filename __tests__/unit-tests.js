@@ -156,6 +156,19 @@ describe("Basic user flow for Website", () => {
     expect(statusVal).toBe("Unapplied");
   });
 
+  it("Check change application status", async () => {
+    console.log("Testing changing application status...");
+    var app = await page.$("job-card");
+    var root = await app.getProperty("shadowRoot");
+    var deleteBtn = await root.$(".delete-icon");
+    await deleteBtn.click(0, 1, 1);
+    var popup = await page.$('[id="delete-application"]');
+    expect(await popup.isIntersectingViewport()).toBe(true);
+    var cancelBtn = await popup.$('[id="d-cancel"]');
+    await cancelBtn.click(0, 1, 1);
+    expect(await popup.isIntersectingViewport()).toBe(false);
+  });
+
   it("Check delete confirmation popup", async () => {
     console.log("Testing delete confirmation popup...");
     var app = await page.$("job-card");
