@@ -1,17 +1,20 @@
-name: Jest
-on:
-  push:
-    branches:
-      - "**"
-  pull_request:
-    branches:
-      - "**"
+name: CI
+on: push
 jobs:
-  build:
+  installDependencies:
+    name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install modules
-        run: npm install
-      - name: Run tests
-        run: npm test
+      - uses: actions/checkout@v3
+      - name: Install Dependencies
+        uses: actions/setup-node@v2
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+        with:
+          args: install
+      - name: Test Code
+        uses: mujo-code/puppeteer-headful@16.6.0
+        env:
+          CI: "true"
+        with:
+          args: npm test
