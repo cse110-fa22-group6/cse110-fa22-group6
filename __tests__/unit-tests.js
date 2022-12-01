@@ -47,7 +47,7 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date"]');
     await textBox.type("06212023");
 
-    var submitBtn = await popup.$('[id="add_submit"]');
+    var submitBtn = await popup.$('[id="add-submit"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
     popup = await page.$('[id="add-application"]');
