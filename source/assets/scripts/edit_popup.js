@@ -1,4 +1,4 @@
-const edit_dialog = document.getElementsByClassName('edit-application')[0];
+const edit_dialog = document.getElementsByClassName("edit-application")[0];
 const edit_cancel = document.getElementsByClassName('edit_cancel')
 
 for (let i = 0; i < edit_cancel.length; i++) {
