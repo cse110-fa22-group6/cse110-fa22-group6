@@ -161,7 +161,7 @@ describe("Basic user flow for Website", () => {
     await deleteBtn.click(0, 1, 1);
     var popup = await page.$('[id="delete-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancelBtn = await popup.$('[id="d_cancel"]');
+    var cancelBtn = await popup.$('[id="d-cancel"]');
     await cancelBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });

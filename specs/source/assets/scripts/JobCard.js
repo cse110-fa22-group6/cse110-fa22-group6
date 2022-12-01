@@ -368,7 +368,7 @@ class JobCard extends HTMLElement {
       .addEventListener("click", () => {
         const delete_dialog = document.getElementById("delete-application");
         delete_dialog.showModal();
-        document.getElementById("d_cancel").addEventListener("click", () => {
+        document.getElementById("d-cancel").addEventListener("click", () => {
           delete_dialog.close();
         });
         document.getElementById("d_delete").addEventListener("click", () => {
