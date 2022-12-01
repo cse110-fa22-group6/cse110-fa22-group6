@@ -2,6 +2,7 @@
 /* eslint-disable snakecasejs/snakecasejs */
 /* eslint-disable no-undef */
 const { expect } = require("@jest/globals");
+const jestPuppeteerConfig = require("../jest-puppeteer.config");
 const URL = "https://cse110-fa22-group6.github.io/cse110-fa22-group6/source/index.html";
 describe("Basic user flow for Website", () => {
   beforeAll(async () => {
@@ -49,11 +50,15 @@ describe("Basic user flow for Website", () => {
     var submitBtn = await popup.$('[id="add-submit"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('#add-application'),
+    ]);
     popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
-  });
+  }, 10000);
 
   it("Check new job card", async () => {
     console.log("Checking the new job card...");
@@ -125,7 +130,7 @@ describe("Basic user flow for Website", () => {
     expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
-  });
+  }, 10000);
 
   it("Check edited job card", async () => {
     console.log("Checking the edited job card...");
@@ -160,14 +165,108 @@ describe("Basic user flow for Website", () => {
     console.log("Testing changing application status...");
     var app = await page.$("job-card");
     var root = await app.getProperty("shadowRoot");
-    var deleteBtn = await root.$(".delete-icon");
-    await deleteBtn.click(0, 1, 1);
-    var popup = await page.$('[id="delete-application"]');
-    expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancelBtn = await popup.$('[id="d-cancel"]');
-    await cancelBtn.click(0, 1, 1);
-    expect(await popup.isIntersectingViewport()).toBe(false);
-  });
+    var stages = await root.$(".stages");
+    var stageList = await root.$$(".step");
+    expect(stageList.length).toBe(6);
+
+    await stageList[0].click(0,1,1);
+    await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('job-card'),
+    ]);
+    app = await page.$("job-card");
+    root = await app.getProperty("shadowRoot");
+    stages = await root.$(".stages");
+    var activeList = await stages.$$(".active");
+    expect(activeList.length).toBe(1);
+    var activeBlock = await activeList[0].$("p");
+    var activeTxt = await activeBlock.getProperty("innerText");
+    expect(await activeTxt.jsonValue()).toBe("Rejected");
+
+    stageList = await root.$$(".step");
+    await stageList[1].click(0,1,1);
+    await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('job-card'),
+    ]);
+    app = await page.$("job-card");
+    root = await app.getProperty("shadowRoot");
+    stages = await root.$(".stages");
+    activeList = await stages.$$(".active");
+    expect(activeList.length).toBe(1);
+    activeBlock = await activeList[0].$("p");
+    activeTxt = await activeBlock.getProperty("innerText");
+    expect(await activeTxt.jsonValue()).toBe("Unapplied");
+
+    stageList = await root.$$(".step");
+    await stageList[2].click(0,1,1);
+    await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('job-card'),
+    ]);
+    app = await page.$("job-card");
+    root = await app.getProperty("shadowRoot");
+    stages = await root.$(".stages");
+    activeList = await stages.$$(".active");
+    expect(activeList.length).toBe(1);
+    activeBlock = await activeList[0].$("p");
+    activeTxt = await activeBlock.getProperty("innerText");
+    expect(await activeTxt.jsonValue()).toBe("Applied");
+
+    stageList = await root.$$(".step");
+    await stageList[3].click(0,1,1);
+    await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('job-card'),
+    ]);
+    app = await page.$("job-card");
+    root = await app.getProperty("shadowRoot");
+    stages = await root.$(".stages");
+    activeList = await stages.$$(".active");
+    expect(activeList.length).toBe(1);
+    activeBlock = await activeList[0].$("p");
+    activeTxt = await activeBlock.getProperty("innerText");
+    expect(await activeTxt.jsonValue()).toBe("Screening");
+
+    stageList = await root.$$(".step");
+    await stageList[4].click(0,1,1);
+    await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('job-card'),
+    ]);
+    app = await page.$("job-card");
+    root = await app.getProperty("shadowRoot");
+    stages = await root.$(".stages");
+    activeList = await stages.$$(".active");
+    expect(activeList.length).toBe(1);
+    activeBlock = await activeList[0].$("p");
+    activeTxt = await activeBlock.getProperty("innerText");
+    expect(await activeTxt.jsonValue()).toBe("Interview");
+
+    stageList = await root.$$(".step");
+    await stageList[5].click(0,1,1);
+    await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('job-card'),
+    ]);
+    app = await page.$("job-card");
+    root = await app.getProperty("shadowRoot");
+    stages = await root.$(".stages");
+    activeList = await stages.$$(".active");
+    expect(activeList.length).toBe(1);
+    activeBlock = await activeList[0].$("p");
+    activeTxt = await activeBlock.getProperty("innerText");
+    expect(await activeTxt.jsonValue()).toBe("Offer");
+
+    stageList = await root.$$(".step");
+    expect(stageList.length).toBe(6);
+  }, 10000);
 
   it("Check delete confirmation popup", async () => {
     console.log("Testing delete confirmation popup...");
@@ -202,5 +301,5 @@ describe("Basic user flow for Website", () => {
     expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(0);
-  });
+  }, 10000);
 });
