@@ -6,12 +6,11 @@ on:
   pull_request:
     branches:
       - "**"
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: npm install
-    - name: Run tests
-      run: npm run test
+steps:
+  - uses: actions/checkout@v3
+
+  - name: Install packages
+    run: npm install
+
+  - name: Run tests
+    run: npm test
