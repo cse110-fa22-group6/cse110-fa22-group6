@@ -4,6 +4,7 @@
 
 Wing It is a fast and easy way to track and update job applications.
 
+[![Tests](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/jest.yml/badge.svg)](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/jest.yml)
 [![ESLint](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/eslint.yml/badge.svg)](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/eslint.yml)
 [![HTML Validation](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/html.yml/badge.svg)](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/html.yml)
 [![CSSLint](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/csslint.yml/badge.svg)](https://github.com/cse110-fa22-group6/cse110-fa22-group6/actions/workflows/csslint.yml)
