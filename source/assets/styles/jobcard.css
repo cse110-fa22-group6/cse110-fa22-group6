@@ -44,6 +44,7 @@
   text-align: center;
   padding-left: 20px;
 }
+
 .grid-4 i {
   font-size: 2.2em;
 }
@@ -131,18 +132,22 @@
   .grid-container {
     grid-template-columns: 0.15fr 0.5fr 1.2fr 0.2fr;
   }
+
   .position {
     font-weight: bold;
     font-size: 23px;
   }
+
   .company,
   .location {
     font-size: 14px;
   }
+
   .stages .step p {
     top: 15px;
     font-size: 14px;
   }
+
   .grid-1 i {
     padding-bottom: 20px;
     font-size: 45px;
@@ -153,18 +158,22 @@
   .grid-container {
     grid-template-columns: 0.15fr 0.45fr 1.47fr 0.08fr;
   }
+
   .position {
     font-weight: bold;
     font-size: 23px;
   }
+
   .company,
   .location {
     font-size: 14px;
   }
+
   .stages .step p {
     top: 15px;
     font-size: 14px;
   }
+
   .grid-1 i {
     padding-bottom: 40px;
     font-size: 40px;
@@ -175,18 +184,22 @@
   .grid-container {
     grid-template-columns: 0.13fr 0.41fr 1.53fr 0.08fr;
   }
+
   .position {
     font-weight: bold;
     font-size: 21px;
   }
+
   .company,
   .location {
     font-size: 12px;
   }
+
   .stages .step p {
     padding-top: 8px;
     font-size: 12px;
   }
+
   .grid-1 i {
     padding-bottom: 40px;
     font-size: 35px;
@@ -197,21 +210,26 @@
   .grid-container {
     grid-template-columns: 0.13fr 0.43fr 1.53fr 0.06fr;
   }
+
   .position {
     font-weight: bold;
     font-size: 19px;
   }
+
   .company,
   .location {
     font-size: 10px;
   }
+
   .stages .step p {
     padding-top: 10px;
     font-size: 10px;
   }
+
   .grid-1 i {
     padding-bottom: 40px;
   }
+
   .grid-2 {
     padding-right: 10px;
   }
@@ -221,21 +239,26 @@
   .grid-container {
     grid-template-columns: 0.13fr 0.43fr 1.53fr 0.06fr;
   }
+
   .position {
     font-weight: bold;
     font-size: 17px;
   }
+
   .company,
   .location {
     font-size: 8px;
   }
+
   .stages .step p {
     padding-top: 15px;
     font-size: 8px;
   }
+
   .grid-1 i {
     padding-bottom: 40px;
   }
+
   .grid-2 {
     padding-right: 20px;
   }

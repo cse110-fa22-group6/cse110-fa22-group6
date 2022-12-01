@@ -1,7 +1,7 @@
 #add-application,
 #edit-application,
 #delete-application {
-  background-color: rgb(237, 237, 237);
+  background-color: rgb(237 237 237);
   width: 50%;
   left: 25%;
   height: fit-content;
@@ -24,7 +24,7 @@
 #edit-application::backdrop,
 #delete-application::backdrop {
   /* Backdrop is only displayed when dialog is opened with dialog.showModal() */
-  background: rgba(0, 0, 0, 0.4);
+  background: rgb(0 0 0 / 40%);
 }
 
 .modal-content {
@@ -129,6 +129,7 @@ label {
   padding-bottom: 0.7em;
   text-align: center;
 }
+
 input {
   margin: auto;
   display: block;
@@ -154,9 +155,11 @@ hr {
     grid-template-columns: none;
     grid-template-rows: [row1] auto [row2] auto [row3] auto [row4] auto;
   }
+
   .form-section {
     padding: 0.8em 0;
   }
+
   @media all and (max-height: 945px) {
     #add-application,
     #edit-application {

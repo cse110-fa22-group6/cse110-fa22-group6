@@ -5,12 +5,13 @@
 }
 
 :root {
-  --special-color: rgb(149, 161, 241);
+  --special-color: rgb(149 161 241);
 }
 
 * {
   font-family: "Spoof";
   font-weight: 300;
+
   /* margin: 0.5em; */
 }
 
@@ -52,7 +53,7 @@ h5 {
 }
 
 #add_application_btn:hover {
-  background-color: rgb(105, 123, 240);
+  background-color: rgb(105 123 240);
   color: white;
   cursor: pointer;
 }
