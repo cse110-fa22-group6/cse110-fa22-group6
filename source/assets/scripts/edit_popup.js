@@ -12,6 +12,7 @@ console.log(edit_dialog);
 for (let i = 0; i < edit_icons.length; i++) {
   edit_icons[i].addEventListener("click", () => {
     console.log(`${i}th item wants to be edited`);
-    edit_dialog.show_modal();
+    // eslint-disable-next-line snakecasejs/snakecasejs
+    edit_dialog.showModal();
   });
 }

@@ -5,8 +5,8 @@ document.getElementById("add-cancel").addEventListener("click", () => {
   add_dialog.close();
 });
 
-
 add_btn.addEventListener("click", () => {
   console.log("add application");
-  add_dialog.show_modal();
+  // eslint-disable-next-line snakecasejs/snakecasejs
+  add_dialog.showModal();
 });
