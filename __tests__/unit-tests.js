@@ -2,12 +2,11 @@
 /* eslint-disable snakecasejs/snakecasejs */
 /* eslint-disable no-undef */
 const { expect } = require("@jest/globals");
-
+const URL = "https://cse110-fa22-group6.github.io/cse110-fa22-group6/source/index.html";
 describe("Basic user flow for Website", () => {
   beforeAll(async () => {
-    const LIVESERVER_URL = "http://127.0.0.1:5500/source/index.html";
     // add the correct URL according to your LiveServer
-    await page.goto(LIVESERVER_URL);
+    await page.goto(URL);
   });
 
   it("Check page status when first opened (clear local storage)", async () => {
@@ -178,6 +177,10 @@ describe("Basic user flow for Website", () => {
     var submitBtn = await popup.$('[id="d-delete"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('#add-application'),
+    ]);
     popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
