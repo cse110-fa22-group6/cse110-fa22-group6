@@ -1,10 +1,10 @@
-### Wing It
+# Wing It
 
-###### Team 6 - First Backend meeting for sprint 1 (planning)
+## Team 6 - First Backend meeting for sprint 1 (planning)
 
-###### Zoom - 11/03/22
+Zoom - 11/03/22
 
-###### 9:00pm - 9:30pm
+9:00pm - 9:30pm
 
 <hr>
 

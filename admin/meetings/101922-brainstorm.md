@@ -1,10 +1,10 @@
-### Wing It
+# Wing It
 
-###### Team 6 - First Brainstorm Meeting
+## Team 6 - First Brainstorm Meeting
 
-###### Warren Bear - 10/19/22
+Warren Bear - 10/19/22
 
-###### 2:00pm - 2:45pm
+2:00pm - 2:45pm
 
 <hr>
 
@@ -18,9 +18,8 @@
 6. Michael Lian
 7. Supratik Banerjee
 8. Tamara Sagakova
-9. Kwangyun Keum 
+9. Kwangyun Keum
 10. Andrei Secor (absent)
-
 
 <hr>
 
@@ -30,25 +29,20 @@
 
 <hr>
 
+### Unfinished business
 
+### New Business & discussion
 
-
-### Unfinished business:
-
-
-
-
-### New Business & discussion :
 - Discussed Ideas
   - Receipt Tracker
-  - Youtube Video Organizer
+  - YouTube Video Organizer
   - Random Music Generator
   - Diet Tracker
   - Mood Tracker
   - Job Application Tracker
   - Schedule Maker
   - Homework Tracker
-  - Post Saver (Reddit/Stackoverflow)
+  - Post Saver (Reddit/Stack Overflow)
   - Shower Thoughts
 - Organized into two categories, work/education and lifestyle
 - Regarding ideas, everything most likely has been created, unlike to have a novel idea
@@ -62,9 +56,10 @@
   - Monday night, zoom call to practice starting pitch
   - Tuesday, starting pitch with TA
 
-
 ### Agenda for next
+
 - Go over research and decide on what idea to move forward with for starting pitch
-  
-### Concerns:
-  - None
+
+### Concerns
+
+- None
