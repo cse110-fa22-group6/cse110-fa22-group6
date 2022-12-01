@@ -3,7 +3,7 @@ const delete_dialog = document.getElementById('delete-application');
 
 
 document.getElementById('d_cancel').addEventListener('click', () => {
-    delete_dialog.close();
+  delete_dialog.close();
 });
 
 
