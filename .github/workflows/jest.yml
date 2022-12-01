@@ -1,4 +1,4 @@
-name: Jest
+name: Tests
 on:
   push:
     branches:
