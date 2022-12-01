@@ -15,3 +15,12 @@ jobs:
       run: npm install
     - name: Run tests
       run: npm run test
+
+    - name: Install dependencies
+        uses: tj-actions/puppeteer@v3.2
+        with:
+          args: npm install
+      - name: Run test
+        uses: tj-actions/puppeteer@v3.2
+        with:
+          args: npm test
