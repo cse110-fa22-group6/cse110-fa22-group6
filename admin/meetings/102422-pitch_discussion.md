@@ -1,10 +1,10 @@
-### Wing It
+# Wing It
 
-###### Team 6 - Pitch Discussion
+## Team 6 - Pitch Discussion
 
-###### Zoom - 10/24/22
+Zoom - 10/24/22
 
-###### 8:00pm - 9:00pm
+8:00pm - 9:00pm
 
 <hr>
 
@@ -49,6 +49,7 @@
 <hr>
   
 ### Unifinished Business
+
 - Slides that can be without meeting: 
   - Problem, 
   - Solution
