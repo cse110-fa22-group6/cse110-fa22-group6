@@ -1,3 +1,6 @@
+/* eslint-disable quotes */
+/* eslint-disable snakecasejs/snakecasejs */
+/* eslint-disable no-undef */
 const { expect } = require("@jest/globals");
 
 describe("Basic user flow for Website", () => {
