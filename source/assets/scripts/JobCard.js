@@ -292,7 +292,7 @@ class JobCard extends HTMLElement {
       <!--     Logo (for the future)  -->
       <div class="grid-1">
 
-        <input type="image" src="./assets/images/image-solid.svg" />
+        <input type="image" src="../source/assets/images/image-solid.svg" />
       </div>
 
       <!--     Application Text -->
@@ -335,8 +335,8 @@ class JobCard extends HTMLElement {
 
       <!--       Trash/Pencil Icons -->
       <div class="grid-4">
-      <input class="delete-icon" type="image" src="./assets/images/trash-solid.svg" />
-      <input class="edit-icon" type="image" src="./assets/images/pen-solid.svg" />
+      <input class="delete-icon" type="image" src="../source/assets/images/trash-solid.svg" />
+      <input class="edit-icon" type="image" src="../source/assets/images/pen-solid.svg" />
       </div>
     </div>
 
