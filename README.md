@@ -22,7 +22,7 @@ Wing It is a fast and easy way to track and update job applications.
 
 ## Demo
 
-Insert gif or link to demo
+https://cse110-fa22-group6.github.io/cse110-fa22-group6/source/index.html
 
 ## Features
 
