@@ -1,3 +1,4 @@
+/* eslint-disable snakecasejs/snakecasejs */
 // JobCard.js
 class JobCard extends HTMLElement {
   constructor () {

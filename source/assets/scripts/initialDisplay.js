@@ -11,7 +11,7 @@ function init () {
   document.getElementById("number-of-job-cards").innerText = num_of_card;
   add_jobs_to_document(jobs);
   // Add the event listeners to the form elements
-  initFormHandler();
+  init_form_handler();
 }
 
 /**
@@ -63,7 +63,7 @@ function add_jobs_to_document (jobs) {
  * Adds the necesarry event handlers to <form> and the clear storage
  * <button>.
  */
-function initFormHandler () {
+function init_form_handler () {
   const add_dialog = document.getElementById("add-application");
   document.getElementById("add-cancel").addEventListener("click", () => {
     add_dialog.close();

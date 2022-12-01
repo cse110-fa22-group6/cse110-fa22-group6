@@ -8,5 +8,5 @@ document.getElementById("add-cancel").addEventListener("click", () => {
 
 add_btn.addEventListener("click", () => {
   console.log("add application");
-  add_dialog.showModal();
+  add_dialog.show_modal();
 });

@@ -1,3 +1,4 @@
+/* eslint-disable snakecasejs/snakecasejs */
 /* eslint-disable no-undef */
 const { expect } = require("@jest/globals");
 
