@@ -56,7 +56,7 @@
 
 #add-title,
 #edit-title,
-#delete_title {
+#delete-title {
   width: 100%;
   font-size: 2.5rem;
   font-weight: 400;
@@ -65,7 +65,7 @@
   text-align: center;
 }
 
-#delete_question {
+#delete-question {
   margin-top: 2em;
   margin-bottom: 1.1em;
   font-size: 1.5rem;
@@ -73,18 +73,18 @@
   text-align: center;
 }
 
-.add_buttons,
-.edit_buttons,
-.delete_buttons {
+.add-buttons,
+.edit-buttons,
+.delete-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5em;
 }
 
-.add_buttons button,
-.edit_buttons button,
-.delete_buttons button {
+.add-buttons button,
+.edit-buttons button,
+.delete-buttons button {
   margin: 0 0.7em;
 }
 
