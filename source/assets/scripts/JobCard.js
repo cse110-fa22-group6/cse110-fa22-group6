@@ -372,7 +372,7 @@ class JobCard extends HTMLElement {
         document.getElementById("d-cancel").addEventListener("click", () => {
           delete_dialog.close();
         });
-        document.getElementById("d_delete").addEventListener("click", () => {
+        document.getElementById("d-delete").addEventListener("click", () => {
           let items = window.localStorage.getItem("jobs");
           let item_list = JSON.parse(items);
           item_list.splice(id, 1);

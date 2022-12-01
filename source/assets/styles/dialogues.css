@@ -93,7 +93,7 @@
 #edit-cancel,
 #edit-submit,
 #d-cancel,
-#d_delete {
+#d-delete {
   width: 130px;
   height: 40px;
   text-align: center;
@@ -107,10 +107,10 @@
 
 #add-cancel:hover,
 #add-submit:hover,
-#edit_cancel:hover,
+#edit-cancel:hover,
 #edit-submit:hover,
 #d-cancel:hover,
-#d_delete:hover {
+#d-delete:hover {
   background-color: var(--special-color);
   border: 1px solid var(--special-color);
   color: white;
