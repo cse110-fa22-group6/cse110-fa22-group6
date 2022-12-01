@@ -4,11 +4,11 @@ document.getElementById("d_cancel").addEventListener("click", () => {
   delete_dialog.close();
 });
 
-var deleteIcons = document.getElementsByClassName("delete-icon");
+var delete_icons = document.getElementsByClassName("delete-icon");
 
-for (let i = 0; i < deleteIcons.length; i++) {
-  deleteIcons[i].addEventListener("click", () => {
+for (let i = 0; i < delete_icons.length; i++) {
+  delete_icons[i].addEventListener("click", () => {
     console.log(`${i}th item wants to be deleted`);
-    delete_dialog.showModal();
+    delete_dialog.show_modal();
   });
 }
