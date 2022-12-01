@@ -53,6 +53,11 @@ Install dependencies
   npm install
 ```
 
+## Documentation
+
+[TO BE FILLED](https://linktodocumentation)
+
+
 ## Running Tests
 
 To run tests, run the following command
