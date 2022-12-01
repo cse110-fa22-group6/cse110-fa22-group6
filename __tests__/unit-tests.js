@@ -117,6 +117,10 @@ describe("Basic user flow for Website", () => {
     var submitBtn = await popup.$('[id="edit-submit"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('#edit-application'),
+    ]);
     popup = await page.$('[id="edit-application"]');
     expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
