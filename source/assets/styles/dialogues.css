@@ -91,7 +91,7 @@
 #add-cancel,
 #add-submit,
 #edit-cancel,
-#edit_submit,
+#edit-submit,
 #d_cancel,
 #d_delete {
   width: 130px;
@@ -108,7 +108,7 @@
 #add-cancel:hover,
 #add-submit:hover,
 #edit_cancel:hover,
-#edit_submit:hover,
+#edit-submit:hover,
 #d_cancel:hover,
 #d_delete:hover {
   background-color: var(--special-color);
