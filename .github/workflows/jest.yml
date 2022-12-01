@@ -10,17 +10,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: npm install
-    - name: Run tests
-      run: npm run test
-
-    - name: Install dependencies
+      - name: puppeteer-chrome
         uses: tj-actions/puppeteer@v3.2
-        with:
-          args: npm install
-      - name: Run test
-        uses: tj-actions/puppeteer@v3.2
-        with:
-          args: npm test
