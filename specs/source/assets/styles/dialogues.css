@@ -90,7 +90,7 @@
 
 #add_cancel,
 #add_submit,
-#edit_cancel,
+#edit-cancel,
 #edit_submit,
 #d_cancel,
 #d_delete {
@@ -107,7 +107,7 @@
 
 #add_cancel:hover,
 #add_submit:hover,
-#edit_cancel:hover,
+#edit-cancel:hover,
 #edit_submit:hover,
 #d_cancel:hover,
 #d_delete:hover {

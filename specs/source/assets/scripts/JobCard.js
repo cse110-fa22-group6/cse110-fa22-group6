@@ -390,7 +390,7 @@ class JobCard extends HTMLElement {
       .querySelector(".edit-icon")
       .addEventListener("click", () => {
         const edit_dialog = document.getElementById("edit-application");
-        const edit_cancel = document.getElementById("edit_cancel");
+        const edit_cancel = document.getElementById("edit-cancel");
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();
