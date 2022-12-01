@@ -3,7 +3,7 @@ const dark_theme = "dark-theme";
 const dark_theme_SetUp = () => {
   if (get_current_theme() === "dark_mode") {
     document.getElementById("toggle").checked = true;
-    document.getElementById('main-logo').src = "/admin/branding/icon_darkmode.png";
+    document.getElementById("main-logo").src =
     document.getElementById('delete-logo').src = "/admin/branding/icon_darkmode.png";
     document.getElementById('add-logo').src = "/admin/branding/icon_darkmode.png";
     document.getElementById('edit-logo').src = "/admin/branding/icon_darkmode.png";
