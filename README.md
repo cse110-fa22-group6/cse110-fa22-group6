@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # CSE 110 Group 6
-=======
-# CSE 110 - Group 6
->>>>>>> front-back-end-integration-testing-place
 
 ![logo](./admin/branding/panorama-logo.jpeg)
 
@@ -17,11 +13,12 @@ Wing It is a fast and easy way to track and update job applications.
 
 ## Table of content
 
-- [CSE 110 - Group 6](#cse-110---group-6)
+- [CSE 110 Group 6](#cse-110-group-6)
   - [Table of content](#table-of-content)
   - [Demo](#demo)
   - [Features](#features)
   - [Run Locally](#run-locally)
+  - [Documentation](#documentation)
   - [Running Tests](#running-tests)
   - [Linting and Validation](#linting-and-validation)
   - [Authors](#authors)
@@ -102,8 +99,6 @@ To automatically perform CSS linter fixes
 
 Meet the team [here](./admin/team.md)!
 
-<<<<<<< HEAD
-=======
 - [@awesomesup](https://github.com/awesomesup)
 - [@ahhorse1](https://github.com/ahhorse1)
 - [@tyler-le](https://github.com/tyler-le)
@@ -114,4 +109,3 @@ Meet the team [here](./admin/team.md)!
 - [@CristianAH](https://github.com/CristianAH)
 - [@andreijsecor](https://github.com/andreijsecor)
 - [@michaelliann](https://github.com/michaelliann)
->>>>>>> front-back-end-integration-testing-place
