@@ -88,6 +88,81 @@ describe("Basic user flow for Website", () => {
     expect(statusVal).toBe("Unapplied");
   });
 
+  it("Check adding application without company", async () => {
+    console.log("Testing adding application without company...");
+    var addBtn = await page.$('[id="add-application-btn"]');
+    await addBtn.click(0, 1, 1);
+    var popup = await page.$('[id="add-application"]');
+    expect(await popup.isIntersectingViewport()).toBe(true);
+
+    textBox = await popup.$('[id="company"]');
+    await textBox.type("");
+    textBox = await popup.$('[id="position"]');
+    await textBox.type("Professional Burger Flipper");
+    textBox = await popup.$('[id="location"]');
+    await textBox.type("Jackson, CA");
+    textBox = await popup.$('[id="date"]');
+    await textBox.type("06212023");
+
+    var submitBtn = await popup.$('[id="add-submit"]');
+    await submitBtn.click(0, 1, 1);
+    expect(await popup.isIntersectingViewport()).toBe(true);
+    var jobs = await page.$$("job-card");
+    expect(jobs.length).toBe(1);
+
+    await page.reload();
+  }, 10000);
+
+  it("Check adding application without position", async () => {
+    console.log("Testing adding application without company...");
+    var addBtn = await page.$('[id="add-application-btn"]');
+    await addBtn.click(0, 1, 1);
+    var popup = await page.$('[id="add-application"]');
+    expect(await popup.isIntersectingViewport()).toBe(true);
+
+    textBox = await popup.$('[id="company"]');
+    await textBox.type("Ronald's Emporium");
+    textBox = await popup.$('[id="position"]');
+    await textBox.type("");
+    textBox = await popup.$('[id="location"]');
+    await textBox.type("Jackson, CA");
+    textBox = await popup.$('[id="date"]');
+    await textBox.type("06212023");
+
+    var submitBtn = await popup.$('[id="add-submit"]');
+    await submitBtn.click(0, 1, 1);
+    expect(await popup.isIntersectingViewport()).toBe(true);
+    var jobs = await page.$$("job-card");
+    expect(jobs.length).toBe(1);
+
+    await page.reload();
+  }, 10000);
+
+  it("Check adding application without date", async () => {
+    console.log("Testing adding application without company...");
+    var addBtn = await page.$('[id="add-application-btn"]');
+    await addBtn.click(0, 1, 1);
+    var popup = await page.$('[id="add-application"]');
+    expect(await popup.isIntersectingViewport()).toBe(true);
+
+    textBox = await popup.$('[id="company"]');
+    await textBox.type("Ronald's Emporium");
+    textBox = await popup.$('[id="position"]');
+    await textBox.type("Professional Burger Flipper");
+    textBox = await popup.$('[id="location"]');
+    await textBox.type("Jackson, CA");
+    textBox = await popup.$('[id="date"]');
+    await textBox.type("");
+
+    var submitBtn = await popup.$('[id="add-submit"]');
+    await submitBtn.click(0, 1, 1);
+    expect(await popup.isIntersectingViewport()).toBe(true);
+    var jobs = await page.$$("job-card");
+    expect(jobs.length).toBe(1);
+
+    await page.reload();
+  }, 10000);
+
   it("Check edit confirmation popup", async () => {
     console.log("Testing edit confirmation popup...");
     var app = await page.$("job-card");
@@ -160,6 +235,129 @@ describe("Basic user flow for Website", () => {
     var statusVal = await statusText.jsonValue();
     expect(statusVal).toBe("Unapplied");
   });
+
+  it("Check editing application without company", async () => {
+    console.log("Testing editing application without company...");
+    var app = await page.$("job-card");
+    var root = await app.getProperty("shadowRoot");
+    var editBtn = await root.$(".edit-icon");
+    await editBtn.click(0, 1, 1);
+    var popup = await page.$('[id="edit-application"]');
+    expect(await popup.isIntersectingViewport()).toBe(true);
+
+    textBox = await popup.$('[id="company-edit"]');
+    await textBox.type("");
+    textBox = await popup.$('[id="position-edit"]');
+    await textBox.type("BAD");
+    textBox = await popup.$('[id="location-edit"]');
+    await textBox.type("BAD");
+    textBox = await popup.$('[id="date-edit"]');
+    await textBox.type("11111111");
+
+    var submitBtn = await popup.$('[id="edit-submit"]');
+    await submitBtn.click(0, 1, 1);
+    expect(await popup.isIntersectingViewport()).toBe(true);
+    var jobs = await page.$$("job-card");
+    expect(jobs.length).toBe(1);
+
+    await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('job-card'),
+    ]);
+
+    var jobs = await page.$$("job-card");
+    expect(jobs.length).toBe(1);
+    var app = jobs[0];
+    var root = await app.getProperty("shadowRoot");
+
+    var position = await root.$(".position");
+    var positionText = await position.getProperty("innerText");
+    var positionVal = await positionText.jsonValue();
+    expect(positionVal).toBe("Software Engineering Intern");
+  }, 10000);
+
+  it("Check editing application without position", async () => {
+    console.log("Testing editing application without position...");
+    var app = await page.$("job-card");
+    var root = await app.getProperty("shadowRoot");
+    var editBtn = await root.$(".edit-icon");
+    await editBtn.click(0, 1, 1);
+    var popup = await page.$('[id="edit-application"]');
+    expect(await popup.isIntersectingViewport()).toBe(true);
+
+    textBox = await popup.$('[id="company-edit"]');
+    await textBox.type("BAD");
+    textBox = await popup.$('[id="position-edit"]');
+    await textBox.type("");
+    textBox = await popup.$('[id="location-edit"]');
+    await textBox.type("BAD");
+    textBox = await popup.$('[id="date-edit"]');
+    await textBox.type("11111111");
+
+    var submitBtn = await popup.$('[id="edit-submit"]');
+    await submitBtn.click(0, 1, 1);
+    expect(await popup.isIntersectingViewport()).toBe(true);
+    var jobs = await page.$$("job-card");
+    expect(jobs.length).toBe(1);
+
+    await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('job-card'),
+    ]);
+
+    var jobs = await page.$$("job-card");
+    expect(jobs.length).toBe(1);
+    var app = jobs[0];
+    var root = await app.getProperty("shadowRoot");
+
+    var position = await root.$(".company");
+    var positionText = await position.getProperty("innerText");
+    var positionVal = await positionText.jsonValue();
+    expect(positionVal).toBe("Amazon");
+  }, 10000);
+
+  it("Check editing application without date", async () => {
+    console.log("Testing editing application without date...");
+    var app = await page.$("job-card");
+    var root = await app.getProperty("shadowRoot");
+    var editBtn = await root.$(".edit-icon");
+    await editBtn.click(0, 1, 1);
+    var popup = await page.$('[id="edit-application"]');
+    expect(await popup.isIntersectingViewport()).toBe(true);
+
+    textBox = await popup.$('[id="company-edit"]');
+    await textBox.type("BAD");
+    textBox = await popup.$('[id="position-edit"]');
+    await textBox.type("BAD");
+    textBox = await popup.$('[id="location-edit"]');
+    await textBox.type("BAD");
+    textBox = await popup.$('[id="date-edit"]');
+    await textBox.type("");
+
+    var submitBtn = await popup.$('[id="edit-submit"]');
+    await submitBtn.click(0, 1, 1);
+    expect(await popup.isIntersectingViewport()).toBe(true);
+    var jobs = await page.$$("job-card");
+    expect(jobs.length).toBe(1);
+
+    await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('job-card'),
+    ]);
+
+    var jobs = await page.$$("job-card");
+    expect(jobs.length).toBe(1);
+    var app = jobs[0];
+    var root = await app.getProperty("shadowRoot");
+
+    var position = await root.$(".position");
+    var positionText = await position.getProperty("innerText");
+    var positionVal = await positionText.jsonValue();
+    expect(positionVal).toBe("Software Engineering Intern");
+  }, 10000);
 
   it("Check change application status", async () => {
     console.log("Testing changing application status...");
