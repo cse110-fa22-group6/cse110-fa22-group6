@@ -50,9 +50,14 @@ Zoom - 10/24/22
   
 ### Unifinished Business
 
+<<<<<<< HEAD
 - Slides that can be without meeting:
 
   - Problem
+=======
+- Slides that can be without meeting: 
+  - Problem, 
+>>>>>>> front-back-end-integration-testing-place
   - Solution
   - User Personas/Stories
   - Brainstorming
