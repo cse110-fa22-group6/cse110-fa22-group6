@@ -129,7 +129,7 @@
           <div class="edit-container">
             <div class="logo" id="item1-edit">
               <img
-                src="/admin/branding/icon-transparent.png"
+                src="../admin/branding/icon-transparent.png"
                 alt="logo"
                 width="60"
                 height="60"
@@ -144,35 +144,34 @@
           </div>
           <hr>
 
-          <form id="edit-form"> 
+          <form id="edit-form">
             <div class="grid-container-form">
-                <div class="form-section" id="edit-grid-1">
-                  <label for="company-edit">Company</label>
-                  <input type="text" id="company-edit" name="company-edit" placeholder="Old Company Here">
-                </div>
+              <div class="form-section" id="edit-grid-1">
+                <label for="company-edit">Company</label>
+                <input type="text" id="company-edit" name="company" placeholder="Old Company Here" required>
+              </div>
 
-                <div class="form-section" id="edit-grid-2">
-                  <label for="position-edit">Position</label>
-                  <input type="text" id="position-edit" name="position-edit" placeholder="Old Position Here">
-                </div>
+              <div class="form-section" id="edit-grid-2">
+                <label for="position-edit">Position</label>
+                <input type="text" id="position-edit" name="position" placeholder="Old Position Here" required>
+              </div>
 
-                <div class="form-section" id="edit-grid-3">
-                  <label for="location-edit">Location</label>
-                  <input type="text" id="location-edit" name="location-edit" placeholder="Old Location Here">
-                </div>
+              <div class="form-section" id="edit-grid-3">
+                <label for="location-edit">Location</label>
+                <input type="text" id="location-edit" name="location" placeholder="Old Location Here" >
+              </div>
 
-                <div class="form-section" id="edit-grid-4">
-                  <label for="date-edit">Date</label>
-                  <input type="date" id="date-edit" name="date-edit">
-                </div>
+              <div class="form-section" id="edit-grid-4">
+                <label for="date-edit">Date</label>
+                <input type="date" id="date-edit" name="date" required/>
+              </div>
             </div>
           </form>
-          
         </div>
         <div class="edit-buttons">
-            <button class="edit-cancel" id="edit-cancel">Cancel</button>
-            <button type="submit" form="edit-form" id="edit-submit">Add</button>
-          </div>
+          <button class="edit-cancel" id="edit-cancel">Cancel</button>
+          <button type="submit" form="edit-form" id="edit-submit">Edit</button>
+        </div>
       </dialog>
     </main> 
 
