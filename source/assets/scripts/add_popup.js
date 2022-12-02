@@ -1,13 +1,12 @@
-const addBtn = document.getElementById("add_application_btn");
+const add_btn = document.getElementById("add-application-btn");
 const add_dialog = document.getElementById("add-application");
 
-document.getElementById("add_cancel").addEventListener("click", () => {
+document.getElementById("add-cancel").addEventListener("click", () => {
   add_dialog.close();
 });
 
-var addIcon = document.getElementsByClassName("add-icon");
-
-addBtn.addEventListener("click", () => {
+add_btn.addEventListener("click", () => {
   console.log("add application");
+  // eslint-disable-next-line snakecasejs/snakecasejs
   add_dialog.showModal();
 });

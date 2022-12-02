@@ -1,63 +1,57 @@
 :root {
-    --special-color: #95a1f1;
-    --dialog-backgroud-color: rgb(237, 237, 237);
-    --text-color: black;
-    --input-text-color:black;
-    --button-text-color: black;
-    --dialog-button-text-color: black;
-    --button-color-onhover: rgb(105, 123, 240);
-    --button-text-color-onhover: white;
+  --dialogbackgroud: rgb(237 237 237);
+  --inputtext: black;
+  --dialogbuttontext: black;
+  --buttononhover: rgb(105 123 240);
+  --buttontextonhover: white;
 }
-  
+
 body.dark-theme {
-    --special-color: rgb(187,134,250);
-    --dialog-backgroud-color: rgba(30,30,30,255);
-    --text-color: rgba(218,218,218,255);
-    --input-text-color:black;
-    --button-text-color: white;
-    --dialog-button-text-color: black;
-    --button-color-onhover: rgb(145, 68, 239);
-    --button-text-color-onhover: black;
+  --dialogbackgroud: rgb(30 30 30 / 25500%);
+  --inputtext: black;
+  --dialogbuttontext: black;
+  --buttononhover: rgb(145 68 239);
+  --buttontextonhover: black;
 }
 
 #add-application,
 #edit-application,
 #delete-application {
-    background-color: var(--dialog-backgroud-color);
-    width: 50%;
-    left: 25%;
-    height:fit-content;
-    margin: 0;
-    padding: 0;
-    border: 1px solid black;
-    border-radius: 3.5rem;
+  background-color: var(--dialogbackgroud);
+  width: 50%;
+  left: 25%;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+  border-radius: 3.5rem;
 }
 
 #add-application,
-#edit-application{
-    top: 15%;
+#edit-application {
+  top: 15%;
 }
 
 #delete-application {
-    top: 25%;
+  top: 25%;
 }
 
 #add-application::backdrop,
 #edit-application::backdrop,
 #delete-application::backdrop {
-    /* Backdrop is only displayed when dialog is opened with dialog.showModal() */
-    background: rgba(0, 0, 0, 0.4);
+  /* Backdrop is only displayed when dialog is opened with dialog.showModal() */
+  background: rgb(0 0 0 / 40%);
 }
 
 .modal-content {
-    padding: 2em 1em;
+  padding: 2em 1em;
 }
 
-.add_container,
-.edit_container,
-.delete_container {
-    display: flex;
-    margin: 0 1em;
+.add-container,
+.edit-container,
+.delete-container {
+  display: flex;
+  margin: 0 1em;
 }
 
 .logo,
@@ -76,124 +70,127 @@ body.dark-theme {
   flex: 3 1 0;
 }
 
-#add_title,
-#edit_title,
-#delete_title {
-    width: 100%;
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+#add-title,
+#edit-title,
+#delete-title {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-#delete_question {
-    margin-top: 2em;
-    margin-bottom: 1.1em;
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-align: center;
-}
-  
-.add_buttons,
-.edit_buttons,
-.delete_buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5em;
-}
-  
-.add_buttons button,
-.edit_buttons button,
-.delete_buttons button {
-    margin: 0 0.7em;
+#delete-question {
+  margin-top: 2em;
+  margin-bottom: 1.1em;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
 }
 
-#add_cancel,
-#add_submit,
-#edit_cancel,
-#edit_submit,
-#d_cancel,
-#d_delete {
-    width:130px;
-    height:40px;
-    text-align:center;
-    line-height:1.1em;
-    background-color: white;
-    border: 1px solid var(--dialog-backgroud-color);
-    border-radius: 0.3rem;
-    cursor: pointer;
-    font-size: 1em;
-    color: var(--dialog-button-text-color);
+.add-buttons,
+.edit-buttons,
+.delete-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5em;
 }
 
-#add_cancel:hover,
-#add_submit:hover,
-#edit_cancel:hover,
-#edit_submit:hover,
-#d_cancel:hover,
-#d_delete:hover {
-    background-color: var(--button-color-onhover);
-    border: 1px solid var(--button-color-onhover);
-    color: var(--button-text-color-onhover);
+.add-buttons button,
+.edit-buttons button,
+.delete-buttons button {
+  margin: 0 0.7em;
 }
 
-.grid-container-form{
-    display: grid;
-    grid-template-columns: [col1] 50% [col2] 50%;
-    grid-template-rows: [row1] auto [row2] auto;
-    justify-items: stretch;
+#add-cancel,
+#add-submit,
+#edit-cancel,
+#edit-submit,
+#d-cancel,
+#d-delete {
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  line-height: 1.1em;
+  background-color: white;
+  border: 1px solid var(--dialogbackgroud);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 1em;
+  color: var(--dialogbuttontext);
+}
+
+#add-cancel:hover,
+#add-submit:hover,
+#edit-cancel:hover,
+#edit-submit:hover,
+#d-cancel:hover,
+#d-delete:hover {
+  background-color: var(--buttononhover);
+  border: 1px solid var(--buttononhover);
+  color: var(--buttontextonhover);
+}
+
+.grid-container-form {
+  display: grid;
+  grid-template-columns: [col1] 50% [col2] 50%;
+  grid-template-rows: [row1] auto [row2] auto;
+  justify-items: stretch;
 }
 
 label {
-    display: block;
-    font-size: 1.3em;
-    padding-bottom: 0.7em;
-    text-align: center;
-}
-input {
-    margin: auto;
-    display: block;
-    font-size: 1.2em;
-    border: 0.15em solid #d1d1d1;
-    border-radius: 0.3rem;
-    padding: 0.7em;
-    width: 80%;
-    line-height: 110%;
-    color: var(--input-text-color);
+  display: block;
+  font-size: 1.3em;
+  padding-bottom: 0.7em;
+  text-align: center;
 }
 
-.required:after {
-    content:" *";
-    color: red;
-  }
+input {
+  margin: auto;
+  display: block;
+  font-size: 1.2em;
+  border: 0.15em solid #d1d1d1;
+  border-radius: 0.3rem;
+  padding: 0.7em;
+  width: 80%;
+  line-height: 110%;
+  color: var(--inputtext);
+}
+
+.required::after {
+  content: " *";
+  color: red;
+}
 
 .form-section {
-    padding: 2em 0;
+  padding: 2em 0;
 }
-  
+
 hr {
-    margin: 0;
+  margin: 0;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
-    .grid-container-form{
-        grid-template-columns: none;
-        grid-template-rows: [row1] auto [row2] auto [row3] auto [row4] auto;
+  .grid-container-form {
+    grid-template-columns: none;
+    grid-template-rows: [row1] auto [row2] auto [row3] auto [row4] auto;
+  }
+
+  .form-section {
+    padding: 0.8em 0;
+  }
+
+  @media all and (max-height: 945px) {
+    #add-application,
+    #edit-application {
+      height: 75%;
     }
-    .form-section {
-        padding: 0.8em 0;
-    }
-    @media all and (max-height: 945px){ 
-        #add-application,
-        #edit-application{
-            height: 75%;
-        }
-    }
+  }
 }

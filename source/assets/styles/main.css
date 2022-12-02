@@ -9,17 +9,16 @@
   --backgroud-color: white;
   --text-color: black;
   --button-text-color: black;
-  --button-color-onhover: rgb(105, 123, 240);
+  --button-color-onhover: rgb(105 123 240);
   --button-text-color-onhover: white;
-
 }
 
 body.dark-theme {
-  --special-color: rgb(187,134,250);
-  --backgroud-color: rgba(18,18,18,255);
-  --text-color: rgba(218,218,218,255);
+  --special-color: rgb(187 134 250);
+  --backgroud-color: rgb(18 18 18 / 25500%);
+  --text-color: rgb(218 218 218 / 25500%);
   --button-text-color: white;
-  --button-color-onhover: rgb(145, 68, 239);
+  --button-color-onhover: rgb(145 68 239);
   --button-text-color-onhover: black;
 }
 
@@ -50,7 +49,7 @@ h2 {
   margin-bottom: -1em;
 }
 
-.flexitem-3{
+.flexitem-3 {
   position: absolute;
   width: auto;
   top: 35px;
@@ -68,26 +67,26 @@ h5 {
   color: grey;
 }
 
-#add_application_btn {
+#add-application-btn {
   background-color: var(--special-color);
   color: var(--button-text-color);
   margin: 1em 0.7em;
-  padding: .5em 2.5em;
+  padding: 0.5em 2.5em;
   cursor: pointer;
 }
 
-#add_application_btn:hover {
+#add-application-btn:hover {
   background-color: var(--button-color-onhover);
   color: var(--button-text-color-onhover);
   cursor: pointer;
 }
 
 /* dark theme */
-.darkMode {
+.darkmode {
   display: none;
 }
-  
-.darkMode-switch {
+
+.darkmode-switch {
   background-color: var(--special-color);
   border-radius: 50px;
   cursor: pointer;
@@ -100,8 +99,8 @@ h5 {
   width: 50px;
   transform: scale(0.8);
 }
-  
-.darkMode-switch .ball {
+
+.darkmode-switch .ball {
   background-color: #fff;
   border-radius: 50%;
   position: absolute;
@@ -109,14 +108,14 @@ h5 {
   left: 2px;
   height: 28px;
   width: 28px;
-  transform: translateX(0px);
+  transform: translateX(0);
   transition: transform 0.2s linear;
 }
-  
-.darkMode:checked + .darkMode-switch .ball {
+
+.darkmode:checked + .darkmode-switch .ball {
   transform: translateX(28px);
 }
-  
+
 .fa-moon, .fa-sun {
   color: black;
 }

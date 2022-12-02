@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Spoof";
+  src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
+}
+
+:root {
+  --special: #95a1f1;
+  --jcbackgroud: #e6e6e6;
+}
+
+body.dark-theme {
+  --jjcbackgroud: rgb(30 30 30 / 25500%);
+}
+
+.grid-container {
+  background: var(--j);
+}
+
+.delete-icon,
+.edit-icon {
+  background-color: var(--jcbackgroud);
+}
+
+.stages .step.active {
+  background-color: var(--special);
+}
