@@ -118,8 +118,10 @@
 
 .grid-container-form {
   display: grid;
-  grid-template-columns: [col1] 50% [col2] 50%;
-  grid-template-rows: [row1] auto [row2] auto;
+  -grid-template-columns: [col1] 50% [col2] 50%;
+  grid-template-columns: 50%  50%;
+  -grid-template-rows: [row1] auto [row2] auto;
+  grid-template-rows: auto auto;
   justify-items: stretch;
 }
 
@@ -153,7 +155,8 @@ hr {
 @media screen and (max-width: 1024px) {
   .grid-container-form {
     grid-template-columns: none;
-    grid-template-rows: [row1] auto [row2] auto [row3] auto [row4] auto;
+    -grid-template-rows: [row1] auto [row2] auto [row3] auto [row4] auto;
+    grid-template-rows: auto auto auto auto;
   }
 
   .form-section {
