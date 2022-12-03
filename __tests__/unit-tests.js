@@ -7,6 +7,8 @@ describe("Basic user flow for Website", () => {
   beforeAll(async () => {
     // add the correct URL according to your LiveServer
     await page.goto(URL);
+    jest.setTimeout(30000);
+
   });
 
   it("Check page status when first opened (clear local storage)", async () => {
@@ -49,6 +51,10 @@ describe("Basic user flow for Website", () => {
     var submitBtn = await popup.$('[id="add-submit"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
+    await Promise.all([
+      page.goto(URL),
+      page.waitForSelector('#add-application'),
+    ]);
     popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
