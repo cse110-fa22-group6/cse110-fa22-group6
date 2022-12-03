@@ -119,7 +119,7 @@
 .grid-container-form {
   display: grid;
   -grid-template-columns: [col1] 50% [col2] 50%;
-  grid-template-columns: 50%  50%;
+  grid-template-columns: 50% 50%;
   -grid-template-rows: [row1] auto [row2] auto;
   grid-template-rows: auto auto;
   justify-items: stretch;
