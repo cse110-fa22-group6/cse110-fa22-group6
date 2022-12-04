@@ -367,24 +367,24 @@ class JobCard extends HTMLElement {
     }
 
     this.shadowRoot
-    .querySelector(".delete-icon")
-    .addEventListener("click", () => {
-      const delete_dialog = document.getElementById("delete-application");
-      delete_dialog.showModal();
-      document.getElementById("d_cancel").addEventListener("click", () => {
-        delete_dialog.close();
-      });
-      document.getElementById("d_delete").addEventListener("click", () => {
-        let items = window.localStorage.getItem('jobs');
-        let item_list = JSON.parse(items);
-        item_list.splice(id,1);
-        for (let i = 0; i < item_list.length; i++) {
-          item_list[i]["id"] = String(i);
-        }
-        localStorage.setItem("jobs", JSON.stringify(item_list));
-        document.getElementById("delete-application").close();
-        window.location.reload();
-      });
+      .querySelector(".delete-icon")
+      .addEventListener("click", () => {
+        const delete_dialog = document.getElementById("delete-application");
+        delete_dialog.showModal();
+        document.getElementById("d_cancel").addEventListener("click", () => {
+          delete_dialog.close();
+        });
+        document.getElementById("d_delete").addEventListener("click", () => {
+          let items = window.localStorage.getItem('jobs');
+          let item_list = JSON.parse(items);
+          item_list.splice(id,1);
+          for (let i = 0; i < item_list.length; i++) {
+            item_list[i]["id"] = String(i);
+          }
+          localStorage.setItem("jobs", JSON.stringify(item_list));
+          document.getElementById("delete-application").close();
+          window.location.reload();
+        });
     });
 
     // Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
