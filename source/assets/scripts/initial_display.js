@@ -104,7 +104,7 @@ function get_jobs_from_storage() {
  *
  * Can also append specific jobs to main depending on the job
  * status which can be specified by statusFilter parameter
- * 
+ *
  * @param {Array<Object>} jobs An array of jobs
  * @param {number} statusFilter status to filter jobs
  */
