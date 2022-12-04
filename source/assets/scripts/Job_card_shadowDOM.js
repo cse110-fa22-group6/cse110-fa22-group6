@@ -415,7 +415,7 @@ class JobCard extends HTMLElement {
         });
       });
 
-    this.shadowRoot.querySelector('#img-icon').addEventListener("click", () => {
+    this.shadowRoot.querySelector("#img-icon").addEventListener("click", () => {
       const image_dialog = document.querySelector(".img-upload");
       image_dialog.showModal();
       let file_input = document.querySelector("#file_upload");
