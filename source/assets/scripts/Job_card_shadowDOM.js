@@ -1,14 +1,13 @@
 // JobCard.js
 class JobCard extends HTMLElement {
-
   constructor() {
     super(); // Inheret everything from HTMLElement
     // Attaches the shadow DOM to this Web Component
-    let shadow_element = this.attachShadow({mode:'open'});
-    // Creates an <article> element 
-    let article_element = document.createElement('article');
-    // Create a style element 
-    let style_element = document.createElement('style');
+    let shadow_element = this.attachShadow({mode:"open"});
+    // Creates an <article> element
+    let article_element = document.createElement("article");
+    // Create a style element
+    let style_element = document.createElement("style");
 
     //Job card CSS goes here
     style_element.textContent = `
@@ -284,7 +283,7 @@ class JobCard extends HTMLElement {
 
     //  Selects the <article> we added to the Shadow DOM in the constructor
     let shadow_article = this.shadowRoot.querySelector('article');
-    const id = data.id
+    const id = data.id;
     const company = data.company;
     const location = data.location;
     const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
@@ -348,23 +347,23 @@ class JobCard extends HTMLElement {
     </div>
 
     <!-- END JOB CARD -->
-      `
+    `;
 
     // update stage
-    var stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li")
-    stage[status].classList.add("active")
+    let stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
+    stage[status].classList.add("active");
     for (let i = 0; i < stage.length; i++) {
         stage[i].addEventListener("click", function(e){
           // get which bubble was clicked for that specific progress bar
           // make the clicked bubble purple and prev status white
-          let items = localStorage.getItem('jobs')
-          let item_list = JSON.parse(items)
-          let prev = item_list[id]['status']
-          stage[prev].classList.remove("active")
-          stage[i].classList.add("active")
-          item_list[id]['status'] = String(i)
-          localStorage.setItem('jobs',JSON.stringify(item_list))
-      })
+          let items = localStorage.getItem('jobs');
+          let item_list = JSON.parse(items);
+          let prev = item_list[id]['status'];
+          stage[prev].classList.remove("active");
+          stage[i].classList.add("active");
+          item_list[id]['status'] = String(i);
+          localStorage.setItem('jobs',JSON.stringify(item_list));
+      });
     }
 
     
@@ -377,14 +376,14 @@ class JobCard extends HTMLElement {
         });
         document.getElementById('d_delete').addEventListener('click', () => {
             let items = window.localStorage.getItem('jobs');
-            let item_list = JSON.parse(items)
-            item_list.splice(id,1)
-            for (var i = 0; i<item_list.length; i++) {
-              item_list[i]['id'] = String(i)
+            let item_list = JSON.parse(items);
+            item_list.splice(id,1);
+            for (let i = 0; i<item_list.length; i++) {
+              item_list[i]['id'] = String(i);
             }
             localStorage.setItem('jobs', JSON.stringify(item_list));
             document.getElementById('delete-application').close();
-            window.location.reload()
+            window.location.reload();
         })
       })
 
@@ -406,23 +405,23 @@ class JobCard extends HTMLElement {
       });
       document.getElementById('edit-form').addEventListener('submit', () => {
         let items = window.localStorage.getItem('jobs');
-        let item_list = JSON.parse(items)
-        item_list[id]['company'] = edit_form.company.value
-        item_list[id]['position'] = edit_form.position.value
-        item_list[id]['location'] = edit_form.location.value
-        item_list[id]['date'] = edit_form.date.value
+        let item_list = JSON.parse(items);
+        item_list[id]['company'] = edit_form.company.value;
+        item_list[id]['position'] = edit_form.position.value;
+        item_list[id]['location'] = edit_form.location.value;
+        item_list[id]['date'] = edit_form.date.value;
         localStorage.setItem('jobs', JSON.stringify(item_list));
-      })
-    })
+      });
+    });
 
     this.shadowRoot.querySelector('#img-icon').addEventListener('click', () => {
       const image_dialog = document.querySelector('.img-upload');
       image_dialog.showModal();
       var file_input = document.querySelector("#file_upload");
       document.querySelector('.upload_cancel').addEventListener('click', () => {
-        file_input.value = null
+        file_input.value = null;
         image_dialog.close();
-      })
+      });
       const handle_file = () => {
         const selected_file = [...file_input.files];
         const file_reader = new FileReader();
@@ -439,18 +438,18 @@ class JobCard extends HTMLElement {
           } catch (e) {
             alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items")
           }
-        }
-      }
+        };
+      };
       document.querySelector('.upload_confirm').addEventListener('click', () => {
         handle_file();
-        window.location.reload()
+        window.location.reload();
       })
       file_input.onchange = () => {
         if(file_input.files[0].size > 500000) {
-          alert("file is too big!")
-          file_input.value = null
+          alert("file is too big!");
+          file_input.value = null;
         }
-      }
+      };
 
       
     })
