@@ -58,7 +58,7 @@ function init() {
   let jobs = get_jobs_from_storage();
   // Add each job to the <main> element
   num_of_card = jobs.length;
-  document.getElementById('number-of-job-cards').innerText = num_of_card
+  document.getElementById("number-of-job-cards").innerText = num_of_card;
   add_jobs_to_document(jobs, 0);
   // Add the event listeners to the form elements
   const addBtn = document.getElementById("add_application_btn");
@@ -84,9 +84,9 @@ function init() {
  */
 function get_jobs_from_storage() {
   //vars
-  var unparsed_job_list = window.localStorage.getItem('jobs');
-  var parsed_job_list = JSON.parse(unparsed_job_list);
-  var empty_arr = [];
+  let unparsed_job_list = window.localStorage.getItem("jobs");
+  let parsed_job_list = JSON.parse(unparsed_job_list);
+  let empty_arr = [];
 
   //check for empty, then return empty
   if (parsed_job_list == null) {
@@ -124,7 +124,7 @@ function add_jobs_to_document(jobs, statusFilter) {
     if(statusFilter == 0 || jobs[i].status == statusFilter-1){
       let job = document.createElement("job-card");
       job.data = jobs[i];
-      let date = jobs[i]['date'];
+      let date = jobs[i]["date"];
       if (sortDic[date] == null){
         sortDic[date] = [job];
       }else {
@@ -166,31 +166,31 @@ function init_form_handler() {
 
   // Add an event listener for the 'submit' event, which fires when the
   // submit button is clicked
-  form_element.addEventListener('submit', () => {
+  form_element.addEventListener("submit", () => {
     //new FormData object from the <form> element reference above
     let form_data = new FormData(form_element); 
     let job_object = new Object();
-    job_object['id'] = num_of_card
-    job_object['status'] = 1
+    job_object["id"] = num_of_card
+    job_object["status"] = 1
     num_of_card += 1
     for (var[key,value] of form_data) {
       job_object[key] = value;
     }
 
     // new <job-card> element
-    let job_card = document.createElement('job-card'); 
+    let job_card = document.createElement("job-card"); 
     // Add the jobObject data to <recipe-card> using element.data
     job_card.data = job_object;
     // Append this new <job-card> to <main>
     //main.append
-    document.querySelector('main').append(job_card);
+    document.querySelector("main").append(job_card);
     // Get the jobs array from localStorage, add this new job to it, and
     // then try to save the jobs array back to localStorage
     // if localStorage has enough space for saving, it will be saved 
     // otherwise, not save, but displayed with warning messages
     item_list.push(job_object);
     try {
-      localStorage.setItem('jobs', JSON.stringify(item_list));
+      localStorage.setItem("jobs", JSON.stringify(item_list));
     } catch(e) {
       alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items")
     }
@@ -203,9 +203,9 @@ function init_form_handler() {
  */
  function filter_button_listener() {
       // prettier-ignore
-      document.getElementsByClassName('filterStages')[0].addEventListener('click', function (e) {
+      document.getElementsByClassName("filterStages")[0].addEventListener("click", function (e) {
           // get which bubble was clicked for that specific progress bar
-          if (e.target && e.target.nodeName === 'LI') {
+          if (e.target && e.target.nodeName === "LI") {
             const filter = e.target.textContent;
             let filterNum = 0;
             switch(filter) {
@@ -232,12 +232,12 @@ function init_form_handler() {
                 break;
             }
             // make the clicked bubble purple and all others white
-            update_filter(document.getElementsByClassName('filterStages')[0], filterNum);
+            update_filter(document.getElementsByClassName("filterStages")[0], filterNum);
 
-            let main = document.querySelector('main');
+            let main = document.querySelector("main");
 
             // Removes All Jobs
-            let arrayOfJobs = main.querySelectorAll('job-card');
+            let arrayOfJobs = main.querySelectorAll("job-card");
             for(let i = 0; i < arrayOfJobs.length; i++){
               arrayOfJobs[i].remove();
             }
