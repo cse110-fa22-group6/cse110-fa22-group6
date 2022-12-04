@@ -119,7 +119,7 @@ function add_jobs_to_document(jobs, statusFilter) {
   let i = 0;
   let sortDic = {};
   let sortArr = [];
-  while(i < jobs.length) {
+  while (i < jobs.length) {
     if(statusFilter === 0 || jobs[i].status == statusFilter - 1) {
       let job = document.createElement("job-card");
       job.data = jobs[i];
@@ -185,7 +185,7 @@ function init_form_handler() {
     document.querySelector("main").append(job_card);
     // Get the jobs array from localStorage, add this new job to it, and
     // then try to save the jobs array back to localStorage
-    // if localStorage has enough space for saving, it will be saved 
+    // if localStorage has enough space for saving, it will be saved
     // otherwise, not save, but displayed with warning messages
     item_list.push(job_object);
     try {
@@ -200,52 +200,52 @@ function init_form_handler() {
  * @description Updates the filter buttons by retrieving which filter was clicked
  * and updates the job cards to show the cards that were filtered
  */
- function filter_button_listener() {
-    // prettier-ignore
-    document.getElementsByClassName("filterStages")[0].addEventListener("click", function (e) {
-      // get which bubble was clicked for that specific progress bar
-      if (e.target && e.target.nodeName === "LI") {
-        const filter = e.target.textContent;
-        let filterNum = 0;
-        switch(filter) {
-          case 'All':
-            filterNum = filter_all;
-            break;
-          case 'Rejected':
-            filterNum = filter_rejected;
-            break;
-          case 'Unapplied':
-            filterNum = filter_unapplied;
-            break;
-          case 'Applied':
-            filterNum = filter_applied;
-            break;
-          case 'Screening':
-            filterNum = filter_screening;
-            break;
-          case 'Interview':
-            filterNum = filter_interview;
-            break;
-          case 'Offer':
-            filterNum = filter_offer;
-            break;
+function filter_button_listener() {
+  // prettier-ignore
+  document.getElementsByClassName("filterStages")[0].addEventListener("click", function (e) {
+    // get which bubble was clicked for that specific progress bar
+    if (e.target && e.target.nodeName === "LI") {
+      const filter = e.target.textContent;
+      let filterNum = 0;
+      switch(filter) {
+        case 'All':
+          filterNum = filter_all;            
+          break;
+        case 'Rejected':
+          filterNum = filter_rejected;
+          break;
+        case 'Unapplied':
+          filterNum = filter_unapplied;
+          break;
+        case 'Applied':
+          filterNum = filter_applied;
+          break;
+        case 'Screening':
+          filterNum = filter_screening;
+          break;
+        case 'Interview':
+          filterNum = filter_interview;
+          break;
+        case 'Offer':
+          filterNum = filter_offer;
+          break;
         }
-        // make the clicked bubble purple and all others white
-        update_filter(document.getElementsByClassName("filterStages")[0], filterNum);
+    // make the clicked bubble purple and all others white
+    update_filter(document.getElementsByClassName("filterStages")[0], filterNum);
 
-        let main = document.querySelector("main");
+    let main = document.querySelector("main");
 
-        // Removes All Jobs
-        let arrayOfJobs = main.querySelectorAll("job-card");
-        for(let i = 0; i < arrayOfJobs.length; i++){
-          arrayOfJobs[i].remove();
-        }
+    // Removes All Jobs
+    let arrayOfJobs = main.querySelectorAll("job-card");
+    for(let i = 0; i < arrayOfJobs.length; i++){
+      arrayOfJobs[i].remove();
+    }
+    let jobs = get_jobs_from_storage();
 
-        let jobs = get_jobs_from_storage();
-
-        add_jobs_to_document(jobs ,filterNum);
-      }
-    });
+    add_jobs_to_document(jobs ,filterNum);
+    
+    }
+  });
 }
 
 /**
