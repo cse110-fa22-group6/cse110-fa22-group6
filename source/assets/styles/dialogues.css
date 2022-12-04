@@ -155,7 +155,6 @@ input {
     content:"* ";
     color: red;
 }
-
 .form-section {
     padding: 2em 0;
 }
@@ -167,7 +166,6 @@ hr {
 ::-webkit-scrollbar {
     display: none;
 }
-
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
