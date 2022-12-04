@@ -399,7 +399,7 @@ class JobCard extends HTMLElement {
         edit_dialog.showModal();
         document.getElementById("company-edit").setAttribute("placeholder", company)
         document.getElementById("position-edit").setAttribute("placeholder", position)
-        document.getElementById("location-edit").setAttribute("placeholder", location)
+        document
         document.getElementById("date-edit").setAttribute("placeholder", date);
         edit_cancel.addEventListener('click', () => {
           edit_dialog.close();
