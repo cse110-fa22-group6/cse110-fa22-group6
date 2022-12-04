@@ -193,6 +193,7 @@ function init_form_handler() {
     } catch (e) {
       alert(
         "local storage has exceed storage limit, this change will not be saved, remove some unnecessary items"
+      );
     }
   });
 }

@@ -397,9 +397,9 @@ class JobCard extends HTMLElement {
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();
-        document.getElementById("company-edit").setAttribute("placeholder", company)
-        document.getElementById("position-edit").setAttribute("placeholder", position)
-        document
+        document.getElementById("company-edit").setAttribute("placeholder", company);
+        document.getElementById("position-edit").setAttribute("placeholder", position);
+        document.getElementById("location-edit").setAttribute("placeholder", location);
         document.getElementById("date-edit").setAttribute("placeholder", date);
         edit_cancel.addEventListener('click', () => {
           edit_dialog.close();
@@ -436,7 +436,7 @@ class JobCard extends HTMLElement {
             item_list[id]["img"] = file_reader.result
             localStorage.setItem("jobs", JSON.stringify(item_list));
           } catch (e) {
-            alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items")
+            alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items");
           }
         };
       };
