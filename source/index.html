@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/source/assets/styles/jobcard.css"> 
     <link rel="stylesheet" href="/source/assets/styles/dialogues.css"> 
     <link rel="icon" type="image/x-icon" href="/admin/branding/logo.ico">
-    <script src="/source/assets/scripts/initialDisplay.js" type="module"></script>
-    <script src="/source/assets/scripts/JobCard.js" type="module"></script>
+    <script src="/source/assets/scripts/initial_display.js" type="module"></script>
+    <script src="/source/assets/scripts/Job_card_shadowDOM.js" type="module"></script>
     <title>Wing It</title>
   </head>
   <body>
@@ -25,10 +25,22 @@
       </div>
       <h2>Your Applications</h2>
       <div class="container-2">
-        <h5><span id="number-of-job-cards">#</span> Total Aplications</h5>
+        <h5><span id="number-of-job-cards">#</span> Total Applications</h5>
         <button type="button" id="add_application_btn">
           <i class="fa-solid fa-plus"></i> Add Application
         </button>
+      </div>
+      <div class="container-3">
+        <h3>Filter Applications:</h3>
+        <ul class="filterStages">
+          <li class="filterStep active">All</li>
+          <li class="filterStep">Rejected</li>
+          <li class="filterStep">Unapplied</li>
+          <li class="filterStep">Applied</li>
+          <li class="filterStep">Screening</li>
+          <li class="filterStep">Interview</li>
+          <li class="filterStep">Offer</li>
+        </ul>
       </div>
     </header>
     <main>
@@ -82,27 +94,27 @@
           <form id="add-form"> <!-- change action later if needed-->
             <div class="grid-container-form">
               <div class="form-section" id="add-grid-1">
-                <label for="company">Company</label>
+                <label class="required" for="company">Company</label>
                 <input type="text" id="company" name="company" required>
               </div>
 
               <div class="form-section" id="add-grid-2">
-                <label for="position">Position</label>
+                <label class="required" for="position">Position</label>
                 <input type="text" id="position" name="position" required>
               </div>
 
               <div class="form-section" id="add-grid-3">
                 <label for="location">Location</label>
-                <input type="text" id="location" name="location" required>
+                <input type="text" id="location" name="location">
               </div>
 
               <div class="form-section" id="add-grid-4">
-                <label for="date">Date</label>
+                <label class="required" for="date">Date</label>
                 <input type="date" id="date" name="date" required>
               </div>
             </div>
           </form>
-          
+          <p class = "notice">required field</p>
         </div>
         <div class="add_buttons">
             <button id="add_cancel">Cancel</button>
@@ -134,13 +146,13 @@
           <form id="edit-form"> <!-- change action later if needed-->
             <div class="grid-container-form">
                 <div class="form-section" id="edit-grid-1">
-                  <label for="company-edit">Company</label>
-                  <input type="text" id="company-edit" name="company" placeholder="Old Company Here">
+                  <label class="required" for="company-edit">Company</label>
+                  <input type="text" id="company-edit" name="company" placeholder="Old Company Here" required>
                 </div>
 
                 <div class="form-section" id="edit-grid-2">
-                  <label for="position-edit">Position</label>
-                  <input type="text" id="position-edit" name="position" placeholder="Old Position Here">
+                  <label class="required" for="position-edit">Position</label>
+                  <input type="text" id="position-edit" name="position" placeholder="Old Position Here" required>
                 </div>
 
                 <div class="form-section" id="edit-grid-3">
@@ -149,30 +161,28 @@
                 </div>
 
                 <div class="form-section" id="edit-grid-4">
-                  <label for="date-edit">Date</label>
-                  <input type="date" id="date-edit" name="date">
+                  <label class="required" for="date-edit">Date</label>
+                  <input type="date" id="date-edit" name="date" required>
                 </div>
             </div>
           </form>
-          
+          <p class = "notice">required field</p>
         </div>
         <div class="edit_buttons">
             <button class="edit_cancel" id="edit_cancel">Cancel</button>
             <button type="submit" form="edit-form" id="edit_submit">Edit</button>
           </div>
       </dialog>
+
+      <dialog class="img-upload">
+          <input type="file" id="file_upload" accept='image/jpg, image/png'/>
+          <p class="notice">accepted file types : jpeg ,jpg, png (*.png recommeded)</p>
+          <p class="notice">file size: < 500kb</p>
+          <div class="img_buttons">
+            <button class="upload_cancel">Cancel</button>
+            <button class="upload_confirm">Confirm</button>
+          </div>
+      </dialog>
     </main> 
-
-    <!-- Script for job card progress bar -->
-    <!-- <script src="/source/assets/scripts/progres_bar.js"></script> -->
-
-    <!-- Script for Delete Dialogue Box -->
-    <!-- <script type="module" src="/source/assets/scripts/delete_popup.js"></script> -->
-
-    <!-- Script for Add Dialogue Box -->
-    <script type="module" src="/source/assets/scripts/add_popup.js"></script>
-
-    <!-- Script for Edit Dialogue Box -->
-    <!-- <script type="module" src="/source/assets/scripts/edit_popup.js"></script> -->
   </body>
 </html>

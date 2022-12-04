@@ -140,6 +140,22 @@ input {
     line-height: 110%;
 }
 
+.required:after {
+    content:" *";
+    color: red;
+  }
+
+.notice {
+    text-align: right;
+    font-style: italic;
+    color: gray;
+}
+
+.notice:before {
+    content:"* ";
+    color: red;
+}
+
 .form-section {
     padding: 2em 0;
 }
@@ -147,6 +163,11 @@ input {
 hr {
     margin: 0;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
