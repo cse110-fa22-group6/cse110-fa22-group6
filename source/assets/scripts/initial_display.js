@@ -246,7 +246,7 @@ function init_form_handler() {
 
             add_jobs_to_document(jobs ,filterNum);
           }
-      })
+      });
 }
    
 /**
