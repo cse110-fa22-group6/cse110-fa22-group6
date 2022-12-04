@@ -120,7 +120,7 @@ function add_jobs_to_document(jobs, statusFilter) {
   let sortDic = {};
   let sortArr = [];
   while(i < jobs.length) {
-    if(statusFilter === 0 || jobs[i].status !== statusFilter - 1) {
+    if(statusFilter === 0 || jobs[i].status == statusFilter - 1) {
       let job = document.createElement("job-card");
       job.data = jobs[i];
       let date = jobs[i]["date"];
