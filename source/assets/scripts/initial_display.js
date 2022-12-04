@@ -1,12 +1,12 @@
 // main.js
 // Run the init() function when the page has loaded
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener("DOMContentLoaded", init);
 /**
  * @constant
  * @type {number}
  * @default
  */
-var num_of_card = 0;
+let num_of_card = 0;
 /**
  * @constant
  * @type {number}
@@ -53,12 +53,11 @@ const filter_offer = 6;
 
 // Starts the program, all function calls trace back here
 
-
 function init() {
   // Get the jobs from localStorage
   let jobs = get_jobs_from_storage();
   // Add each job to the <main> element
-  num_of_card = jobs.length
+  num_of_card = jobs.length;
   document.getElementById('number-of-job-cards').innerText = num_of_card
   add_jobs_to_document(jobs, 0);
   // Add the event listeners to the form elements
@@ -119,13 +118,13 @@ function add_jobs_to_document(jobs, statusFilter) {
   // sorted by date
   // Append each element to <main>
   let i = 0;
-  let sortDic = {}
-  let sortArr = []
+  let sortDic = {};
+  let sortArr = [];
   while(i<jobs.length) {
     if(statusFilter == 0 || jobs[i].status == statusFilter-1){
-      let job = document.createElement('job-card');
+      let job = document.createElement("job-card");
       job.data = jobs[i];
-      var date = jobs[i]['date'];
+      let date = jobs[i]['date'];
       if (sortDic[date] == null){
         sortDic[date] = [job];
       }else {
@@ -141,7 +140,6 @@ function add_jobs_to_document(jobs, statusFilter) {
       main.append(sortDic[sortArr[i]][j]);
     }
   }
-
 }
 
 /**
@@ -150,7 +148,7 @@ function add_jobs_to_document(jobs, statusFilter) {
  * @param {Array<Object>} jobs An array of jobs
  */
 function save_jobs_to_storage(jobs) {
-  localStorage.setItem('jobs', JSON.stringify(jobs));
+  localStorage.setItem("jobs", JSON.stringify(jobs));
 }
 
 /**
@@ -164,7 +162,7 @@ function init_form_handler() {
   });
 
   let form_element = document.querySelector('#add-form');
-  var item_list = get_jobs_from_storage()
+  let item_list = get_jobs_from_storage();
 
   // Add an event listener for the 'submit' event, which fires when the
   // submit button is clicked
@@ -196,15 +194,14 @@ function init_form_handler() {
     } catch(e) {
       alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items")
     }
-});
-
+  });
 }
 
 /**
  * @description Updates the filter buttons by retrieving which filter was clicked
  * and updates the job cards to show the cards that were filtered
  */
- function filter_button_listener(){
+ function filter_button_listener() {
       // prettier-ignore
       document.getElementsByClassName('filterStages')[0].addEventListener('click', function (e) {
           // get which bubble was clicked for that specific progress bar

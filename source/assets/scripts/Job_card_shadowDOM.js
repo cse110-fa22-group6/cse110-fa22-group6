@@ -282,7 +282,7 @@ class JobCard extends HTMLElement {
     if (!data) return;
 
     //  Selects the <article> we added to the Shadow DOM in the constructor
-    let shadow_article = this.shadowRoot.querySelector('article');
+    let shadow_article = this.shadowRoot.querySelector("article");
     const id = data.id;
     const company = data.company;
     const location = data.location;
@@ -353,21 +353,19 @@ class JobCard extends HTMLElement {
     let stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
     stage[status].classList.add("active");
     for (let i = 0; i < stage.length; i++) {
-        stage[i].addEventListener("click", function(e){
+        stage[i].addEventListener("click", function(e) {
           // get which bubble was clicked for that specific progress bar
           // make the clicked bubble purple and prev status white
-          let items = localStorage.getItem('jobs');
+          let items = localStorage.getItem("jobs");
           let item_list = JSON.parse(items);
-          let prev = item_list[id]['status'];
+          let prev = item_list[id]["status"];
           stage[prev].classList.remove("active");
           stage[i].classList.add("active");
-          item_list[id]['status'] = String(i);
-          localStorage.setItem('jobs',JSON.stringify(item_list));
+          item_list[id]["status"] = String(i);
+          localStorage.setItem("jobs",JSON.stringify(item_list));
       });
     }
 
-    
-   
     this.shadowRoot.querySelector('.delete-icon').addEventListener('click', () => {
         const delete_dialog = document.getElementById('delete-application');
         delete_dialog.showModal();
@@ -440,7 +438,7 @@ class JobCard extends HTMLElement {
           }
         };
       };
-      document.querySelector('.upload_confirm').addEventListener('click', () => {
+      document.querySelector(".upload_confirm").addEventListener('click', () => {
         handle_file();
         window.location.reload();
       })
@@ -450,16 +448,10 @@ class JobCard extends HTMLElement {
           file_input.value = null;
         }
       };
-
-      
     })
   }
-
-  
-
-
 }
 
 // Defines the Class as a customElement to create
 // 'job-card' elements
-customElements.define('job-card', JobCard);
+customElements.define("job-card", JobCard);
