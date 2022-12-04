@@ -429,11 +429,11 @@ class JobCard extends HTMLElement {
 
         file_reader.readAsDataURL(selected_file[0]);
         file_reader.onload = () => {
-          this.shadowRoot.querySelector("#img-icon").src = file_reader.result
+          this.shadowRoot.querySelector("#img-icon").src = file_reader.result;
           let items = window.localStorage.getItem("jobs");
           let item_list = JSON.parse(items);
           try {
-            item_list[id]["img"] = file_reader.result
+            item_list[id]["img"] = file_reader.result;
             localStorage.setItem("jobs", JSON.stringify(item_list));
           } catch (e) {
             alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items");
