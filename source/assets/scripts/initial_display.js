@@ -192,7 +192,7 @@ function init_form_handler() {
       localStorage.setItem("jobs", JSON.stringify(item_list));
     } catch (e) {
       alert(
-        "local storage has exceed storage limit, this change will not be saved, remove some unnecessary items");
+        "local storage has exceed storage limit, this change will not be saved, remove some unnecessary items"
     }
   });
 }
