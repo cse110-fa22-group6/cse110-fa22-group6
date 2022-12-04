@@ -403,14 +403,14 @@ class JobCard extends HTMLElement {
           .setAttribute("placeholder", company);
         document
           .getElementById("position-edit")
-            .setAttribute("placeholder", position);
+          .setAttribute("placeholder", position);
         document
           .getElementById("location-edit")
           .setAttribute("placeholder", location);
         document
           .getElementById("date-edit")
           .setAttribute("placeholder", date);
-        edit_cancel.addEventListener('click', () => {
+        edit_cancel.addEventListener("click", () => {
           edit_dialog.close();
         });
         document.getElementById("edit-form").addEventListener("submit", () => {
