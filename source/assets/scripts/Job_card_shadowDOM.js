@@ -443,7 +443,7 @@ class JobCard extends HTMLElement {
         window.location.reload();
       });
       file_input.onchange = () => {
-        if(file_input.files[0].size > 500000) {
+        if (file_input.files[0].size > 500000) {
           alert("file is too big!");
           file_input.value = null;
         }
