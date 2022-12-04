@@ -375,9 +375,9 @@ class JobCard extends HTMLElement {
           delete_dialog.close();
         });
         document.getElementById("d_delete").addEventListener("click", () => {
-          let items = window.localStorage.getItem('jobs');
+          let items = window.localStorage.getItem("jobs");
           let item_list = JSON.parse(items);
-          item_list.splice(id,1);
+          item_list.splice(id, 1);
           for (let i = 0; i < item_list.length; i++) {
             item_list[i]["id"] = String(i);
           }
@@ -385,37 +385,38 @@ class JobCard extends HTMLElement {
           document.getElementById("delete-application").close();
           window.location.reload();
         });
-    });
+      });
 
     // Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
     // For status change, might be extracted to out of this button event to get user change
     // Jobcard 'id' is not changed for this button action
-    this.shadowRoot.querySelector(".edit-icon").addEventListener("click", () => {
-      const edit_dialog = document.getElementById("edit-application");
-      const edit_cancel = document.getElementById("edit_cancel");
-      const edit_form = document.getElementById("edit-form");
+    this.shadowRoot
+      .querySelector(".edit-icon").addEventListener("click", () => {
+        const edit_dialog = document.getElementById("edit-application");
+        const edit_cancel = document.getElementById("edit_cancel");
+        const edit_form = document.getElementById("edit-form");
 
-      edit_dialog.showModal();
-      document.getElementById("company-edit").setAttribute("placeholder", company)
-      document.getElementById("position-edit").setAttribute("placeholder", position)
-      document.getElementById("location-edit").setAttribute("placeholder", location)
-      document.getElementById("date-edit").setAttribute("placeholder", date)
-      edit_cancel.addEventListener('click', () => {
-        edit_dialog.close();
-      });
-      document.getElementById("edit-form").addEventListener("submit", () => {
-        let items = window.localStorage.getItem("jobs");
-        let item_list = JSON.parse(items);
+        edit_dialog.showModal();
+        document.getElementById("company-edit").setAttribute("placeholder", company)
+        document.getElementById("position-edit").setAttribute("placeholder", position)
+        document.getElementById("location-edit").setAttribute("placeholder", location)
+        document.getElementById("date-edit").setAttribute("placeholder", date)
+        edit_cancel.addEventListener('click', () => {
+          edit_dialog.close();
+        });
+        document.getElementById("edit-form").addEventListener("submit", () => {
+          let items = window.localStorage.getItem("jobs");
+          let item_list = JSON.parse(items);
           item_list[id]["company"] = edit_form.company.value;
-        item_list[id]["position"] = edit_form.position.value;
-        item_list[id]["location"] = edit_form.location.value;
-        item_list[id]["date"] = edit_form.date.value;
-        localStorage.setItem("jobs", JSON.stringify(item_list));
+          item_list[id]["position"] = edit_form.position.value;
+          item_list[id]["location"] = edit_form.location.value;
+          item_list[id]["date"] = edit_form.date.value;
+          localStorage.setItem("jobs", JSON.stringify(item_list));
+        });
       });
-    });
 
     this.shadowRoot.querySelector('#img-icon').addEventListener("click", () => {
-      const image_dialog = document.querySelector('.img-upload');
+      const image_dialog = document.querySelector(".img-upload");
       image_dialog.showModal();
       let file_input = document.querySelector("#file_upload");
       document.querySelector(".upload_cancel").addEventListener("click", () => {
@@ -430,7 +431,7 @@ class JobCard extends HTMLElement {
         file_reader.onload = () => {
           this.shadowRoot.querySelector("#img-icon").src = file_reader.result
           let items = window.localStorage.getItem("jobs");
-          let item_list = JSON.parse(items)
+          let item_list = JSON.parse(items);
           try {
             item_list[id]["img"] = file_reader.result
             localStorage.setItem("jobs", JSON.stringify(item_list));
@@ -439,9 +440,11 @@ class JobCard extends HTMLElement {
           }
         };
       };
-      document.querySelector(".upload_confirm").addEventListener("click", () => {
-        handle_file();
-        window.location.reload();
+      document
+        .querySelector(".upload_confirm")
+        .addEventListener("click", () => {
+          handle_file();
+          window.location.reload();
       });
       file_input.onchange = () => {
         if (file_input.files[0].size > 500000) {

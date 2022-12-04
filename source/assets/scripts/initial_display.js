@@ -101,7 +101,7 @@ function get_jobs_from_storage() {
  * new <job-card> element, adds the recipe data to that card
  * using element.data = {...}, and then appends that new job
  * to <main>
- * 
+ *
  * Can also append specific jobs to main depending on the job
  * status which can be specified by statusFilter parameter
  * 
@@ -120,7 +120,7 @@ function add_jobs_to_document(jobs, statusFilter) {
   let sortDic = {};
   let sortArr = [];
   while (i < jobs.length) {
-    if(statusFilter === 0 || jobs[i].status == statusFilter - 1) {
+    if (statusFilter === 0 || jobs[i].status == statusFilter - 1) {
       let job = document.createElement("job-card");
       job.data = jobs[i];
       let date = jobs[i]["date"];
@@ -134,8 +134,8 @@ function add_jobs_to_document(jobs, statusFilter) {
     i++;
   }
   sortArr.sort();
-  for ( i = 0 ; i < sortArr.length; i++) {
-    for ( let j = 0; j < sortDic[sortArr[i]].length; j++) {
+  for (i = 0; i < sortArr.length; i++) {
+    for (let j = 0; j < sortDic[sortArr[i]].length; j++) {
       main.append(sortDic[sortArr[i]][j]);
     }
   }
@@ -172,7 +172,7 @@ function init_form_handler() {
     job_object["id"] = num_of_card;
     job_object["status"] = 1;
     num_of_card += 1;
-    for ( let [key, value] of form_data) {
+    for (let [key, value] of form_data) {
       job_object[key] = value;
     }
 
@@ -190,8 +190,9 @@ function init_form_handler() {
     item_list.push(job_object);
     try {
       localStorage.setItem("jobs", JSON.stringify(item_list));
-    } catch(e) {
-      alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items")
+    } catch (e) {
+      alert(
+        "local storage has exceed storage limit, this change will not be saved, remove some unnecessary items");
     }
   });
 }
@@ -243,7 +244,7 @@ function filter_button_listener() {
     let jobs = get_jobs_from_storage();
 
     add_jobs_to_document(jobs ,filterNum);
-    
+
     }
   });
 }
