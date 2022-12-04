@@ -353,7 +353,7 @@ class JobCard extends HTMLElement {
     let stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
     stage[status].classList.add("active");
     for (let i = 0; i < stage.length; i++) {
-      stage[i].addEventListener("click", function(e) {
+      stage[i].addEventListener("click", function (e) {
         // get which bubble was clicked for that specific progress bar
         // make the clicked bubble purple and prev status white
         let items = localStorage.getItem("jobs");
@@ -362,22 +362,24 @@ class JobCard extends HTMLElement {
         stage[prev].classList.remove("active");
         stage[i].classList.add("active");
         item_list[id]["status"] = String(i);
-        localStorage.setItem("jobs",JSON.stringify(item_list));
+        localStorage.setItem("jobs", JSON.stringify(item_list));
       });
     }
 
-    this.shadowRoot.querySelector(".delete-icon").addEventListener("click", () => {
-      const delete_dialog = document.getElementById('delete-application');
+    this.shadowRoot
+    .querySelector(".delete-icon")
+    .addEventListener("click", () => {
+      const delete_dialog = document.getElementById("delete-application");
       delete_dialog.showModal();
       document.getElementById("d_cancel").addEventListener("click", () => {
         delete_dialog.close();
       });
-      document.getElementById('d_delete').addEventListener('click', () => {
+      document.getElementById("d_delete").addEventListener("click", () => {
         let items = window.localStorage.getItem('jobs');
         let item_list = JSON.parse(items);
         item_list.splice(id,1);
-        for (let i = 0; i<item_list.length; i++) {
-          item_list[i]['id'] = String(i);
+        for (let i = 0; i < item_list.length; i++) {
+          item_list[i]["id"] = String(i);
         }
         localStorage.setItem("jobs", JSON.stringify(item_list));
         document.getElementById("delete-application").close();
@@ -388,35 +390,35 @@ class JobCard extends HTMLElement {
     // Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
     // For status change, might be extracted to out of this button event to get user change
     // Jobcard 'id' is not changed for this button action
-    this.shadowRoot.querySelector('.edit-icon').addEventListener('click', () => {
-      const edit_dialog = document.getElementById('edit-application');
-      const edit_cancel = document.getElementById('edit_cancel');
-      const edit_form = document.getElementById('edit-form');
+    this.shadowRoot.querySelector(".edit-icon").addEventListener("click", () => {
+      const edit_dialog = document.getElementById("edit-application");
+      const edit_cancel = document.getElementById("edit_cancel");
+      const edit_form = document.getElementById("edit-form");
 
       edit_dialog.showModal();
-      document.getElementById('company-edit').setAttribute("placeholder", company)
-      document.getElementById('position-edit').setAttribute("placeholder", position)
-      document.getElementById('location-edit').setAttribute("placeholder", location)
-      document.getElementById('date-edit').setAttribute("placeholder", date)
+      document.getElementById("company-edit").setAttribute("placeholder", company)
+      document.getElementById("position-edit").setAttribute("placeholder", position)
+      document.getElementById("location-edit").setAttribute("placeholder", location)
+      document.getElementById("date-edit").setAttribute("placeholder", date)
       edit_cancel.addEventListener('click', () => {
         edit_dialog.close();
       });
-      document.getElementById('edit-form').addEventListener('submit', () => {
-        let items = window.localStorage.getItem('jobs');
+      document.getElementById("edit-form").addEventListener("submit", () => {
+        let items = window.localStorage.getItem("jobs");
         let item_list = JSON.parse(items);
           item_list[id]["company"] = edit_form.company.value;
-        item_list[id]['position'] = edit_form.position.value;
-        item_list[id]['location'] = edit_form.location.value;
-        item_list[id]['date'] = edit_form.date.value;
-        localStorage.setItem('jobs', JSON.stringify(item_list));
+        item_list[id]["position"] = edit_form.position.value;
+        item_list[id]["location"] = edit_form.location.value;
+        item_list[id]["date"] = edit_form.date.value;
+        localStorage.setItem("jobs", JSON.stringify(item_list));
       });
     });
 
-    this.shadowRoot.querySelector('#img-icon').addEventListener('click', () => {
+    this.shadowRoot.querySelector('#img-icon').addEventListener("click", () => {
       const image_dialog = document.querySelector('.img-upload');
       image_dialog.showModal();
-      var file_input = document.querySelector("#file_upload");
-      document.querySelector('.upload_cancel').addEventListener('click', () => {
+      let file_input = document.querySelector("#file_upload");
+      document.querySelector(".upload_cancel").addEventListener("click", () => {
         file_input.value = null;
         image_dialog.close();
       });
@@ -425,20 +427,19 @@ class JobCard extends HTMLElement {
         const file_reader = new FileReader();
 
         file_reader.readAsDataURL(selected_file[0]);
-        
         file_reader.onload = () => {
-          this.shadowRoot.querySelector('#img-icon').src = file_reader.result
-          let items = window.localStorage.getItem('jobs');
+          this.shadowRoot.querySelector("#img-icon").src = file_reader.result
+          let items = window.localStorage.getItem("jobs");
           let item_list = JSON.parse(items)
           try {
-            item_list[id]['img'] = file_reader.result
+            item_list[id]["img"] = file_reader.result
             localStorage.setItem("jobs", JSON.stringify(item_list));
           } catch (e) {
             alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items")
           }
         };
       };
-      document.querySelector(".upload_confirm").addEventListener('click', () => {
+      document.querySelector(".upload_confirm").addEventListener("click", () => {
         handle_file();
         window.location.reload();
       });
