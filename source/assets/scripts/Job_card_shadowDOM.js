@@ -3,7 +3,7 @@ class JobCard extends HTMLElement {
   constructor() {
     super(); // Inheret everything from HTMLElement
     // Attaches the shadow DOM to this Web Component
-    let shadow_element = this.attachShadow({mode:"open"});
+    let shadow_element = this.attachShadow({ mode: "open" });
     // Creates an <article> element
     let article_element = document.createElement("article");
     // Create a style element
@@ -366,22 +366,22 @@ class JobCard extends HTMLElement {
       });
     }
 
-    this.shadowRoot.querySelector('.delete-icon').addEventListener('click', () => {
+    this.shadowRoot.querySelector(".delete-icon").addEventListener("click", () => {
         const delete_dialog = document.getElementById('delete-application');
         delete_dialog.showModal();
-        document.getElementById('d_cancel').addEventListener('click', () => {
-            delete_dialog.close();
+        document.getElementById("d_cancel").addEventListener("click", () => {
+          delete_dialog.close();
         });
         document.getElementById('d_delete').addEventListener('click', () => {
-            let items = window.localStorage.getItem('jobs');
-            let item_list = JSON.parse(items);
-            item_list.splice(id,1);
-            for (let i = 0; i<item_list.length; i++) {
-              item_list[i]['id'] = String(i);
-            }
-            localStorage.setItem('jobs', JSON.stringify(item_list));
-            document.getElementById('delete-application').close();
-            window.location.reload();
+          let items = window.localStorage.getItem('jobs');
+          let item_list = JSON.parse(items);
+          item_list.splice(id,1);
+          for (let i = 0; i<item_list.length; i++) {
+            item_list[i]['id'] = String(i);
+          }
+          localStorage.setItem("jobs", JSON.stringify(item_list));
+          document.getElementById("delete-application").close();
+          window.location.reload();
         })
       })
 
@@ -432,7 +432,7 @@ class JobCard extends HTMLElement {
           let item_list = JSON.parse(items)
           try {
             item_list[id]['img'] = file_reader.result
-            localStorage.setItem('jobs', JSON.stringify(item_list));
+            localStorage.setItem("jobs", JSON.stringify(item_list));
           } catch (e) {
             alert("local storage has exceed storage limit, this change will not be saved, remove some unnecessary items")
           }
@@ -441,7 +441,7 @@ class JobCard extends HTMLElement {
       document.querySelector(".upload_confirm").addEventListener('click', () => {
         handle_file();
         window.location.reload();
-      })
+      });
       file_input.onchange = () => {
         if(file_input.files[0].size > 500000) {
           alert("file is too big!");
