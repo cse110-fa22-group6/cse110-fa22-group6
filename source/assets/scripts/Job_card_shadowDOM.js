@@ -404,7 +404,7 @@ class JobCard extends HTMLElement {
       document.getElementById('edit-form').addEventListener('submit', () => {
         let items = window.localStorage.getItem('jobs');
         let item_list = JSON.parse(items);
-        item_list[id]['company'] = edit_form.company.value;
+          item_list[id]["company"] = edit_form.company.value;
         item_list[id]['position'] = edit_form.position.value;
         item_list[id]['location'] = edit_form.location.value;
         item_list[id]['date'] = edit_form.date.value;
