@@ -1,0 +1,15 @@
+env:
+  browser: true
+  es2021: true
+  jest: true
+extends: eslint:recommended
+overrides: []
+plugins: [snakecasejs]
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+rules:
+  quotes: warn
+  semi: warn
+  space-before-function-paren: warn
+  snakecasejs/snakecasejs: "error"

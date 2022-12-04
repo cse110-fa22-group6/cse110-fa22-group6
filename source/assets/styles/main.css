@@ -5,17 +5,16 @@
 }
 
 :root {
-  --special-color: rgb(149, 161, 241);
+  --special-color: rgb(149 161 241);
 }
 
 * {
-  font-family: "Spoof";
+  font-family: "Spoof", sans-serif;
   font-weight: 300;
-  /* margin: 0.5em; */
 }
 
 body {
-    margin: 2% 5%;
+  margin: 2% 5%;
 }
 
 .container-1 {
@@ -54,12 +53,12 @@ h5 {
 #add_application_btn {
   background-color: var(--special-color);
   margin: 1em 0.7em;
-  padding: .5em 2.5em;
+  padding: 0.5em 2.5em;
   cursor: pointer;
 }
 
-#add_application_btn:hover {
-  background-color: rgb(105, 123, 240);
+#add-application-btn:hover {
+  background-color: rgb(105 123 240);
   color: white;
   cursor: pointer;
 }

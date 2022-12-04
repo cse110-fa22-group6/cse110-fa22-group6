@@ -1,3 +1,4 @@
+/* eslint-disable snakecasejs/snakecasejs */
 // JobCard.js
 class JobCard extends HTMLElement {
   constructor() {
@@ -13,7 +14,7 @@ class JobCard extends HTMLElement {
     style_element.textContent = `
     @font-face {
       font-family: Spoof, serif;
-      src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
+      src: url("../font/Spoof-Regular.woff") format("woff");
     }
     
     * {
@@ -341,8 +342,8 @@ class JobCard extends HTMLElement {
 
       <!--       Trash/Pencil Icons -->
       <div class="grid-4">
-      <input class="delete-icon" type="image" src="/source/assets/images/trash-solid.svg" />
-      <input class="edit-icon" type="image" src="/source/assets/images/pen-solid.svg" />
+      <input class="delete-icon" type="image" src="../source/assets/images/trash-solid.svg" />
+      <input class="edit-icon" type="image" src="../source/assets/images/pen-solid.svg" />
       </div>
     </div>
 

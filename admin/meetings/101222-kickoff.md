@@ -1,10 +1,10 @@
-### Wing It
+# Wing It
 
-###### Team 6 - Kickoff Meeting
+## Team 6 - Kickoff Meeting
 
-###### Warren Bear - 10/12/22
+Warren Bear - 10/12/22
 
-###### 2:00pm - 2:45pm
+2:00pm - 2:45pm
 
 <hr>
 
@@ -59,6 +59,7 @@
 ### Concerns
 
 - Project details are a little vague (collectively agreed upon)
+
 <hr>
 
 ### Reviewed By
