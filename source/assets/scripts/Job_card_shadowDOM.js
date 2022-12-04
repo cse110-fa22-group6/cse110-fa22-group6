@@ -353,37 +353,37 @@ class JobCard extends HTMLElement {
     let stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
     stage[status].classList.add("active");
     for (let i = 0; i < stage.length; i++) {
-        stage[i].addEventListener("click", function(e) {
-          // get which bubble was clicked for that specific progress bar
-          // make the clicked bubble purple and prev status white
-          let items = localStorage.getItem("jobs");
-          let item_list = JSON.parse(items);
-          let prev = item_list[id]["status"];
-          stage[prev].classList.remove("active");
-          stage[i].classList.add("active");
-          item_list[id]["status"] = String(i);
-          localStorage.setItem("jobs",JSON.stringify(item_list));
+      stage[i].addEventListener("click", function(e) {
+        // get which bubble was clicked for that specific progress bar
+        // make the clicked bubble purple and prev status white
+        let items = localStorage.getItem("jobs");
+        let item_list = JSON.parse(items);
+        let prev = item_list[id]["status"];
+        stage[prev].classList.remove("active");
+        stage[i].classList.add("active");
+        item_list[id]["status"] = String(i);
+        localStorage.setItem("jobs",JSON.stringify(item_list));
       });
     }
 
     this.shadowRoot.querySelector(".delete-icon").addEventListener("click", () => {
-        const delete_dialog = document.getElementById('delete-application');
-        delete_dialog.showModal();
-        document.getElementById("d_cancel").addEventListener("click", () => {
-          delete_dialog.close();
-        });
-        document.getElementById('d_delete').addEventListener('click', () => {
-          let items = window.localStorage.getItem('jobs');
-          let item_list = JSON.parse(items);
-          item_list.splice(id,1);
-          for (let i = 0; i<item_list.length; i++) {
-            item_list[i]['id'] = String(i);
-          }
-          localStorage.setItem("jobs", JSON.stringify(item_list));
-          document.getElementById("delete-application").close();
-          window.location.reload();
-        })
-      })
+      const delete_dialog = document.getElementById('delete-application');
+      delete_dialog.showModal();
+      document.getElementById("d_cancel").addEventListener("click", () => {
+        delete_dialog.close();
+      });
+      document.getElementById('d_delete').addEventListener('click', () => {
+        let items = window.localStorage.getItem('jobs');
+        let item_list = JSON.parse(items);
+        item_list.splice(id,1);
+        for (let i = 0; i<item_list.length; i++) {
+          item_list[i]['id'] = String(i);
+        }
+        localStorage.setItem("jobs", JSON.stringify(item_list));
+        document.getElementById("delete-application").close();
+        window.location.reload();
+      });
+    });
 
     // Button Event for Update(will go to update modal, and confirmation button in update modal will be below)
     // For status change, might be extracted to out of this button event to get user change
@@ -448,7 +448,7 @@ class JobCard extends HTMLElement {
           file_input.value = null;
         }
       };
-    })
+    });
   }
 }
 
