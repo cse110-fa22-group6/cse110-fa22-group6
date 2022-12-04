@@ -42,14 +42,13 @@ const filter_screening = 4;
  * @type {number}
  * @default
  */
- const filter_interview = 5;
- /**
+const filter_interview = 5;
+/**
  * @constant
  * @type {number}
  * @default
  */
 const filter_offer = 6;
-
 
 // Starts the program, all function calls trace back here
 
@@ -94,7 +93,7 @@ function get_jobs_from_storage() {
   }
 
   //else returns the parsed list
-  return parsed_job_list; 
+  return parsed_job_list;
 }
 
 /**
@@ -111,7 +110,7 @@ function get_jobs_from_storage() {
  */
 function add_jobs_to_document(jobs, statusFilter) {
   // Get a reference to the <main> element
-  let main = document.querySelector('main');
+  let main = document.querySelector("main");
 
   // Loops through each of the jobs in the passed in array,
   // creates a <job-card> element for each one, and populate
@@ -120,14 +119,14 @@ function add_jobs_to_document(jobs, statusFilter) {
   let i = 0;
   let sortDic = {};
   let sortArr = [];
-  while(i<jobs.length) {
-    if(statusFilter == 0 || jobs[i].status == statusFilter-1){
+  while(i < jobs.length) {
+    if(statusFilter === 0 || jobs[i].status !== statusFilter - 1) {
       let job = document.createElement("job-card");
       job.data = jobs[i];
       let date = jobs[i]["date"];
-      if (sortDic[date] == null){
+      if (sortDic[date] == null) {
         sortDic[date] = [job];
-      }else {
+      } else {
         sortDic[date].push(job);
       }
       sortArr.push(date);
@@ -135,8 +134,8 @@ function add_jobs_to_document(jobs, statusFilter) {
     i++;
   }
   sortArr.sort();
-  for(i = 0; i<sortArr.length; i++){
-    for (let j = 0; j<sortDic[sortArr[i]].length; j++){
+  for ( i = 0 ; i < sortArr.length; i++) {
+    for ( let j = 0; j < sortDic[sortArr[i]].length; j++) {
       main.append(sortDic[sortArr[i]][j]);
     }
   }
@@ -161,24 +160,24 @@ function init_form_handler() {
     add_dialog.close();
   });
 
-  let form_element = document.querySelector('#add-form');
+  let form_element = document.querySelector("#add-form");
   let item_list = get_jobs_from_storage();
 
   // Add an event listener for the 'submit' event, which fires when the
   // submit button is clicked
   form_element.addEventListener("submit", () => {
     //new FormData object from the <form> element reference above
-    let form_data = new FormData(form_element); 
+    let form_data = new FormData(form_element);
     let job_object = new Object();
-    job_object["id"] = num_of_card
-    job_object["status"] = 1
-    num_of_card += 1
-    for (var[key,value] of form_data) {
+    job_object["id"] = num_of_card;
+    job_object["status"] = 1;
+    num_of_card += 1;
+    for ( let [key, value] of form_data) {
       job_object[key] = value;
     }
 
     // new <job-card> element
-    let job_card = document.createElement("job-card"); 
+    let job_card = document.createElement("job-card");
     // Add the jobObject data to <recipe-card> using element.data
     job_card.data = job_object;
     // Append this new <job-card> to <main>
@@ -202,53 +201,53 @@ function init_form_handler() {
  * and updates the job cards to show the cards that were filtered
  */
  function filter_button_listener() {
-      // prettier-ignore
-      document.getElementsByClassName("filterStages")[0].addEventListener("click", function (e) {
-          // get which bubble was clicked for that specific progress bar
-          if (e.target && e.target.nodeName === "LI") {
-            const filter = e.target.textContent;
-            let filterNum = 0;
-            switch(filter) {
-              case 'All':
-                filterNum = filter_all;
-                break;
-              case 'Rejected':
-                filterNum = filter_rejected;
-                break;
-              case 'Unapplied':
-                filterNum = filter_unapplied;
-                break;
-              case 'Applied':
-                filterNum = filter_applied;
-                break;
-              case 'Screening':
-                filterNum = filter_screening;
-                break;
-              case 'Interview':
-                filterNum = filter_interview;
-                break;
-              case 'Offer':
-                filterNum = filter_offer;
-                break;
-            }
-            // make the clicked bubble purple and all others white
-            update_filter(document.getElementsByClassName("filterStages")[0], filterNum);
+    // prettier-ignore
+    document.getElementsByClassName("filterStages")[0].addEventListener("click", function (e) {
+      // get which bubble was clicked for that specific progress bar
+      if (e.target && e.target.nodeName === "LI") {
+        const filter = e.target.textContent;
+        let filterNum = 0;
+        switch(filter) {
+          case 'All':
+            filterNum = filter_all;
+            break;
+          case 'Rejected':
+            filterNum = filter_rejected;
+            break;
+          case 'Unapplied':
+            filterNum = filter_unapplied;
+            break;
+          case 'Applied':
+            filterNum = filter_applied;
+            break;
+          case 'Screening':
+            filterNum = filter_screening;
+            break;
+          case 'Interview':
+            filterNum = filter_interview;
+            break;
+          case 'Offer':
+            filterNum = filter_offer;
+            break;
+        }
+        // make the clicked bubble purple and all others white
+        update_filter(document.getElementsByClassName("filterStages")[0], filterNum);
 
-            let main = document.querySelector("main");
+        let main = document.querySelector("main");
 
-            // Removes All Jobs
-            let arrayOfJobs = main.querySelectorAll("job-card");
-            for(let i = 0; i < arrayOfJobs.length; i++){
-              arrayOfJobs[i].remove();
-            }
+        // Removes All Jobs
+        let arrayOfJobs = main.querySelectorAll("job-card");
+        for(let i = 0; i < arrayOfJobs.length; i++){
+          arrayOfJobs[i].remove();
+        }
 
-            let jobs = get_jobs_from_storage();
+        let jobs = get_jobs_from_storage();
 
-            add_jobs_to_document(jobs ,filterNum);
-          }
-      });
+        add_jobs_to_document(jobs ,filterNum);
+      }
+    });
 }
-   
+
 /**
  * @param {Object} ul The filter bar
  * @param {number} filterNum The current filter (bubble) we have clicked
@@ -267,5 +266,3 @@ function update_filter(ul, filterNum) {
     }
   }
 }
-
-
