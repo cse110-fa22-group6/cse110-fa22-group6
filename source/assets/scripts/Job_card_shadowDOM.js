@@ -46,7 +46,11 @@ class JobCard extends HTMLElement {
       left: 10px;
       padding: auto;
     }
-    
+
+    #img-icon {
+      width: 80px
+    }
+
     .delete-icon,
     .edit-icon {
       border: none;
@@ -286,14 +290,14 @@ class JobCard extends HTMLElement {
     const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
     const position = data.position;
     const date = data.date;
-
+    const img = data.img;
     shadow_article.innerHTML = `
     <!-- BEGIN JOB CARD -->
     <div class="grid-container">
       <!--     Logo (for the future)  -->
       <div class="grid-1">
-
-        <input type="image" src="../source/assets/images/image-solid.svg" />
+        <p style="font-size: 15px">Click to change</p>
+        <input id="img-icon" type="image" src="${img}">
       </div>
 
       <!--     Application Text -->
@@ -301,6 +305,8 @@ class JobCard extends HTMLElement {
         <p class="position">${position}</p>
         <p class="company">${company}</p>
         <p class="location">${location}</p>
+        <p class="date">created: ${date}</p>
+
       </div>
 
       <!--     Progress Bar -->
@@ -342,25 +348,22 @@ class JobCard extends HTMLElement {
     </div>
 
     <!-- END JOB CARD -->
-      `;
+    `;
 
     // update stage
-    var stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
+    let stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
     stage[status].classList.add("active");
     for (let i = 0; i < stage.length; i++) {
       stage[i].addEventListener("click", function (e) {
         // get which bubble was clicked for that specific progress bar
-        if (e.target && e.target.nodeName == "LI") {
-          console.log(`updating progress bar ${i}`);
-          // make the clicked bubble purple and all others white
-          stage[status].classList.remove("active");
-          stage[i].classList.add("active");
-          let items = localStorage.getItem("jobs");
-          let item_list = JSON.parse(items);
-          item_list[id]["status"] = String(i);
-          localStorage.setItem("jobs", JSON.stringify(item_list));
-          window.location.reload();
-        }
+        // make the clicked bubble purple and prev status white
+        let items = localStorage.getItem("jobs");
+        let item_list = JSON.parse(items);
+        let prev = item_list[id]["status"];
+        stage[prev].classList.remove("active");
+        stage[i].classList.add("active");
+        item_list[id]["status"] = String(i);
+        localStorage.setItem("jobs", JSON.stringify(item_list));
       });
     }
 
@@ -369,17 +372,18 @@ class JobCard extends HTMLElement {
       .addEventListener("click", () => {
         const delete_dialog = document.getElementById("delete-application");
         delete_dialog.showModal();
-        document.getElementById("d-cancel").addEventListener("click", () => {
+        document.getElementById("d_cancel").addEventListener("click", () => {
           delete_dialog.close();
         });
-        document.getElementById("d-delete").addEventListener("click", () => {
+        document.getElementById("d_delete").addEventListener("click", () => {
           let items = window.localStorage.getItem("jobs");
           let item_list = JSON.parse(items);
           item_list.splice(id, 1);
-          for (var i = 0; i < item_list.length; i++) {
+          for (let i = 0; i < item_list.length; i++) {
             item_list[i]["id"] = String(i);
           }
           localStorage.setItem("jobs", JSON.stringify(item_list));
+          document.getElementById("delete-application").close();
           window.location.reload();
         });
       });
@@ -391,7 +395,7 @@ class JobCard extends HTMLElement {
       .querySelector(".edit-icon")
       .addEventListener("click", () => {
         const edit_dialog = document.getElementById("edit-application");
-        const edit_cancel = document.getElementById("edit-cancel");
+        const edit_cancel = document.getElementById("edit_cancel");
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();
@@ -404,7 +408,9 @@ class JobCard extends HTMLElement {
         document
           .getElementById("location-edit")
           .setAttribute("placeholder", location);
-        document.getElementById("date-edit").setAttribute("placeholder", date);
+        document
+          .getElementById("date-edit")
+          .setAttribute("placeholder", date);
         edit_cancel.addEventListener("click", () => {
           edit_dialog.close();
         });
@@ -415,11 +421,50 @@ class JobCard extends HTMLElement {
           item_list[id]["position"] = edit_form.position.value;
           item_list[id]["location"] = edit_form.location.value;
           item_list[id]["date"] = edit_form.date.value;
-
           localStorage.setItem("jobs", JSON.stringify(item_list));
-          window.location.reload();
         });
       });
+
+    this.shadowRoot.querySelector("#img-icon").addEventListener("click", () => {
+      const image_dialog = document.querySelector(".img-upload");
+      image_dialog.showModal();
+      let file_input = document.querySelector("#file_upload");
+      document.querySelector(".upload_cancel").addEventListener("click", () => {
+        file_input.value = null;
+        image_dialog.close();
+      });
+      const handle_file = () => {
+        const selected_file = [...file_input.files];
+        const file_reader = new FileReader();
+
+        file_reader.readAsDataURL(selected_file[0]);
+        file_reader.onload = () => {
+          this.shadowRoot.querySelector("#img-icon").src = file_reader.result;
+          let items = window.localStorage.getItem("jobs");
+          let item_list = JSON.parse(items);
+          try {
+            item_list[id]["img"] = file_reader.result;
+            localStorage.setItem("jobs", JSON.stringify(item_list));
+          } catch (e) {
+            alert(
+              "local storage has exceed storage limit, this change will not be saved, remove some unnecessary items"
+            );
+          }
+        };
+      };
+      document
+        .querySelector(".upload_confirm")
+        .addEventListener("click", () => {
+          handle_file();
+          window.location.reload();
+        });
+      file_input.onchange = () => {
+        if (file_input.files[0].size > 500000) {
+          alert("file is too big!");
+          file_input.value = null;
+        }
+      };
+    });
   }
 }
 
