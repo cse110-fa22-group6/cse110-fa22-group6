@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Spoof";
+  src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
+}
+
+:root {
+  --special: #95a1f1;
+  --jcbackgroud: #e6e6e6;
+}
+
+body.dark-theme {
+  background-color: rgb(30 30 30 / 25500%);
+  --jjcbackgroud: rgb(30 30 30 / 25500%);
+}
+
+.grid-container {
+  background: var(--j);
+}
+
+.delete-icon,
+.edit-icon {
+  background-color: var(--jcbackgroud);
+}
+
+.stages .step.active {
+  background-color: var(--special);
+}
+
+.darkmode {
+  display: none;
+}
+
+.darkmode-switch {
+  background-color: var(--special-color);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(0.8);
+}
+
+.darkmode-switch .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  height: 28px;
+  width: 28px;
+  transform: translateX(0);
+  transition: transform 0.2s linear;
+}
+
+.darkmode:checked + .darkmode-switch .ball {
+  transform: translateX(28px);
+}
+
+.fa-moon, .fa-sun {
+  color: black;
+}
