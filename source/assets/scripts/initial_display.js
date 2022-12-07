@@ -157,6 +157,10 @@ function save_jobs_to_storage(jobs) {
 function init_form_handler() {
   const add_dialog = document.getElementById("add-application");
   document.getElementById("add_cancel").addEventListener("click", () => {
+    document.querySelector("#company").value = ""
+    document.querySelector("#position").value = ""
+    document.querySelector("#location").value = ""
+    document.querySelector("#date").value = ""
     add_dialog.close();
   });
 
