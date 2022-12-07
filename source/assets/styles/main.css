@@ -22,16 +22,15 @@ body.dark-theme {
   --button-text-color-onhover: black;
 }
 
-body.dark-theme .filterStages{
-  color : black;
+body.dark-theme ul[class="filterStages"] {
+  color: black;
 }
-	
+
 * {
   font-family: "Spoof", serif;
   font-weight: 300;
   color: var(--text-color);
 }
-
 
 body {
   margin: 2% 5%;
@@ -72,7 +71,7 @@ h5 {
   padding-top: 1em;
 }
 
-#add_application_btn {
+button[id="add_application_btn"] {
   background-color: var(--special-color);
   margin: 1em 0.7em;
   color: var(--button-text-color);
@@ -80,12 +79,13 @@ h5 {
   cursor: pointer;
 }
 
-#add_application_btn:hover {
+button[id="add_application_btn"]:hover {
   background-color: var(--button-color-onhover);
   color: var(--button-text-color-onhover);
   cursor: pointer;
 }
-/* darkmode*/
+
+/* darkmode */
 .flexitem-3 {
   position: absolute;
   width: auto;
@@ -93,7 +93,7 @@ h5 {
   right: 5px;
 }
 
-.filterStages {
+ul[class="filterStages"] {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -103,7 +103,7 @@ h5 {
   align-items: center;
 }
 
-.filterStages .filterStep {
+ul[class="filterStages"] ul[class="filterStep"] {
   border: 3px solid black;
   color: black;
   cursor: pointer;
@@ -115,14 +115,14 @@ h5 {
   position: relative;
 }
 
-.filterStages .filterStep span {
+ul[class="filterStages"] ul[class="filterStep"] span {
   display: none;
 }
 
-body .filterStages .filterStep.active {
+body ul[class="filterStages"] ul[class="filterStep"].active {
   background-color: #95a1f1;
 }
 
-body.dark-theme .filterStages .filterStep.active {
+body.dark-theme ul[class="filterStages"] ul[class="filterStep"].active {
   background-color: rgb(187 134 250);
 }
