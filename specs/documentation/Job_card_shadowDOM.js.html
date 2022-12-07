@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#add_jobs_to_document">add_jobs_to_document</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_all">filter_all</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_applied">filter_applied</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#filter_button_listener">filter_button_listener</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_interview">filter_interview</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_offer">filter_offer</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_rejected">filter_rejected</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_screening">filter_screening</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_unapplied">filter_unapplied</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#get_jobs_from_storage">get_jobs_from_storage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init_form_handler">init_form_handler</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#num_of_card">num_of_card</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#save_jobs_to_storage">save_jobs_to_storage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#update_filter">update_filter</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#add_jobs_to_document">add_jobs_to_document</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_all">filter_all</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_applied">filter_applied</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#filter_button_listener">filter_button_listener</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_interview">filter_interview</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_offer">filter_offer</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_rejected">filter_rejected</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_screening">filter_screening</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#filter_unapplied">filter_unapplied</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#get_jobs_from_storage">get_jobs_from_storage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init_form_handler">init_form_handler</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#num_of_card">num_of_card</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#update_filter">update_filter</a></span></li>
 </nav>
 
 <div id="main">
@@ -42,7 +42,7 @@
             <pre class="prettyprint source linenums"><code>/* eslint-disable snakecasejs/snakecasejs */
 // JobCard.js
 class JobCard extends HTMLElement {
-  constructor() {
+  constructor () {
     super(); // Inheret everything from HTMLElement
     // Attaches the shadow DOM to this Web Component
     let shadow_element = this.attachShadow({ mode: "open" });
@@ -323,7 +323,7 @@ class JobCard extends HTMLElement {
    *                          "position": "Data Science Intern", (str)
    *                          "date": "12/24/2022" (str)
    */
-  set data(data) {
+  set data (data) {
     // If nothing was passed in, return
     if (!data) return;
 
@@ -335,9 +335,9 @@ class JobCard extends HTMLElement {
     const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
     const position = data.position;
     const date = data.date;
-    var img = "../source/assets/images/image-solid.svg"
+    var img = "../source/assets/images/image-solid.svg";
     if (data.img != null) {
-      img = data.img
+      img = data.img;
     }
     shadow_article.innerHTML = `
     &lt;!-- BEGIN JOB CARD -->
@@ -447,16 +447,10 @@ class JobCard extends HTMLElement {
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();
-        document.getElementById("company-edit").value = company
-        document
-          .getElementById("position-edit")
-          .value = position
-        document
-          .getElementById("location-edit")
-          .value = location
-        document
-          .getElementById("date-edit")
-          .value = date
+        document.getElementById("company-edit").value = company;
+        document.getElementById("position-edit").value = position;
+        document.getElementById("location-edit").value = location;
+        document.getElementById("date-edit").value = date;
         edit_cancel.addEventListener("click", () => {
           edit_dialog.close();
         });
@@ -529,7 +523,7 @@ customElements.define("job-card", JobCard);
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Dec 07 2022 19:02:55 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Dec 07 2022 19:16:58 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
