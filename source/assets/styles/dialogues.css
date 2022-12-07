@@ -15,6 +15,15 @@ body.dark-theme {
   --buttontextonhover: black;
 }
 
+body.dark-theme .img-upload {
+  background-color: var(--dialogbackgroud);
+  border-color: black;
+}
+body.dark-theme #file_upload{
+  color: white;
+  border-color: black 
+}
+
 #add-application,
 #edit-application,
 #delete-application {
@@ -99,12 +108,15 @@ body.dark-theme {
   margin-bottom: 1.5em;
 }
 
+.img_button button,
 .add_buttons button,
 .edit_buttons button,
 .delete_buttons button {
   margin: 0 0.7em;
 }
 
+.upload_cancel,
+.upload_confirm,
 #add_cancel,
 #add_submit,
 #edit_cancel,
@@ -187,6 +199,7 @@ hr {
 ::-webkit-scrollbar {
     display: none;
 }
+
 
 
 /* MEDIA QUERIES */

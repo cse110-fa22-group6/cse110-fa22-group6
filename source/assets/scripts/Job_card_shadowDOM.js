@@ -154,6 +154,10 @@ class JobCard extends HTMLElement {
     .stages .step.active {
       background-color: var(--special-color);
     }
+
+    #img-icon {
+      width: 80px
+    }
     
     /* MEDIA QUERIES */
     @media screen and (max-width: 1127px) {
