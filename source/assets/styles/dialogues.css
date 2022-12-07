@@ -173,19 +173,19 @@ input {
 }
 
 .required::after {
-    content: " *";
-    color: red;
+  content: " *";
+  color: red;
 }
 
 .notice {
-    text-align: right;
-    font-style: italic;
-    color: gray;
+  text-align: right;
+  font-style: italic;
+  color: gray;
 }
 
 .notice::before {
-    content: "* ";
-    color: red;
+  content: "* ";
+  color: red;
 }
 
 .form-section {
@@ -197,10 +197,8 @@ hr {
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-
-
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
