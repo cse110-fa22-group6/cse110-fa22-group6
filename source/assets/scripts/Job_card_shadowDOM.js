@@ -13,18 +13,27 @@ class JobCard extends HTMLElement {
     //Job card CSS goes here
     style_element.textContent = `
     @font-face {
-      font-family: Spoof, serif;
-      src: url("../font/Spoof-Regula  r.woff") format("woff");
+      font-family: "Spoof";
+      src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
+    }
+    
+    :root {
+      --special-color: #95a1f1;
+      --job-card-backgroud-color: #e6e6e6;
+    }
+    
+    body.dark-theme {
+      --job-card-backgroud-color: rgba(30,30,30,255);
     }
     
     * {
-      font-family: Spoof, serif;
+      font-family: "Spoof", serif;
     }
     
     .grid-container {
       display: grid;
       grid-template-columns: 0.15fr .7fr 1fr 0.2fr;
-      background: #e6e6e6;
+      background: var(--job-card-backgroud-color);
       padding: 20px 30px;
       border: 3px solid black;
       margin: 1em 0;
@@ -44,24 +53,24 @@ class JobCard extends HTMLElement {
     .grid-2 {
       position: relative;
       left: 10px;
-      padding: auto;
+      padding: unset;
     }
-
-    #img-icon {
-      width: 80px
-    }
-
+    
     .delete-icon,
     .edit-icon {
       border: none;
       cursor: pointer;
-      background-color: #e6e6e6;
-      width: 1.5rem
+      background-color: var(--job-card-backgroud-color);
+      width: 1.5rem;
     }
     
     .grid-4 {
       text-align: center;
       padding-left: 20px;
+    }
+    .grid-4 i {
+      font-size: 1.7em;
+      padding-bottom: .3em;
     }
     
     .position {
@@ -96,7 +105,7 @@ class JobCard extends HTMLElement {
     #progress-bar-2{
       position: absolute;
       background: black;
-      margin: none;
+      margin: unset;
       width: 100%;
       height: 5px;
       top: 50%
@@ -111,6 +120,7 @@ class JobCard extends HTMLElement {
       justify-content: space-between;
       height: 100%;
       align-items: center;
+      position: relative;
     }
     
     .stages::before {
@@ -137,16 +147,18 @@ class JobCard extends HTMLElement {
       line-height: 300%;
       cursor: default;
       font-size: 16px;
+      height: 0;
+      position: absolute;
     }
     
     .stages .step.active {
-      background-color: #95a1f1;
+      background-color: var(--special-color);
     }
     
     /* MEDIA QUERIES */
     @media screen and (max-width: 1127px) {
       .grid-container {
-        grid-template-columns: 0.15fr .5fr 1.2fr 0.2fr;
+        grid-template-columns: 0.15fr .5fr 1.2fr 0.3fr;
       }
       .position {
         font-weight: bold;
@@ -157,7 +169,6 @@ class JobCard extends HTMLElement {
         font-size: 14px;
       }
       .stages .step p {
-        top: 15px;
         font-size: 14px;
       }
       .grid-1 i {
@@ -179,37 +190,16 @@ class JobCard extends HTMLElement {
         font-size: 14px;
       }
       .stages .step p {
-        top: 15px;
         font-size: 14px;
       }
       .grid-1 i {
         padding-bottom: 40px;
         font-size: 40px;
-    
       }
-    } 
-    
-    @media screen and (max-width: 790px) {
-      .grid-container {
-        grid-template-columns: 0.13fr .41fr 1.53fr 0.08fr;
+      .grid-4 i {
+      font-size: 1.7em;
       }
-      .position {
-        font-weight: bold;
-        font-size: 21px;
-      }
-      .company,
-      .location {
-        font-size: 12px;
-      }
-      .stages .step p {
-        padding-top: 8px;
-        font-size: 12px;
-      }
-      .grid-1 i {
-        padding-bottom: 40px;
-        font-size: 35px;
-      }
-    } 
+    }
     
     @media screen and (max-width: 790px) {
       .grid-container {
@@ -224,7 +214,7 @@ class JobCard extends HTMLElement {
         font-size: 10px;
       }
       .stages .step p {
-        padding-top: 10px;
+        top: 10px;
         font-size: 10px;
       }
       .grid-1 i {
@@ -237,25 +227,34 @@ class JobCard extends HTMLElement {
     
     @media screen and (max-width: 640px) {
       .grid-container {
-        grid-template-columns: 0.13fr .43fr 1.53fr 0.06fr;
+        grid-template-columns: [grid1] 0.13fr [grid2] .43fr [grid3] 1.53fr [grid4] 0.01fr;
+        padding: 20px 12px;
       }
       .position {
         font-weight: bold;
-        font-size: 17px;
+        font-size: 19px;
       }
       .company,
       .location {
-        font-size: 8px;
+        font-size: 10px;
       }
       .stages .step p {
-        padding-top: 15px;
-        font-size: 8px;
+        top: 10px;
+        font-size: 10px;
+      }
+      .grid-1{
+        display: none;
       }
       .grid-1 i {
-        padding-bottom: 40px
+        padding-bottom: 40px;
       }
       .grid-2 {
-        padding-right: 20px;
+        padding-right: 10px;
+        grid-column-start: 1;
+        grid-column-end: span grid3;
+      }
+      .grid-4 {
+        padding-left: 3px;
       }
     } 
     `;
@@ -402,18 +401,16 @@ class JobCard extends HTMLElement {
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();
-        document
-          .getElementById("company-edit")
-          .setAttribute("placeholder", company);
+        document.getElementById("company-edit").value = company
         document
           .getElementById("position-edit")
-          .setAttribute("placeholder", position);
+          .value = position
         document
           .getElementById("location-edit")
-          .setAttribute("placeholder", location);
+          .value = location
         document
           .getElementById("date-edit")
-          .setAttribute("placeholder", date);
+          .value = date
         edit_cancel.addEventListener("click", () => {
           edit_dialog.close();
         });

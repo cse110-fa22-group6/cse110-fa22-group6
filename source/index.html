@@ -5,24 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../source/assets/styles/main.css" />
-    <link rel="stylesheet" href="../source/assets/styles/jobcard.css" />
-    <link rel="stylesheet" href="/source/assets/styles/darkmode.css">
     <link rel="stylesheet" href="../source/assets/styles/dialogues.css" />
+    <link rel="stylesheet" href="../source/assets/styles/darkmode.css" />
     <link rel="icon" type="image/x-icon" href="../admin/branding/logo.ico" />
     <script src="../source/assets/scripts/initial_display.js" type="module"></script>
     <script src="../source/assets/scripts/Job_card_shadowDOM.js" type="module"></script>
-    <script type="module" src="/source/assets/scripts/dark_mode.js"></script>
+    <script type="module" src="../source/assets/scripts/dark_mode.js"></script>
     <title>Wing It</title>
   </head>
   <body>
     <header>
       <div class="container-1">
-        <img
-          src="../admin/branding/icon-transparent.png"
-          alt="logo"
-          width="80"
-          height="80"
-        />
+        <img src="../admin/branding/icon-transparent.png" alt="logo" width="80" height="80" id = "main-logo"/>
         <h1 id="title">Wing It</h1>
 
         <div class="flexitem-3">
@@ -65,7 +59,7 @@
                 alt="logo"
                 width="60"
                 height="60"
-                class="delete-logo"
+                id="delete-logo"
               >
             </div>
             <div class="title" id="item2-delete">
@@ -92,7 +86,7 @@
                 alt="logo"
                 width="60"
                 height="60"
-                class="add-logo"
+                id="add-logo"
               > 
             </div>
             <div class="title" id="item2-add">
@@ -144,7 +138,7 @@
                 alt="logo"
                 width="60"
                 height="60"
-                class="add-logo"
+                id="edit-logo"
               >
             </div>
             <div class="title" id="item2-edit">
@@ -158,17 +152,17 @@
             <div class="grid-container-form">
                 <div class="form-section" id="edit-grid-1">
                   <label class="required" for="company-edit">Company</label>
-                  <input type="text" id="company-edit" name="company" placeholder="Old Company Here" required>
+                  <input type="text" id="company-edit" name="company" required>
                 </div>
 
                 <div class="form-section" id="edit-grid-2">
                   <label class="required" for="position-edit">Position</label>
-                  <input type="text" id="position-edit" name="position" placeholder="Old Position Here" required>
+                  <input type="text" id="position-edit" name="position" required>
                 </div>
 
                 <div class="form-section" id="edit-grid-3">
                   <label for="location-edit">Location</label>
-                  <input type="text" id="location-edit" name="location" placeholder="Old Location Here">
+                  <input type="text" id="location-edit" name="location">
                 </div>
 
                 <div class="form-section" id="edit-grid-4">
