@@ -468,5 +468,5 @@ class JobCard extends HTMLElement {
 }
 
 // Defines the Class as a customElement to create
-// 'job-card' elements
+// 'job-card' elements Job card defining
 customElements.define("job-card", JobCard);
