@@ -14,7 +14,7 @@ class JobCard extends HTMLElement {
     style_element.textContent = `
     @font-face {
       font-family: Spoof, serif;
-      src: url("../font/Spoof-Regular.woff") format("woff");
+      src: url("../font/Spoof-Regula  r.woff") format("woff");
     }
     
     * {
@@ -290,14 +290,17 @@ class JobCard extends HTMLElement {
     const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
     const position = data.position;
     const date = data.date;
-    const img = data.img;
+    var img = "../source/assets/images/image-solid.svg"
+    if (data.img != null) {
+      img = data.img
+    }
     shadow_article.innerHTML = `
     <!-- BEGIN JOB CARD -->
     <div class="grid-container">
       <!--     Logo (for the future)  -->
       <div class="grid-1">
         <p style="font-size: 15px">Click to change</p>
-        <input id="img-icon" type="image" src="${img}">
+        <input id="img-icon" type="image" src="${img}" alt="logo">
       </div>
 
       <!--     Application Text -->
@@ -305,7 +308,7 @@ class JobCard extends HTMLElement {
         <p class="position">${position}</p>
         <p class="company">${company}</p>
         <p class="location">${location}</p>
-        <p class="date">created: ${date}</p>
+        <p class="date">${date}</p>
 
       </div>
 
