@@ -93,7 +93,7 @@ button[id="add_application_btn"]:hover {
   right: 5px;
 }
 
-.container-3 > ul{
+.container-3 > ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -115,7 +115,7 @@ button[id="add_application_btn"]:hover {
   position: relative;
 }
 
- .step span {
+.step span {
   display: none;
 }
 
