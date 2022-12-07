@@ -2,9 +2,8 @@ name: JSDoc
 
 on:
   push:
-    branches-ignore:
-      - main
-  workflow_dispatch:
+    branches:
+      - "**"
 
 jobs:
   deploy:
@@ -12,8 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT }}
 
       - name: Generate Docs
         uses: andstor/jsdoc-action@v1
@@ -31,4 +28,3 @@ jobs:
           push_options: "--force"
           status_options: "--untracked-files=no"
           skip_dirty_check: true
-
