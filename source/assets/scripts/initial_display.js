@@ -60,14 +60,16 @@ function init() {
   document.getElementById("number-of-job-cards").innerText = num_of_card;
   add_jobs_to_document(jobs, 0);
   // Add the event listeners to the form elements
-  const addBtn = document.getElementById("add_application_btn");
+  const add_btn = document.getElementById("add_application_btn");
   const add_dialog = document.getElementById("add-application");
 
   document.getElementById("add_cancel").addEventListener("click", () => {
     add_dialog.close();
   });
-  addBtn.addEventListener("click", () => {
-    add_dialog.showModal();
+  add_btn.addEventListener("click", () => {
+    /* eslint-disable */
+    add_dialog.showModal(); 
+    /* eslint-enable */
   });
 
   init_form_handler();
@@ -106,9 +108,9 @@ function get_jobs_from_storage() {
  * status which can be specified by statusFilter parameter
  *
  * @param {Array<Object>} jobs An array of jobs
- * @param {number} statusFilter status to filter jobs
+ * @param {number} status_filter status to filter jobs
  */
-function add_jobs_to_document(jobs, statusFilter) {
+function add_jobs_to_document(jobs, status_filter) {
   // Get a reference to the <main> element
   let main = document.querySelector("main");
 
@@ -117,26 +119,26 @@ function add_jobs_to_document(jobs, statusFilter) {
   // sorted by date
   // Append each element to <main>
   let i = 0;
-  let sortDic = {};
-  let sortArr = [];
+  let sort_dic = {};
+  let sort_arr = [];
   while (i < jobs.length) {
-    if (statusFilter === 0 || jobs[i].status == statusFilter - 1) {
+    if (status_filter === 0 || jobs[i].status == status_filter - 1) {
       let job = document.createElement("job-card");
       job.data = jobs[i];
       let date = jobs[i]["date"];
-      if (sortDic[date] == null) {
-        sortDic[date] = [job];
+      if (sort_dic[date] == null) {
+        sort_dic[date] = [job];
       } else {
-        sortDic[date].push(job);
+        sort_dic[date].push(job);
       }
-      sortArr.push(date);
+      sort_arr.push(date);
     }
     i++;
   }
-  sortArr.sort();
-  for (i = 0; i < sortArr.length; i++) {
-    for (let j = 0; j < sortDic[sortArr[i]].length; j++) {
-      main.append(sortDic[sortArr[i]][j]);
+  sort_arr.sort();
+  for (i = 0; i < sort_arr.length; i++) {
+    for (let j = 0; j < sort_dic[sort_arr[i]].length; j++) {
+      main.append(sort_dic[sort_arr[i]][j]);
     }
   }
 }
@@ -212,43 +214,43 @@ function filter_button_listener() {
     // get which bubble was clicked for that specific progress bar
     if (e.target && e.target.nodeName === "LI") {
       const filter = e.target.textContent;
-      let filterNum = 0;
+      let filter_num = 0;
       switch(filter) {
         case 'All':
-          filterNum = filter_all;            
+          filter_num = filter_all;            
           break;
         case 'Rejected':
-          filterNum = filter_rejected;
+          filter_num = filter_rejected;
           break;
         case 'Unapplied':
-          filterNum = filter_unapplied;
+          filter_num = filter_unapplied;
           break;
         case 'Applied':
-          filterNum = filter_applied;
+          filter_num = filter_applied;
           break;
         case 'Screening':
-          filterNum = filter_screening;
+          filter_num = filter_screening;
           break;
         case 'Interview':
-          filterNum = filter_interview;
+          filter_num = filter_interview;
           break;
         case 'Offer':
-          filterNum = filter_offer;
+          filter_num = filter_offer;
           break;
         }
     // make the clicked bubble purple and all others white
-    update_filter(document.getElementsByClassName("filterStages")[0], filterNum);
+    update_filter(document.getElementsByClassName("filterStages")[0], filter_num);
 
     let main = document.querySelector("main");
 
     // Removes All Jobs
-    let arrayOfJobs = main.querySelectorAll("job-card");
-    for(let i = 0; i < arrayOfJobs.length; i++){
-      arrayOfJobs[i].remove();
+    let array_of_jobs = main.querySelectorAll("job-card");
+    for(let i = 0; i < array_of_jobs.length; i++){
+      array_of_jobs[i].remove();
     }
     let jobs = get_jobs_from_storage();
 
-    add_jobs_to_document(jobs ,filterNum);
+    add_jobs_to_document(jobs ,filter_num);
 
     }
   });

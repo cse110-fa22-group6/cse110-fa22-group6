@@ -12,6 +12,7 @@ class JobCard extends HTMLElement {
 
     //Job card CSS goes here
     style_element.textContent = `
+
     @font-face {
       font-family: "Spoof";
       src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
@@ -360,7 +361,7 @@ class JobCard extends HTMLElement {
     let stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
     stage[status].classList.add("active");
     for (let i = 0; i < stage.length; i++) {
-      stage[i].addEventListener("click", function (e) {
+      stage[i].addEventListener("click", () => {
         // get which bubble was clicked for that specific progress bar
         // make the clicked bubble purple and prev status white
         let items = localStorage.getItem("jobs");
