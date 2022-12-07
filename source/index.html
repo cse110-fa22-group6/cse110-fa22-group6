@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../source/assets/styles/main.css" />
     <link rel="stylesheet" href="../source/assets/styles/jobcard.css" />
+    <link rel="stylesheet" href="/source/assets/styles/darkmode.css">
     <link rel="stylesheet" href="../source/assets/styles/dialogues.css" />
     <link rel="icon" type="image/x-icon" href="../admin/branding/logo.ico" />
     <script src="../source/assets/scripts/initial_display.js" type="module"></script>
     <script src="../source/assets/scripts/Job_card_shadowDOM.js" type="module"></script>
+    <script type="module" src="/source/assets/scripts/dark_mode.js"></script>
     <title>Wing It</title>
   </head>
   <body>
@@ -22,6 +24,15 @@
           height="80"
         />
         <h1 id="title">Wing It</h1>
+
+        <div class="flexitem-3">
+          <input type="checkbox" class="darkmode" id="toggle">
+          <label class="darkmode-switch" for="toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+          </label>
+        </div>
       </div>
       <h2>Your Applications</h2>
       <div class="container-2">
@@ -82,7 +93,7 @@
                 width="60"
                 height="60"
                 class="add-logo"
-              >
+              > 
             </div>
             <div class="title" id="item2-add">
               <p id="add_title">Add Application</p>
@@ -115,7 +126,7 @@
             </div>
           </form>
           <p class = "notice">required field</p>
-        </div>
+        </div> 
         <div class="add_buttons">
             <button id="add_cancel">Cancel</button>
             <button type="submit" form="add-form" id="add_submit">Add</button>
@@ -184,5 +195,7 @@
           </div>
       </dialog>
     </main> 
+    <script src="https://kit.fontawesome.com/b9cc338eb6.js" crossorigin="anonymous"></script>
+
   </body>
 </html>
