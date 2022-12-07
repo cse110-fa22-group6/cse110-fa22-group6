@@ -62,6 +62,13 @@ h5 {
   color: white;
   cursor: pointer;
 }
+/* darkmode*/
+.flexitem-3 {
+  position: absolute;
+  width: auto;
+  top: 35px;
+  right: 5px;
+}
 
 .filterStages {
   margin: 0;
@@ -92,3 +99,41 @@ h5 {
   background-color: #95a1f1;
 }
 
+/* dark theme */
+.darkmode {
+  display: none;
+}
+
+.darkmode-switch {
+  background-color: var(--special-color);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(0.8);
+}
+
+.darkmode-switch .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  height: 28px;
+  width: 28px;
+  transform: translateX(0);
+  transition: transform 0.2s linear;
+}
+
+.darkmode:checked + .darkmode-switch .ball {
+  transform: translateX(28px);
+}
+
+.fa-moon, .fa-sun {
+  color: black;
+}
