@@ -52,7 +52,7 @@ const filter_offer = 6;
 
 // Starts the program, all function calls trace back here
 
-function init() {
+function init () {
   // Get the jobs from localStorage
   let jobs = get_jobs_from_storage();
   // Add each job to the <main> element
@@ -83,7 +83,7 @@ function init() {
  * is returned.
  * @returns {Array<Object>} An array of jobs found in localStorage
  */
-function get_jobs_from_storage() {
+function get_jobs_from_storage () {
   //vars
   let unparsed_job_list = window.localStorage.getItem("jobs");
   let parsed_job_list = JSON.parse(unparsed_job_list);
@@ -110,7 +110,7 @@ function get_jobs_from_storage() {
  * @param {Array<Object>} jobs An array of jobs
  * @param {number} status_filter status to filter jobs
  */
-function add_jobs_to_document(jobs, status_filter) {
+function add_jobs_to_document (jobs, status_filter) {
   // Get a reference to the <main> element
   let main = document.querySelector("main");
 
@@ -143,26 +143,26 @@ function add_jobs_to_document(jobs, status_filter) {
   }
 }
 
-/**
- * Takes in an array of jobs, converts it to a string, and then
- * saves that string to 'jobs' in localStorage
- * @param {Array<Object>} jobs An array of jobs
- */
-function save_jobs_to_storage(jobs) {
-  localStorage.setItem("jobs", JSON.stringify(jobs));
-}
+// /**
+//  * Takes in an array of jobs, converts it to a string, and then
+//  * saves that string to 'jobs' in localStorage
+//  * @param {Array<Object>} jobs An array of jobs
+//  */
+// function save_jobs_to_storage (jobs) {
+//   localStorage.setItem("jobs", JSON.stringify(jobs));
+// }
 
 /**
  * Adds the necesarry event handlers to <form> and the clear storage
  * <button>.
  */
-function init_form_handler() {
+function init_form_handler () {
   const add_dialog = document.getElementById("add-application");
   document.getElementById("add_cancel").addEventListener("click", () => {
-    document.querySelector("#company").value = ""
-    document.querySelector("#position").value = ""
-    document.querySelector("#location").value = ""
-    document.querySelector("#date").value = ""
+    document.querySelector("#company").value = "";
+    document.querySelector("#position").value = "";
+    document.querySelector("#location").value = "";
+    document.querySelector("#date").value = "";
     add_dialog.close();
   });
 
@@ -208,7 +208,7 @@ function init_form_handler() {
  * @description Updates the filter buttons by retrieving which filter was clicked
  * and updates the job cards to show the cards that were filtered
  */
-function filter_button_listener() {
+function filter_button_listener () {
   // prettier-ignore
   document.getElementsByClassName("filterStages")[0].addEventListener("click", function (e) {
     // get which bubble was clicked for that specific progress bar
@@ -216,25 +216,25 @@ function filter_button_listener() {
       const filter = e.target.textContent;
       let filter_num = 0;
       switch(filter) {
-        case 'All':
+        case "All":
           filter_num = filter_all;            
           break;
-        case 'Rejected':
+        case "Rejected":
           filter_num = filter_rejected;
           break;
-        case 'Unapplied':
+        case "Unapplied":
           filter_num = filter_unapplied;
           break;
-        case 'Applied':
+        case "Applied":
           filter_num = filter_applied;
           break;
-        case 'Screening':
+        case "Screening":
           filter_num = filter_screening;
           break;
-        case 'Interview':
+        case "Interview":
           filter_num = filter_interview;
           break;
-        case 'Offer':
+        case "Offer":
           filter_num = filter_offer;
           break;
         }
@@ -258,16 +258,16 @@ function filter_button_listener() {
 
 /**
  * @param {Object} ul The filter bar
- * @param {number} filterNum The current filter (bubble) we have clicked
+ * @param {number} filter_num The current filter (bubble) we have clicked
  * @description Makes a specific filter bubble purple and makes all others white.
  */
-function update_filter(ul, filterNum) {
+function update_filter (ul, filter_num) {
   // get the filters
   const li = ul.getElementsByTagName("li");
 
   // change each bubble accordingly
   for (let i = 0; i < li.length; i++) {
-    if (i === filterNum) {
+    if (i === filter_num) {
       li[i].classList.add("active");
     } else {
       li[i].classList.remove("active");

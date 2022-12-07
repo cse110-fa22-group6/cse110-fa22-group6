@@ -1,7 +1,7 @@
 /* eslint-disable snakecasejs/snakecasejs */
 // JobCard.js
 class JobCard extends HTMLElement {
-  constructor() {
+  constructor () {
     super(); // Inheret everything from HTMLElement
     // Attaches the shadow DOM to this Web Component
     let shadow_element = this.attachShadow({ mode: "open" });
@@ -282,7 +282,7 @@ class JobCard extends HTMLElement {
    *                          "position": "Data Science Intern", (str)
    *                          "date": "12/24/2022" (str)
    */
-  set data(data) {
+  set data (data) {
     // If nothing was passed in, return
     if (!data) return;
 
@@ -294,9 +294,9 @@ class JobCard extends HTMLElement {
     const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
     const position = data.position;
     const date = data.date;
-    var img = "../source/assets/images/image-solid.svg"
+    var img = "../source/assets/images/image-solid.svg";
     if (data.img != null) {
-      img = data.img
+      img = data.img;
     }
     shadow_article.innerHTML = `
     <!-- BEGIN JOB CARD -->
@@ -406,16 +406,10 @@ class JobCard extends HTMLElement {
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();
-        document.getElementById("company-edit").value = company
-        document
-          .getElementById("position-edit")
-          .value = position
-        document
-          .getElementById("location-edit")
-          .value = location
-        document
-          .getElementById("date-edit")
-          .value = date
+        document.getElementById("company-edit").value = company;
+        document.getElementById("position-edit").value = position;
+        document.getElementById("location-edit").value = location;
+        document.getElementById("date-edit").value = date;
         edit_cancel.addEventListener("click", () => {
           edit_dialog.close();
         });
