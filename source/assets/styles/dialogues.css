@@ -101,7 +101,7 @@ p[id="delete_question"] {
 
 div[class="add_buttons"],
 div[class="edit_buttons"],
-div[class="delete_buttons"]{
+div[class="delete_buttons"] {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,8 +141,8 @@ button[id="edit_cancel"]:hover,
 button[id="edit_submit"]:hover,
 button[id="d_cancel"]:hover,
 button[id="d_delete"]:hover {
-  background-color: var(--buttononhover);	
-  border: 1px solid var(--buttononhover);	
+  background-color: var(--buttononhover);
+  border: 1px solid var(--buttononhover);
   color: var(--buttontextonhover);
 }
 
@@ -172,10 +172,10 @@ input {
   color: var(--inputtext);
 }
 
-.required:after {
-    content:" *";
+.required::after {
+    content: " *";
     color: red;
-  }
+}
 
 .notice {
     text-align: right;
@@ -183,8 +183,8 @@ input {
     color: gray;
 }
 
-.notice:before {
-    content:"* ";
+.notice::before {
+    content: "* ";
     color: red;
 }
 
