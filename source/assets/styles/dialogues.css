@@ -1,4 +1,3 @@
-
 :root {
   --dialogbackgroud: rgb(237 237 237);
   --inputtext: black;
@@ -19,9 +18,10 @@ body.dark-theme .img-upload {
   background-color: var(--dialogbackgroud);
   border-color: black;
 }
-body.dark-theme #file_upload{
+
+body.dark-theme input[type="file"] {
   color: white;
-  border-color: black 
+  border-color: black ;
 }
 
 #add-application,
@@ -80,9 +80,9 @@ body.dark-theme #file_upload{
   flex: 3 1 0;
 }
 
-#add_title,
-#edit_title,
-#delete_title {
+p[id="add_title"],
+p[id="edit_title"],
+p[id="delete_title"] {
   width: 100%;
   font-size: 2.5rem;
   font-weight: 400;
