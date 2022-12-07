@@ -1,7 +1,24 @@
+
+:root {
+  --dialogbackgroud: rgb(237 237 237);
+  --inputtext: black;
+  --dialogbuttontext: black;
+  --buttononhover: rgb(105 123 240);
+  --buttontextonhover: white;
+}
+
+body.dark-theme {
+  --dialogbackgroud: rgb(30 30 30 / 25500%);
+  --inputtext: black;
+  --dialogbuttontext: black;
+  --buttononhover: rgb(145 68 239);
+  --buttontextonhover: black;
+}
+
 #add-application,
 #edit-application,
 #delete-application {
-  background-color: rgb(237 237 237);
+  background-color: var(--dialogbackgroud);
   width: 50%;
   left: 25%;
   height: fit-content;
@@ -54,9 +71,9 @@
   flex: 3 1 0;
 }
 
-#add-title,
-#edit-title,
-#delete-title {
+#add_title,
+#edit_title,
+#delete_title {
   width: 100%;
   font-size: 2.5rem;
   font-weight: 400;
@@ -65,7 +82,7 @@
   text-align: center;
 }
 
-#delete-question {
+#delete_question {
   margin-top: 2em;
   margin-bottom: 1.1em;
   font-size: 1.5rem;
@@ -73,47 +90,48 @@
   text-align: center;
 }
 
-.add-buttons,
-.edit-buttons,
-.delete-buttons {
+.add_buttons,
+.edit_buttons,
+.delete_buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5em;
 }
 
-.add-buttons button,
-.edit-buttons button,
-.delete-buttons button {
+.add_buttons button,
+.edit_buttons button,
+.delete_buttons button {
   margin: 0 0.7em;
 }
 
-#add-cancel,
-#add-submit,
-#edit-cancel,
-#edit-submit,
-#d-cancel,
-#d-delete {
+#add_cancel,
+#add_submit,
+#edit_cancel,
+#edit_submit,
+#d_cancel,
+#d_delete {
   width: 130px;
   height: 40px;
   text-align: center;
   line-height: 1.1em;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid var(--dialogbackgroud);
   border-radius: 0.3rem;
   cursor: pointer;
   font-size: 1em;
+  color: var(--dialogbuttontext);
 }
 
-#add-cancel:hover,
-#add-submit:hover,
-#edit-cancel:hover,
-#edit-submit:hover,
-#d-cancel:hover,
-#d-delete:hover {
-  background-color: var(--special-color);
-  border: 1px solid var(--special-color);
-  color: white;
+#add_cancel:hover,
+#add_submit:hover,
+#edit_cancel:hover,
+#edit_submit:hover,
+#d_cancel:hover,
+#d_delete:hover {
+  background-color: var(--buttononhover);	
+  border: 1px solid var(--buttononhover);	
+  color: var(--buttontextonhover);
 }
 
 .grid-container-form {
