@@ -6,7 +6,7 @@ const darktheme_setup = () => {
     document.getElementById("main-logo").src = "../admin/branding/icon_darkmode.png";
     document.getElementById("delete-logo").src = "../admin/branding/icon_darkmode.png";
     document.getElementById("add-logo").src = "../admin/branding/icon_darkmode.png";
-    document.getElementById("edit-logo").src = "/admin/branding/icon_darkmode.png";
+    document.getElementById("edit-logo").src = "../admin/branding/icon_darkmode.png";
   } else { 
     document.getElementById("toggle").checked = false;
     document.getElementById("main-logo").src = "../admin/branding/icon-transparent.png";
