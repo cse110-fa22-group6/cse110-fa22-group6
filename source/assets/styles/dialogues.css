@@ -21,7 +21,7 @@ body.dark-theme .img-upload {
 
 body.dark-theme input[type="file"] {
   color: white;
-  border-color: black ;
+  border-color: black;
 }
 
 #add-application,
@@ -91,7 +91,7 @@ p[id="delete_title"] {
   text-align: center;
 }
 
-#delete_question {
+p[id="delete_question"] {
   margin-top: 2em;
   margin-bottom: 1.1em;
   font-size: 1.5rem;
@@ -99,30 +99,30 @@ p[id="delete_title"] {
   text-align: center;
 }
 
-.add_buttons,
-.edit_buttons,
-.delete_buttons {
+div[class="add_buttons"],
+div[class="edit_buttons"],
+div[class="delete_buttons"]{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5em;
 }
 
-.img_button button,
-.add_buttons button,
-.edit_buttons button,
-.delete_buttons button {
+div[class="img_button"] button,
+div[class="add_buttons"] button,
+div[class="edit_buttons"] button,
+div[class="delete_buttons"] button {
   margin: 0 0.7em;
 }
 
-.upload_cancel,
-.upload_confirm,
-#add_cancel,
-#add_submit,
-#edit_cancel,
-#edit_submit,
-#d_cancel,
-#d_delete {
+button[class="upload_cancel"],
+button[class="upload_confirm"],
+button[id="add_cancel"],
+button[id="add_submit"],
+button[id="edit_cancel"],
+button[id="edit_submit"],
+button[id="d_cancel"],
+button[id="d_delete"] {
   width: 130px;
   height: 40px;
   text-align: center;
@@ -135,12 +135,12 @@ p[id="delete_title"] {
   color: var(--dialogbuttontext);
 }
 
-#add_cancel:hover,
-#add_submit:hover,
-#edit_cancel:hover,
-#edit_submit:hover,
-#d_cancel:hover,
-#d_delete:hover {
+button[id="add_cancel"]:hover,
+button[id="add_submit"]:hover,
+button[id="edit_cancel"]:hover,
+button[id="edit_submit"]:hover,
+button[id="d_cancel"]:hover,
+button[id="d_delete"]:hover {
   background-color: var(--buttononhover);	
   border: 1px solid var(--buttononhover);	
   color: var(--buttontextonhover);
