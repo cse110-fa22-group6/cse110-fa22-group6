@@ -9,10 +9,10 @@ const darktheme_setup = () => {
     document.getElementById("edit-logo").src = "/admin/branding/icon_darkmode.png";
   } else { 
     document.getElementById("toggle").checked = false;
-    document.getElementById("main-logo").src = "/admin/branding/icon-transparent.png";
-    document.getElementById("delete-logo").src = "/admin/branding/icon-transparent.png";
-    document.getElementById("add-logo").src = "/admin/branding/icon-transparent.png";
-    document.getElementById("edit-logo").src = "/admin/branding/icon-transparent.png";
+    document.getElementById("main-logo").src = "../admin/branding/icon-transparent.png";
+    document.getElementById("delete-logo").src = "../admin/branding/icon-transparent.png";
+    document.getElementById("add-logo").src = "../admin/branding/icon-transparent.png";
+    document.getElementById("edit-logo").src = "../admin/branding/icon-transparent.png";
   }
 };
 
