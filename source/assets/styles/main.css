@@ -93,7 +93,7 @@ button[id="add_application_btn"]:hover {
   right: 5px;
 }
 
-ul[class="filterStages"] {
+.container-3 > ul{
   margin: 0;
   padding: 0;
   list-style: none;
@@ -103,7 +103,7 @@ ul[class="filterStages"] {
   align-items: center;
 }
 
-ul[class="filterStages"] ul[class="filterStep"] {
+#filter-stages .step {
   border: 3px solid black;
   color: black;
   cursor: pointer;
@@ -115,14 +115,14 @@ ul[class="filterStages"] ul[class="filterStep"] {
   position: relative;
 }
 
-ul[class="filterStages"] ul[class="filterStep"] span {
+ .step span {
   display: none;
 }
 
-body ul[class="filterStages"] ul[class="filterStep"].active {
+body #filter-stages .step.active {
   background-color: #95a1f1;
 }
 
-body.dark-theme ul[class="filterStages"] ul[class="filterStep"].active {
+body.dark-theme #filter-stages .step.active {
   background-color: rgb(187 134 250);
 }
