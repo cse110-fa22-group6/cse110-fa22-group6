@@ -61,6 +61,7 @@ body.dark-theme {
   transform: translateX(28px);
 }
 
-.fa-moon, .fa-sun {
+.fa-moon,
+.fa-sun {
   color: black;
 }
