@@ -1,7 +1,33 @@
+:root {
+  --dialogbackgroud: rgb(237 237 237);
+  --inputtext: black;
+  --dialogbuttontext: black;
+  --buttononhover: rgb(105 123 240);
+  --buttontextonhover: white;
+}
+
+body.dark-theme {
+  --dialogbackgroud: rgb(30 30 30 / 25500%);
+  --inputtext: black;
+  --dialogbuttontext: black;
+  --buttononhover: rgb(145 68 239);
+  --buttontextonhover: black;
+}
+
+body.dark-theme .img-upload {
+  background-color: var(--dialogbackgroud);
+  border-color: black;
+}
+
+body.dark-theme input[type="file"] {
+  color: white;
+  border-color: black;
+}
+
 #add-application,
 #edit-application,
 #delete-application {
-  background-color: rgb(237 237 237);
+  background-color: var(--dialogbackgroud);
   width: 50%;
   left: 25%;
   height: fit-content;
@@ -54,9 +80,9 @@
   flex: 3 1 0;
 }
 
-#add-title,
-#edit-title,
-#delete-title {
+p[id="add_title"],
+p[id="edit_title"],
+p[id="delete_title"] {
   width: 100%;
   font-size: 2.5rem;
   font-weight: 400;
@@ -65,7 +91,7 @@
   text-align: center;
 }
 
-#delete-question {
+p[id="delete_question"] {
   margin-top: 2em;
   margin-bottom: 1.1em;
   font-size: 1.5rem;
@@ -73,54 +99,55 @@
   text-align: center;
 }
 
-.add-buttons,
-.edit-buttons,
-.delete-buttons {
+div[class="add_buttons"],
+div[class="edit_buttons"],
+div[class="delete_buttons"] {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5em;
 }
 
-.add-buttons button,
-.edit-buttons button,
-.delete-buttons button {
+div[class="img_button"] button,
+div[class="add_buttons"] button,
+div[class="edit_buttons"] button,
+div[class="delete_buttons"] button {
   margin: 0 0.7em;
 }
 
-#add-cancel,
-#add-submit,
-#edit-cancel,
-#edit-submit,
-#d-cancel,
-#d-delete {
+button[class="upload_cancel"],
+button[class="upload_confirm"],
+button[id="add_cancel"],
+button[id="add_submit"],
+button[id="edit_cancel"],
+button[id="edit_submit"],
+button[id="d_cancel"],
+button[id="d_delete"] {
   width: 130px;
   height: 40px;
   text-align: center;
   line-height: 1.1em;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid var(--dialogbackgroud);
   border-radius: 0.3rem;
   cursor: pointer;
   font-size: 1em;
+  color: var(--dialogbuttontext);
 }
 
-#add-cancel:hover,
-#add-submit:hover,
-#edit-cancel:hover,
-#edit-submit:hover,
-#d-cancel:hover,
-#d-delete:hover {
-  background-color: var(--special-color);
-  border: 1px solid var(--special-color);
-  color: white;
+button[id="add_cancel"]:hover,
+button[id="add_submit"]:hover,
+button[id="edit_cancel"]:hover,
+button[id="edit_submit"]:hover,
+button[id="d_cancel"]:hover,
+button[id="d_delete"]:hover {
+  background-color: var(--buttononhover);
+  border: 1px solid var(--buttononhover);
+  color: var(--buttontextonhover);
 }
 
 .grid-container-form {
   display: grid;
-  -grid-template-columns: [col1] 50% [col2] 50%;
-  grid-template-columns: 50% 50%;
-  -grid-template-rows: [row1] auto [row2] auto;
   grid-template-rows: auto auto;
   justify-items: stretch;
 }
@@ -141,6 +168,23 @@ input {
   padding: 0.7em;
   width: 80%;
   line-height: 110%;
+  color: var(--inputtext);
+}
+
+.required::after {
+  content: " *";
+  color: red;
+}
+
+.notice {
+  text-align: right;
+  font-style: italic;
+  color: gray;
+}
+
+.notice::before {
+  content: "* ";
+  color: red;
 }
 
 .form-section {
@@ -149,6 +193,10 @@ input {
 
 hr {
   margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* MEDIA QUERIES */

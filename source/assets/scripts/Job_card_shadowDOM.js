@@ -1,7 +1,7 @@
 /* eslint-disable snakecasejs/snakecasejs */
 // JobCard.js
 class JobCard extends HTMLElement {
-  constructor() {
+  constructor () {
     super(); // Inheret everything from HTMLElement
     // Attaches the shadow DOM to this Web Component
     let shadow_element = this.attachShadow({ mode: "open" });
@@ -12,19 +12,29 @@ class JobCard extends HTMLElement {
 
     //Job card CSS goes here
     style_element.textContent = `
+
     @font-face {
-      font-family: Spoof, serif;
-      src: url("../font/Spoof-Regular.woff") format("woff");
+      font-family: "Spoof";
+      src: url("/source/assets/font/Spoof-Regular.woff") format("woff");
+    }
+    
+    :root {
+      --special-color: #95a1f1;
+      --job-card-backgroud-color: #e6e6e6;
+    }
+    
+    body.dark-theme {
+      --job-card-backgroud-color: rgba(30,30,30,255);
     }
     
     * {
-      font-family: Spoof, serif;
+      font-family: "Spoof", serif;
     }
     
     .grid-container {
       display: grid;
       grid-template-columns: 0.15fr .7fr 1fr 0.2fr;
-      background: #e6e6e6;
+      background: var(--job-card-backgroud-color);
       padding: 20px 30px;
       border: 3px solid black;
       margin: 1em 0;
@@ -44,20 +54,24 @@ class JobCard extends HTMLElement {
     .grid-2 {
       position: relative;
       left: 10px;
-      padding: auto;
+      padding: unset;
     }
     
     .delete-icon,
     .edit-icon {
       border: none;
       cursor: pointer;
-      background-color: #e6e6e6;
-      width: 1.5rem
+      background-color: var(--job-card-backgroud-color);
+      width: 1.5rem;
     }
     
     .grid-4 {
       text-align: center;
       padding-left: 20px;
+    }
+    .grid-4 i {
+      font-size: 1.7em;
+      padding-bottom: .3em;
     }
     
     .position {
@@ -92,7 +106,7 @@ class JobCard extends HTMLElement {
     #progress-bar-2{
       position: absolute;
       background: black;
-      margin: none;
+      margin: unset;
       width: 100%;
       height: 5px;
       top: 50%
@@ -107,6 +121,7 @@ class JobCard extends HTMLElement {
       justify-content: space-between;
       height: 100%;
       align-items: center;
+      position: relative;
     }
     
     .stages::before {
@@ -133,16 +148,22 @@ class JobCard extends HTMLElement {
       line-height: 300%;
       cursor: default;
       font-size: 16px;
+      height: 0;
+      position: absolute;
     }
     
     .stages .step.active {
-      background-color: #95a1f1;
+      background-color: var(--special-color);
+    }
+
+    #img-icon {
+      width: 80px
     }
     
     /* MEDIA QUERIES */
     @media screen and (max-width: 1127px) {
       .grid-container {
-        grid-template-columns: 0.15fr .5fr 1.2fr 0.2fr;
+        grid-template-columns: 0.15fr .5fr 1.2fr 0.3fr;
       }
       .position {
         font-weight: bold;
@@ -153,7 +174,6 @@ class JobCard extends HTMLElement {
         font-size: 14px;
       }
       .stages .step p {
-        top: 15px;
         font-size: 14px;
       }
       .grid-1 i {
@@ -175,37 +195,16 @@ class JobCard extends HTMLElement {
         font-size: 14px;
       }
       .stages .step p {
-        top: 15px;
         font-size: 14px;
       }
       .grid-1 i {
         padding-bottom: 40px;
         font-size: 40px;
-    
       }
-    } 
-    
-    @media screen and (max-width: 790px) {
-      .grid-container {
-        grid-template-columns: 0.13fr .41fr 1.53fr 0.08fr;
+      .grid-4 i {
+      font-size: 1.7em;
       }
-      .position {
-        font-weight: bold;
-        font-size: 21px;
-      }
-      .company,
-      .location {
-        font-size: 12px;
-      }
-      .stages .step p {
-        padding-top: 8px;
-        font-size: 12px;
-      }
-      .grid-1 i {
-        padding-bottom: 40px;
-        font-size: 35px;
-      }
-    } 
+    }
     
     @media screen and (max-width: 790px) {
       .grid-container {
@@ -220,7 +219,7 @@ class JobCard extends HTMLElement {
         font-size: 10px;
       }
       .stages .step p {
-        padding-top: 10px;
+        top: 10px;
         font-size: 10px;
       }
       .grid-1 i {
@@ -233,30 +232,39 @@ class JobCard extends HTMLElement {
     
     @media screen and (max-width: 640px) {
       .grid-container {
-        grid-template-columns: 0.13fr .43fr 1.53fr 0.06fr;
+        grid-template-columns: [grid1] 0.13fr [grid2] .43fr [grid3] 1.53fr [grid4] 0.01fr;
+        padding: 20px 12px;
       }
       .position {
         font-weight: bold;
-        font-size: 17px;
+        font-size: 19px;
       }
       .company,
       .location {
-        font-size: 8px;
+        font-size: 10px;
       }
       .stages .step p {
-        padding-top: 15px;
-        font-size: 8px;
+        top: 10px;
+        font-size: 10px;
+      }
+      .grid-1{
+        display: none;
       }
       .grid-1 i {
-        padding-bottom: 40px
+        padding-bottom: 40px;
       }
       .grid-2 {
-        padding-right: 20px;
+        padding-right: 10px;
+        grid-column-start: 1;
+        grid-column-end: span grid3;
+      }
+      .grid-4 {
+        padding-left: 3px;
       }
     } 
     `;
 
-    // Appends the <style> and <article> elements to the Shadow DOM
+    // Appends the <style> and <article> elements to the Shadow DOM.
     shadow_element.append(style_element);
     shadow_element.append(article_element);
   }
@@ -274,7 +282,7 @@ class JobCard extends HTMLElement {
    *                          "position": "Data Science Intern", (str)
    *                          "date": "12/24/2022" (str)
    */
-  set data(data) {
+  set data (data) {
     // If nothing was passed in, return
     if (!data) return;
 
@@ -286,14 +294,17 @@ class JobCard extends HTMLElement {
     const status = data.status; //"status":,(unapplied, applied, rejected, screened, interviewed, offer)
     const position = data.position;
     const date = data.date;
-
+    var img = "../source/assets/images/image-solid.svg";
+    if (data.img != null) {
+      img = data.img;
+    }
     shadow_article.innerHTML = `
     <!-- BEGIN JOB CARD -->
     <div class="grid-container">
       <!--     Logo (for the future)  -->
       <div class="grid-1">
-
-        <input type="image" src="../source/assets/images/image-solid.svg" />
+        <p style="font-size: 15px">Click to change</p>
+        <input id="img-icon" type="image" src="${img}" alt="logo">
       </div>
 
       <!--     Application Text -->
@@ -301,6 +312,8 @@ class JobCard extends HTMLElement {
         <p class="position">${position}</p>
         <p class="company">${company}</p>
         <p class="location">${location}</p>
+        <p class="date">${date}</p>
+
       </div>
 
       <!--     Progress Bar -->
@@ -342,25 +355,22 @@ class JobCard extends HTMLElement {
     </div>
 
     <!-- END JOB CARD -->
-      `;
+    `;
 
     // update stage
-    var stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
+    let stage = this.shadowRoot.querySelector(".stages").querySelectorAll("li");
     stage[status].classList.add("active");
     for (let i = 0; i < stage.length; i++) {
-      stage[i].addEventListener("click", function (e) {
+      stage[i].addEventListener("click", () => {
         // get which bubble was clicked for that specific progress bar
-        if (e.target && e.target.nodeName == "LI") {
-          console.log(`updating progress bar ${i}`);
-          // make the clicked bubble purple and all others white
-          stage[status].classList.remove("active");
-          stage[i].classList.add("active");
-          let items = localStorage.getItem("jobs");
-          let item_list = JSON.parse(items);
-          item_list[id]["status"] = String(i);
-          localStorage.setItem("jobs", JSON.stringify(item_list));
-          window.location.reload();
-        }
+        // make the clicked bubble purple and prev status white
+        let items = localStorage.getItem("jobs");
+        let item_list = JSON.parse(items);
+        let prev = item_list[id]["status"];
+        stage[prev].classList.remove("active");
+        stage[i].classList.add("active");
+        item_list[id]["status"] = String(i);
+        localStorage.setItem("jobs", JSON.stringify(item_list));
       });
     }
 
@@ -369,17 +379,18 @@ class JobCard extends HTMLElement {
       .addEventListener("click", () => {
         const delete_dialog = document.getElementById("delete-application");
         delete_dialog.showModal();
-        document.getElementById("d-cancel").addEventListener("click", () => {
+        document.getElementById("d_cancel").addEventListener("click", () => {
           delete_dialog.close();
         });
-        document.getElementById("d-delete").addEventListener("click", () => {
+        document.getElementById("d_delete").addEventListener("click", () => {
           let items = window.localStorage.getItem("jobs");
           let item_list = JSON.parse(items);
           item_list.splice(id, 1);
-          for (var i = 0; i < item_list.length; i++) {
+          for (let i = 0; i < item_list.length; i++) {
             item_list[i]["id"] = String(i);
           }
           localStorage.setItem("jobs", JSON.stringify(item_list));
+          document.getElementById("delete-application").close();
           window.location.reload();
         });
       });
@@ -391,20 +402,14 @@ class JobCard extends HTMLElement {
       .querySelector(".edit-icon")
       .addEventListener("click", () => {
         const edit_dialog = document.getElementById("edit-application");
-        const edit_cancel = document.getElementById("edit-cancel");
+        const edit_cancel = document.getElementById("edit_cancel");
         const edit_form = document.getElementById("edit-form");
 
         edit_dialog.showModal();
-        document
-          .getElementById("company-edit")
-          .setAttribute("placeholder", company);
-        document
-          .getElementById("position-edit")
-          .setAttribute("placeholder", position);
-        document
-          .getElementById("location-edit")
-          .setAttribute("placeholder", location);
-        document.getElementById("date-edit").setAttribute("placeholder", date);
+        document.getElementById("company-edit").value = company;
+        document.getElementById("position-edit").value = position;
+        document.getElementById("location-edit").value = location;
+        document.getElementById("date-edit").value = date;
         edit_cancel.addEventListener("click", () => {
           edit_dialog.close();
         });
@@ -415,14 +420,53 @@ class JobCard extends HTMLElement {
           item_list[id]["position"] = edit_form.position.value;
           item_list[id]["location"] = edit_form.location.value;
           item_list[id]["date"] = edit_form.date.value;
-
           localStorage.setItem("jobs", JSON.stringify(item_list));
-          window.location.reload();
         });
       });
+
+    this.shadowRoot.querySelector("#img-icon").addEventListener("click", () => {
+      const image_dialog = document.querySelector(".img-upload");
+      image_dialog.showModal();
+      let file_input = document.querySelector("#file_upload");
+      document.querySelector(".upload_cancel").addEventListener("click", () => {
+        file_input.value = null;
+        image_dialog.close();
+      });
+      const handle_file = () => {
+        const selected_file = [...file_input.files];
+        const file_reader = new FileReader();
+
+        file_reader.readAsDataURL(selected_file[0]);
+        file_reader.onload = () => {
+          this.shadowRoot.querySelector("#img-icon").src = file_reader.result;
+          let items = window.localStorage.getItem("jobs");
+          let item_list = JSON.parse(items);
+          try {
+            item_list[id]["img"] = file_reader.result;
+            localStorage.setItem("jobs", JSON.stringify(item_list));
+          } catch (e) {
+            alert(
+              "local storage has exceed storage limit, this change will not be saved, remove some unnecessary items"
+            );
+          }
+        };
+      };
+      document
+        .querySelector(".upload_confirm")
+        .addEventListener("click", () => {
+          handle_file();
+          window.location.reload();
+        });
+      file_input.onchange = () => {
+        if (file_input.files[0].size > 500000) {
+          alert("file is too big!");
+          file_input.value = null;
+        }
+      };
+    });
   }
 }
 
 // Defines the Class as a customElement to create
-// 'job-card' elements
+// 'job-card' elements Job card defining
 customElements.define("job-card", JobCard);
