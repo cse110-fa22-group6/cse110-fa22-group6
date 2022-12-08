@@ -488,7 +488,7 @@ describe("Basic user flow for Website", () => {
     var popup = await page.$('[id="delete-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
 
-    var submitBtn = await popup.$('[id="d-delete"]');
+    var submitBtn = await popup.$('[id="d_delete"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
     await Promise.all([
