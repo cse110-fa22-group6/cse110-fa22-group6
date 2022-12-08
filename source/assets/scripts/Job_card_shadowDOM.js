@@ -264,7 +264,7 @@ class JobCard extends HTMLElement {
     } 
     `;
 
-    // Appends the <style> and <article> elements to the Shadow DOM
+    // Appends the <style> and <article> elements to the Shadow DOM.
     shadow_element.append(style_element);
     shadow_element.append(article_element);
   }
