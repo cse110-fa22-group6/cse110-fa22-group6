@@ -186,6 +186,16 @@ describe("Basic user flow for Website", () => {
     expect(await popup.isIntersectingViewport()).toBe(true);
 
     var textBox = await popup.$('[id="company-edit"]');
+    await page.evaluate(() => {
+      const prevCom = document.querySelector('#company-edit');
+      const prevPos = document.querySelector('#position-edit');
+      const prevLoc = document.querySelector('#location-edit');
+      const prevDat = document.querySelector('#date-edit');
+      prevCom.value = "";
+      prevPos.value = "";
+      prevLoc.value = "";
+      prevDat.value = "";
+    });
     await textBox.type("Amazon");
     textBox = await popup.$('[id="position-edit"]');
     await textBox.type("Software Engineering Intern");
@@ -244,6 +254,16 @@ describe("Basic user flow for Website", () => {
     await editBtn.click(0, 1, 1);
     var popup = await page.$('[id="edit-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
+    await page.evaluate(() => {
+      const prevCom = document.querySelector('#company-edit');
+      const prevPos = document.querySelector('#position-edit');
+      const prevLoc = document.querySelector('#location-edit');
+      const prevDat = document.querySelector('#date-edit');
+      prevCom.value = "";
+      prevPos.value = "";
+      prevLoc.value = "";
+      prevDat.value = "";
+    });
 
     textBox = await popup.$('[id="company-edit"]');
     await textBox.type("");
@@ -256,8 +276,6 @@ describe("Basic user flow for Website", () => {
 
     var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
-    var jobs = await page.$$("job-card");
-    expect(jobs.length).toBe(1);
 
     await page.reload();
     await Promise.all([
@@ -285,6 +303,17 @@ describe("Basic user flow for Website", () => {
     var popup = await page.$('[id="edit-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
 
+    await page.evaluate(() => {
+      const prevCom = document.querySelector('#company-edit');
+      const prevPos = document.querySelector('#position-edit');
+      const prevLoc = document.querySelector('#location-edit');
+      const prevDat = document.querySelector('#date-edit');
+      prevCom.value = "";
+      prevPos.value = "";
+      prevLoc.value = "";
+      prevDat.value = "";
+    });
+
     textBox = await popup.$('[id="company-edit"]');
     await textBox.type("BAD");
     textBox = await popup.$('[id="position-edit"]');
@@ -296,8 +325,6 @@ describe("Basic user flow for Website", () => {
 
     var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
-    var jobs = await page.$$("job-card");
-    expect(jobs.length).toBe(1);
 
     await page.reload();
     await Promise.all([
@@ -325,6 +352,17 @@ describe("Basic user flow for Website", () => {
     var popup = await page.$('[id="edit-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
 
+    await page.evaluate(() => {
+      const prevCom = document.querySelector('#company-edit');
+      const prevPos = document.querySelector('#position-edit');
+      const prevLoc = document.querySelector('#location-edit');
+      const prevDat = document.querySelector('#date-edit');
+      prevCom.value = "";
+      prevPos.value = "";
+      prevLoc.value = "";
+      prevDat.value = "";
+    });
+
     textBox = await popup.$('[id="company-edit"]');
     await textBox.type("BAD");
     textBox = await popup.$('[id="position-edit"]');
@@ -336,8 +374,6 @@ describe("Basic user flow for Website", () => {
 
     var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
-    var jobs = await page.$$("job-card");
-    expect(jobs.length).toBe(1);
 
     await page.reload();
     await Promise.all([
