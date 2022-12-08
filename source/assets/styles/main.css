@@ -5,21 +5,42 @@
 }
 
 :root {
-  --special-color: rgb(149 161 241);
+  --special-color: #95a1f1;
+  --backgroud-color: white;
+  --text-color: black;
+  --button-text-color: black;
+  --button-color-onhover: rgb(105 123 240);
+  --button-text-color-onhover: white;
+}
+
+body.dark-theme {
+  --special-color: rgb(187 134 250);
+  --backgroud-color: rgb(18 18 18 / 25500%);
+  --text-color: rgb(218 218 218 / 25500%);
+  --button-text-color: white;
+  --button-color-onhover: rgb(145 68 239);
+  --button-text-color-onhover: black;
+}
+
+body.dark-theme ul[class="filterStages"] {
+  color: black;
 }
 
 * {
-  font-family: "Spoof", sans-serif;
+  font-family: "Spoof", serif;
   font-weight: 300;
+  color: var(--text-color);
 }
 
 body {
   margin: 2% 5%;
+  background-color: var(--backgroud-color);
 }
 
 .container-1 {
   display: flex;
   align-items: center;
+  position: relative;
   margin-bottom: -1em;
 }
 
@@ -43,15 +64,65 @@ h5 {
   color: grey;
 }
 
-#add-application-btn {
+.container-3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+button[id="add_application_btn"] {
   background-color: var(--special-color);
   margin: 1em 0.7em;
+  color: var(--button-text-color);
   padding: 0.5em 2.5em;
   cursor: pointer;
 }
 
-#add-application-btn:hover {
-  background-color: rgb(105 123 240);
-  color: white;
+button[id="add_application_btn"]:hover {
+  background-color: var(--button-color-onhover);
+  color: var(--button-text-color-onhover);
   cursor: pointer;
+}
+
+/* darkmode */
+.flexitem-3 {
+  position: absolute;
+  width: auto;
+  top: 35px;
+  right: 5px;
+}
+
+.container-3 > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+#filter-stages .step {
+  border: 3px solid black;
+  color: black;
+  cursor: pointer;
+  border-radius: 1em;
+  width: 100px;
+  height: 25px;
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+}
+
+.step span {
+  display: none;
+}
+
+body #filter-stages .step.active {
+  background-color: #95a1f1;
+}
+
+body.dark-theme #filter-stages .step.active {
+  background-color: rgb(187 134 250);
 }
