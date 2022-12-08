@@ -17,6 +17,7 @@ Wing It is a fast and easy way to track and update job applications.
   - [Table of content](#table-of-content)
   - [Demo](#demo)
   - [Features](#features)
+  - [Documentation](#documentation)
   - [Run Locally](#run-locally)
   - [Running Tests](#running-tests)
   - [Linting and Validation](#linting-and-validation)
@@ -24,7 +25,7 @@ Wing It is a fast and easy way to track and update job applications.
 
 ## Demo
 
-https://cse110-fa22-group6.github.io/cse110-fa22-group6/source/index.html
+<https://cse110-fa22-group6.github.io/cse110-fa22-group6/source/index.html>
 
 ## Features
 
@@ -34,6 +35,10 @@ https://cse110-fa22-group6.github.io/cse110-fa22-group6/source/index.html
 - Vanilla JS and Local First
 - Full CRUD
 - Sorting Capability
+
+## Documentation
+
+<https://cse110-fa22-group6.github.io/cse110-fa22-group6/specs/documentation/index.html>
 
 ## Run Locally
 
@@ -54,11 +59,6 @@ Install dependencies
 ```bash
   npm install
 ```
-
-## Documentation
-
-[TO BE FILLED](https://linktodocumentation)
-
 
 ## Running Tests
 

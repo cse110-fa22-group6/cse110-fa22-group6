@@ -8,6 +8,8 @@ describe("Basic user flow for Website", () => {
   beforeAll(async () => {
     // add the correct URL according to your LiveServer
     await page.goto(URL);
+    jest.setTimeout(30000);
+
   });
 
   it("Check page status when first opened (clear local storage)", async () => {
