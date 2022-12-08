@@ -22,18 +22,18 @@ describe("Basic user flow for Website", () => {
 
   it("Check add confirmation popup", async () => {
     console.log("Testing add confirmation popup...");
-    var addBtn = await page.$('[id="add-application-btn"]');
+    var addBtn = await page.$('[id="add_application_btn"]');
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancelBtn = await popup.$('[id="add-cancel"]');
+    var cancelBtn = await popup.$('[id="add_cancel"]');
     await cancelBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });
 
   it("Check adding application", async () => {
     console.log("Testing adding application...");
-    var addBtn = await page.$('[id="add-application-btn"]');
+    var addBtn = await page.$('[id="add_application_btn"]');
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
@@ -47,7 +47,7 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date"]');
     await textBox.type("06212023");
 
-    var submitBtn = await popup.$('[id="add-submit"]');
+    var submitBtn = await popup.$('[id="add_submit"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
     await Promise.all([
@@ -90,7 +90,7 @@ describe("Basic user flow for Website", () => {
 
   it("Check adding application without company", async () => {
     console.log("Testing adding application without company...");
-    var addBtn = await page.$('[id="add-application-btn"]');
+    var addBtn = await page.$('[id="add_application_btn"]');
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
@@ -104,7 +104,7 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date"]');
     await textBox.type("06212023");
 
-    var submitBtn = await popup.$('[id="add-submit"]');
+    var submitBtn = await popup.$('[id="add_submit"]');
     await submitBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(true);
     var jobs = await page.$$("job-card");
@@ -115,7 +115,7 @@ describe("Basic user flow for Website", () => {
 
   it("Check adding application without position", async () => {
     console.log("Testing adding application without company...");
-    var addBtn = await page.$('[id="add-application-btn"]');
+    var addBtn = await page.$('[id="add_application_btn"]');
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
@@ -129,7 +129,7 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date"]');
     await textBox.type("06212023");
 
-    var submitBtn = await popup.$('[id="add-submit"]');
+    var submitBtn = await popup.$('[id="add_submit"]');
     await submitBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(true);
     var jobs = await page.$$("job-card");
@@ -140,7 +140,7 @@ describe("Basic user flow for Website", () => {
 
   it("Check adding application without date", async () => {
     console.log("Testing adding application without company...");
-    var addBtn = await page.$('[id="add-application-btn"]');
+    var addBtn = await page.$('[id="add_application_btn"]');
     await addBtn.click(0, 1, 1);
     var popup = await page.$('[id="add-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
@@ -154,7 +154,7 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date"]');
     await textBox.type("");
 
-    var submitBtn = await popup.$('[id="add-submit"]');
+    var submitBtn = await popup.$('[id="add_submit"]');
     await submitBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(true);
     var jobs = await page.$$("job-card");
@@ -171,7 +171,7 @@ describe("Basic user flow for Website", () => {
     await editBtn.click(0, 1, 1);
     var popup = await page.$('[id="edit-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancelBtn = await popup.$('[id="edit-cancel"]');
+    var cancelBtn = await popup.$('[id="edit_cancel"]');
     await cancelBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });
@@ -194,7 +194,7 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date-edit"]');
     await textBox.type("06222023");
 
-    var submitBtn = await popup.$('[id="edit-submit"]');
+    var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
     await Promise.all([
@@ -254,9 +254,8 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date-edit"]');
     await textBox.type("11111111");
 
-    var submitBtn = await popup.$('[id="edit-submit"]');
+    var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
-    expect(await popup.isIntersectingViewport()).toBe(true);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
 
@@ -295,9 +294,8 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date-edit"]');
     await textBox.type("11111111");
 
-    var submitBtn = await popup.$('[id="edit-submit"]');
+    var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
-    expect(await popup.isIntersectingViewport()).toBe(true);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
 
@@ -336,9 +334,8 @@ describe("Basic user flow for Website", () => {
     textBox = await popup.$('[id="date-edit"]');
     await textBox.type("");
 
-    var submitBtn = await popup.$('[id="edit-submit"]');
+    var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
-    expect(await popup.isIntersectingViewport()).toBe(true);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
 
@@ -474,7 +471,7 @@ describe("Basic user flow for Website", () => {
     await deleteBtn.click(0, 1, 1);
     var popup = await page.$('[id="delete-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
-    var cancelBtn = await popup.$('[id="d-cancel"]');
+    var cancelBtn = await popup.$('[id="d_cancel"]');
     await cancelBtn.click(0, 1, 1);
     expect(await popup.isIntersectingViewport()).toBe(false);
   });
@@ -488,7 +485,7 @@ describe("Basic user flow for Website", () => {
     var popup = await page.$('[id="delete-application"]');
     expect(await popup.isIntersectingViewport()).toBe(true);
 
-    var submitBtn = await popup.$('[id="d-delete"]');
+    var submitBtn = await popup.$('[id="d_delete"]');
     await submitBtn.click(0, 1, 1);
     await page.reload();
     await Promise.all([
