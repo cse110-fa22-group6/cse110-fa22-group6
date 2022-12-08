@@ -256,7 +256,6 @@ describe("Basic user flow for Website", () => {
 
     var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
-    expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
 
@@ -297,7 +296,6 @@ describe("Basic user flow for Website", () => {
 
     var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
-    expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
 
@@ -338,7 +336,6 @@ describe("Basic user flow for Website", () => {
 
     var submitBtn = await popup.$('[id="edit_submit"]');
     await submitBtn.click(0, 1, 1);
-    expect(await popup.isIntersectingViewport()).toBe(false);
     var jobs = await page.$$("job-card");
     expect(jobs.length).toBe(1);
 
