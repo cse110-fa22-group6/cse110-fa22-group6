@@ -148,7 +148,6 @@ button[id="d_delete"]:hover {
 
 .grid-container-form {
   display: grid;
-  grid-templ
   grid-template-rows: auto auto;
   justify-items: stretch;
 }
