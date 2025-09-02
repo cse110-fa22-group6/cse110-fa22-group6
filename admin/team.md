@@ -43,12 +43,6 @@ Hey there, my name is Cristian and I am a member of Wing It (group 6). I am curr
 <img src="./branding/team_images/jongmin.png" alt="Avatar" width=75px>[Jongmin Kim](https://github.com/JongminKim292)<br>
 Hi I am Jongmin and I’m member for Wing It (group 6). I’m 4th year CS Student. I’m interested in iOS mobile application developer. I’m currently working on reward app as my side project.
 
-<br>
-
-<img src="./branding/team_images/kwangyun.png" alt="Avatar" width=75px>[Kwangyun Keum](https://github.com/Kwangyun)<br>
-Hello! I am Kwangyun Keum, a senior Math-CS Student at UCSD and plan to become a software engineer. My goal is to become a penetration tester in the cyber security area.
-
-<br>
 
 <img src="./branding/team_images/matilda.png" alt="Avatar" width=75px>[Matilda Michel](https://github.com/mhm1117) <br>
 Hi Everyone! I'm Matilda and I'm a Cog Sci Machine Learning Major (and CSE Minor) on my last quarter here! For this project, I'm planning to step out of my comfort zone and try my hand at frontend and design work. I’m not even sure I’m going to go into the software engineering field but I love creating and trying new things!
